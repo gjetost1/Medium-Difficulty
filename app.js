@@ -6,13 +6,13 @@ const logger = require('morgan');
 const { sequelize } = require('./db/models');
 const session = require('express-session');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
-const homeRouter = require('./routes/home');
-const usersRouter = require('./routes/users');
-const loginRouter = require('./routes/log-in');
-const signupRouter = require('./routes/sign-up');
-const storiesRouter = require('./routes/stories');
-const createstoryRouter = require('./routes/create-story');
-const categoriesRouter = require('./routes/categories')
+const homeRouter = require('./routes/Home');
+const usersRouter = require('./routes/Users');
+const loginRouter = require('./routes/Login');
+const signupRouter = require('./routes/Signup');
+const storiesRouter = require('./routes/Stories');
+const createstoryRouter = require('./routes/Create-Story');
+const categoriesRouter = require('./routes/Categories')
 
 const app = express();
 
@@ -40,10 +40,10 @@ app.use(
 // create Session table if it doesn't already exist
 store.sync();
 
-app.use('/', homeRouter);
-app.use('/Users', usersRouter);
 app.use('/Login', loginRouter);
 app.use('/Signup', signupRouter);
+app.use('/', homeRouter);
+app.use('/Users', usersRouter);
 app.use('/Stories', storiesRouter);
 app.use('/Create-Story', createstoryRouter);
 app.use('/Categories', categoriesRouter);

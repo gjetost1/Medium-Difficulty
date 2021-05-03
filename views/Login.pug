@@ -1,5 +1,5 @@
 form(action="/Login" method='POST')
-    input(type='text' name='userIdentification' id='userIdentification')
+    input(type='text' name='userIdentification' id='userIdentification' value=userIdentification)
     input(type='password' name='password' id='password')
     input(type='hidden' name='_csrf' value=csrfToken)
     button(type='submit') Submit
@@ -7,4 +7,3 @@ form(action="/Login" method='POST')
         if errors
             each error in errors
                 p=error
-

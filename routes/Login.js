@@ -47,7 +47,7 @@ router.post('/', loginValidators, csrfProtection, asyncHandler(async (req, res, 
 
 
 
-    res.render('/log-in', {
+    res.render('log-in', {
         userIdentification,
         errors,
         csrfToken: req.csrfToken()
