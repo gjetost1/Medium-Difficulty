@@ -21,13 +21,13 @@ module.exports = (sequelize, DataTypes) => {
     User.hasMany(models.Follower, {
       foreignKey: "follower_user_id"
     });
-    User.belongsTo(models.Story,{
+    User.hasMany(models.Story,{
       foreignKey: "author_id"
     })
-    User.belongsTo(models.Like, {
+    User.hasMany(models.Like, {
       foreignKey: 'user_id'
     })
-    User.belongsTo(models.Comment, {
+    User.hasMany(models.Comment, {
       foreignKey: 'user_id'
     })
   };

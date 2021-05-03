@@ -13,13 +13,21 @@ module.exports = {
         type: Sequelize.INTEGER,
         references: { model: "Users" },
       },
-      stories_id: {
-        type: Sequelize.INTEGER,
-        references: { model: "Stories" },
+      // stories_id: {
+      //   type: Sequelize.INTEGER,
+      //   references: { model: "Stories" },
+      // },
+      // comment_id: {
+      //   type: Sequelize.INTEGER,
+      //   references: { model: "Comments" },
+      // },
+      commentable_id: {
+        allowNull: false,
+        type: sequelize.Integer
       },
-      comment_id: {
-        type: Sequelize.INTEGER,
-        references: { model: "Comments" },
+      commentable_type: {
+        allowNull: false,
+        type: sequelize.STRING
       },
       createdAt: {
         allowNull: false,
