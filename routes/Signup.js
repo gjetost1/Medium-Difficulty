@@ -60,18 +60,18 @@ router.get('/', csrfProtection, asyncHandler(async(req, res, next) => {
 router.post('/', userSignUpValidators, csrfProtection, asyncHandler(async(req, res, next) => {
     const {username, email, password} = req.body;
 
-    // const user = await User.build({
-    //     username,
-    //     email,
-    // })
+    const user = await User.build({
+        username,
+        email,
+    })
 
     const validatorErrors = validationResult(req);
 
     if (validatorErrors.isEmpty()) {
-        // const hashedPassword = await bcrypt.hash(password, 10)
-        // user.hashedPassword = hashedPassword;
-        // await user.save()
-        // loginUser(res, req, user);
+        const hashedPassword = await bcrypt.hash(password, 10)
+        user.hashedPassword = hashedPassword;
+        await user.save()
+        loginUser(res, req, user);
         res.redirect('/')
     } else {
         const errors = validatorErrors.array().map(e=>e.msg)
