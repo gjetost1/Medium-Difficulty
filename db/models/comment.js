@@ -4,6 +4,7 @@ module.exports = (sequelize, DataTypes) => {
     id: {
       type: DataTypes.INTEGER,
       isNull: false,
+      primaryKey: true
     },
     comment: DataTypes.TEXT,
     edited: DataTypes.BOOLEAN,
