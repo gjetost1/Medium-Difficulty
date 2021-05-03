@@ -34,7 +34,7 @@ router.post('/', loginValidators, csrfProtection, asyncHandler(async (req, res, 
     if (validatorErrors.isEmpty()) {
         const user = await db.User.findOne({ where: { [Op.or]: [{ email: userIdentification }, { username: userIdentification }] } })
         if (user) {
-            const matchPassword = await bcrypt.compare(user.hashedPassword, password);
+            const matchPassword = await bcrypt.compare(password, user.hashedPassword.toString());
             if (matchPassword) {
                 loginUser(req, res, user);
                 return res.redirect('/')

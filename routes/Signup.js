@@ -12,7 +12,14 @@ const userSignUpValidators = [
       .exists({ checkFalsy: true })
       .withMessage("Please provide a value for Username")
       .isLength({ max: 20 })
-      .withMessage("First Name must not be more than 20 characters long"),
+      .withMessage("First Name must not be more than 20 characters long")
+      .custom(username => {
+        return User.findOne({where: {username}}).then(user => {
+          if (user) {
+            return Promise.reject('Username already in use')
+          }
+        })
+      }),
     check("email")
       .exists({ checkFalsy: true })
       .withMessage("Please provide a value for Email Address")
@@ -71,7 +78,7 @@ router.post('/', userSignUpValidators, csrfProtection, asyncHandler(async(req, r
         const hashedPassword = await bcrypt.hash(password, 10)
         user.hashedPassword = hashedPassword;
         await user.save()
-        loginUser(res, req, user);
+        loginUser(req, res, user);
         res.redirect('/')
     } else {
         const errors = validatorErrors.array().map(e=>e.msg)

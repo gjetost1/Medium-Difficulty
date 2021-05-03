@@ -6,7 +6,7 @@ const { Follower } = require('../db/models')
 
 router.get('/:id', asyncHandler(async (req, res, next) => {
     let currentUser = false;
-    if (req.params.id == res.locals.user) {
+    if (req.params.id == res.locals.user) {  // TODO: Check if okay way to do this.
         currentUser = true
     };
     res.render('User', { user: res.locals.user, currentUser }) //if currentUser is true, giev extra privlages
