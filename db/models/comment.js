@@ -4,7 +4,8 @@ module.exports = (sequelize, DataTypes) => {
     id: {
       type: DataTypes.INTEGER,
       isNull: false,
-      primaryKey: true
+      primaryKey: true,
+      autoIncrement: true,
     },
     comment: DataTypes.TEXT,
     edited: DataTypes.BOOLEAN,

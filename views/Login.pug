@@ -1,0 +1,9 @@
+form(action="/Login" method='POST')
+    input(type='text' name='userIdentification' id='userIdentification' value=userIdentification)
+    input(type='password' name='password' id='password')
+    input(type='hidden' name='_csrf' value=csrfToken)
+    button(type='submit') Submit
+    div
+        if errors
+            each error in errors
+                p=error

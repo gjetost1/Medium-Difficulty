@@ -6,8 +6,14 @@ const logger = require('morgan');
 const { sequelize } = require('./db/models');
 const session = require('express-session');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
-const indexRouter = require('./routes/index');
-const usersRouter = require('./routes/users');
+const homeRouter = require('./routes/Home');
+const usersRouter = require('./routes/Users');
+const loginRouter = require('./routes/Login');
+const signupRouter = require('./routes/Signup');
+const storiesRouter = require('./routes/Stories');
+const createstoryRouter = require('./routes/Create-Story');
+const categoriesRouter = require('./routes/Categories')
+const { restoreUser } = require('./auth')
 
 const app = express();
 
@@ -31,12 +37,17 @@ app.use(
     resave: false,
   })
 );
-
+app.use(restoreUser)
 // create Session table if it doesn't already exist
 store.sync();
 
-app.use('/', indexRouter);
-app.use('/users', usersRouter);
+app.use('/Login', loginRouter);
+app.use('/Signup', signupRouter);
+app.use('/', homeRouter);
+app.use('/Users', usersRouter);
+app.use('/Stories', storiesRouter);
+app.use('/Create-Story', createstoryRouter);
+app.use('/Categories', categoriesRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
