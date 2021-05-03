@@ -15,12 +15,21 @@ module.exports = (sequelize, DataTypes) => {
     {}
   );
   User.associate = function (models) {
-    User.belongsToMany(models.Followers, {
-      foreignKey: "following_user_id",
+    User.belongsToMany(models.Follower, {
+      foreignKey: "following_user_id"
     });
-    User.hasMany(models.Followers, {
-      foreignKey: "follower_user_id",
+    User.hasMany(models.Follower, {
+      foreignKey: "follower_user_id"
     });
+    User.belongsTo(models.Story,{
+      foreignKey: "author_id"
+    })
+    User.belongsTo(models.Like, {
+      foreignKey: 'user_id'
+    })
+    User.belongsTo(models.Comment, {
+      foreignKey: 'user_id'
+    })
   };
   return User;
 };
