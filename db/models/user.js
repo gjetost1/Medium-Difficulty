@@ -6,6 +6,7 @@ module.exports = (sequelize, DataTypes) => {
       id: {
         type: DataTypes.INTEGER,
         isNull: false,
+        primaryKey: true
       },
       username: DataTypes.STRING,
       hashedPassword: DataTypes.STRING,
@@ -16,7 +17,8 @@ module.exports = (sequelize, DataTypes) => {
   );
   User.associate = function (models) {
     User.belongsToMany(models.Follower, {
-      foreignKey: "following_user_id"
+      foreignKey: "following_user_id",
+      through: { model: "Follower" }
     });
     User.hasMany(models.Follower, {
       foreignKey: "follower_user_id"

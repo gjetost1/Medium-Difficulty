@@ -4,12 +4,13 @@ module.exports = (sequelize, DataTypes) => {
     id: {
       type: DataTypes.INTEGER,
       isNull: false,
+      primaryKey: true
     },
     follower_user_id: DataTypes.INTEGER,
     following_user_id: DataTypes.INTEGER
   }, {});
   Follower.associate = function(models) {
-    
+
   };
   return Follower;
 };
