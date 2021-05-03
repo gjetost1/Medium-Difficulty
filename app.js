@@ -13,6 +13,7 @@ const signupRouter = require('./routes/Signup');
 const storiesRouter = require('./routes/Stories');
 const createstoryRouter = require('./routes/Create-Story');
 const categoriesRouter = require('./routes/Categories')
+const { restoreUser } = require('./auth')
 
 const app = express();
 
@@ -36,7 +37,7 @@ app.use(
     resave: false,
   })
 );
-
+app.use(restoreUser)
 // create Session table if it doesn't already exist
 store.sync();
 
