@@ -14,7 +14,7 @@ module.exports = {
       },
       hashedPassword: {
         allowNull: false,
-        type: Sequelize.STRING.BINARY(64),
+        type: Sequelize.STRING.BINARY,
       },
       email: {
         allowNull: false,
@@ -22,7 +22,6 @@ module.exports = {
         unique: true,
       },
       profileImage: {
-        allowNull: false,
         type: Sequelize.STRING(200),
       },
       createdAt: {
