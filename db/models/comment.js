@@ -17,12 +17,8 @@ module.exports = (sequelize, DataTypes) => {
     Comment.belongsTo(models.Story, {
       foreignKey: 'story_id'
     })
-    Comment.hasMany(models.Like, {
-      foreignKey: 'commentable_id',
-      constraints: false,
-      scope: {
-        commentable_type: 'comment'
-      }
+    Comment.hasMany(models.CommentLike, {
+      foreignKey: 'comment_id'
     })
   };
   return Comment;

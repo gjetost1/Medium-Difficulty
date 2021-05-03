@@ -16,14 +16,10 @@ module.exports = (sequelize, DataTypes) => {
     Story.belongsTo(models.User, {
       foreignKey: 'author_id'
     })
-    Story.hasMany(models.Like, {
-      foreignKey: 'commentable_id',
-      constraints: false,
-      scope: {
-        commentable_type: 'story'
-      }
-    })
     Story.hasMany(models.Comment,{
+      foreignKey: 'story_id'
+    })
+    Story.hasMany(models.StoryLike, {
       foreignKey: 'story_id'
     })
   };
