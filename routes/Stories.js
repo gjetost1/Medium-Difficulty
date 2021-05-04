@@ -22,11 +22,11 @@ router.get('/:id/Edit', asyncHandler(async (req, res, next) => { // TODO: Make s
 
 
 router.put('/:id', asyncHandler(async (req, res, next) => {
-    const story = await Story.findByPk(req.params.id);
+    const currentStory = await Story.findByPk(req.params.id);
     const { title, story } = req.body;
 
-    story.title = title;
-    story.story = story;
+    currentStory.title = title;
+    currentStory.story = story;
 
     await story.save();
     res.redirect(`/Stories/${story.id}`)
@@ -43,7 +43,7 @@ router.delete('/:id', asyncHandler(async (req, res, next) => {
 router.post('/:id/comment', asyncHandler(async (req, res, next) => {
     const { comment } = req.body
 
-    const comment = await Comment.create({
+    await Comment.create({
         comment,
         user_id: res.locals.user.id,
         story_id: req.params.id
