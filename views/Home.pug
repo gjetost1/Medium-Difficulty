@@ -20,4 +20,12 @@ block content
   p(class='home__p') Username
   if user
     p(class='home__user__p')=user.username
-  h3(class="home__h3")
+
+  if stories
+    each story in stories
+      p=story.title
+      p=story.story
+      p=story.liked
+        each liker in story.StoryLikes
+          //- button for likers
+          p=liker.User.username
