@@ -9,3 +9,10 @@ append head
 block content
   h1= title
   p Welcome to your Project Skeleton
+  p=thing
+  p ^^^^ Is there valid user logged in?
+  form(action="/" method='POST')
+    button(type='submit') Logout
+  p Username
+  if user
+    p=user.username
