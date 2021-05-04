@@ -9,6 +9,7 @@ router.get('/', asyncHandler(async(req, res, next)=>{
     const stories = await Story.findAll({
         limit: 10
     })
+
     res.render('Stories', {stories})
 }))
 
