@@ -4,8 +4,16 @@ module.exports = {
   up: (queryInterface, Sequelize) => {
     return queryInterface.bulkInsert('Users', [
     {
+        username: 'demo',
+        hashedPassword: '$2a$10$/9GweWHFU0mNkAVJucaOYOAJjWPU3jVB2zuxtd6QCmvrbQfX5.O4K', //demopassword
+        email: 'demo@demo.com',
+        profileImage: '',
+        createdAt: new Date(),
+        updatedAt: new Date()
+    },
+    {
       username: 'John Doe',
-      hashedPassword: '$2a$10$d9P/lkmIQ2o7tAIb43jcHOCsWoBABaiEligM2oDRNcbEbFn.bt4.qe',
+      hashedPassword: '$2a$10$zmiHvQ75lJfzaVtNXPhhyO9VFEUl6hXCEw5BTUuQ21U7ew5Nj3Sge', //1234
       email: 'jd@email.com',
       profileImage: '',
       createdAt: new Date(),
