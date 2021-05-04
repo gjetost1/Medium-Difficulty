@@ -1,29 +1,17 @@
 const express = require('express');
+const { Result } = require('express-validator');
 const router = express.Router();
 const { Story, Comment, StoryLike, User } = require('../db/models')
 const { asyncHandler } = require('./utils')
 
 //Collection Resource
-router.get('/', asyncHandler(async (req, res, next)=>{
-    console.log(res.locals.user.id)
-    let stories = await User.findAll({
-        include: {
-            model: Story,
-        },
-        where: {
-            id: res.locals.user.id,
-        },
+router.get('/', asyncHandler(async(req, res, next)=>{
+    const stories = await Story.findAll({
         limit: 10
     })
-    stories = stories[0].Stories
-
-    const currentUsersStories = false;
-    if (stories.author_id == res.locals.user) {
-        currentUsersStories = true;
-    };
-
-    res.render('Stories', {stories, currentUsersStories})
+    res.render('Stories', {stories})
 }))
+
 
 //Single Resource
 router.get('/:id', asyncHandler(async (req, res, next) => {
