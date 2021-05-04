@@ -12,13 +12,13 @@ router.get('/', async(req, res, next) => {
 router.post('/', asyncHandler(async(req, res, next) => {
     const {title, story} = req.body
 
-    const story = await Story.create({
+    const currentStory = await Story.create({
         title,
         story,
         author_id: res.locals.user.id,
     })
 
-    res.redirect(`/Stories/${story.id}`)
+    res.redirect(`/Stories/${currentStory.id}`)
 }))
 
 
