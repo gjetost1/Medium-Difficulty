@@ -21,11 +21,8 @@ router.get('/', asyncHandler(async (req, res, next) => {
 //----------------------------- //log out user tester
 router.post('/', (req,res,next)=>{
   delete req.session.auth;
-  res.render('Home', {
-    title: 'a/A Express Skeleton Home',
-    user: res.locals.user,
-    thing: res.locals.authenticated
-  })
+  req.session.save(() => res.redirect("/"), {
+    title: 'a/A Express Skeleton Home'})
 })
 //-----------------------------
 
