@@ -18,8 +18,8 @@ block content
         input(class='form__input__signup__confirmpassword' type='password' name='confirmPassword' id='confirmPassword')
 
         input(type='hidden' name='_csrf' value=csrfToken)
-        button(type='submit' class='form__signup__submit') Submit
+        button(type='submit' class='form__button__signup__submit') Submit
         div(class='div__errors__signup')
             if errors
                 each error in errors
-                    p(class="div__errors__signup")=error
+                    p(class="div__p__error__signup")=error

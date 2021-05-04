@@ -1,9 +1,19 @@
 const express = require('express');
+const { Result } = require('express-validator');
 const router = express.Router();
-const { Story, Comment, StoryLike } = require('../db/models')
+const { Story, Comment, StoryLike, User } = require('../db/models')
 const { asyncHandler } = require('./utils')
 
+//Collection Resource
+router.get('/', asyncHandler(async(req, res, next)=>{
+    const stories = await Story.findAll({
+        limit: 10
+    })
+    res.render('Stories', {stories})
+}))
 
+
+//Single Resource
 router.get('/:id', asyncHandler(async (req, res, next) => {
     const story = await Story.findByPk(req.params.id);
     const currentUsersStory = false;
