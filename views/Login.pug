@@ -10,7 +10,7 @@ block content
             input(class="form__input__login__password" type='password' name='password' id='password')
 
             input(type='hidden' name='_csrf' value=csrfToken)
-            button(class="form__button__login__submit" type='submit') Submit
+            button(class="form__button__submit__login" type='submit') Submit
             div(class="div__errors__login")
                 if errors
                     each error in errors
