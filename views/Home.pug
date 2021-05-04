@@ -1,10 +1,14 @@
-extends layout
+extends navbar
 
-append head
-  //- add page specific styles by appending to the head
-  link(rel="stylesheet" href="/stylesheets/index.css")
-  //- add page specific js
-  script(src="/javascripts/index.js" type="module" defer)
+//- append nav
+//-   if user
+//-     div
+//-       a(href="/Users/" + user.id) My Profile
+//-   else
+//-     div
+//-       a(href='/Login') Log In
+//-     div
+//-       a(href='/Signup') Create Account
 
 block content
   h1= title

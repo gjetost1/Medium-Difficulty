@@ -1,0 +1,24 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title=title
+    body
+        nav(id='navbar')
+            div
+                a(href='/') Home
+            div
+                a(href="localhost:8080/AboutUs") About Us
+            div
+                a(href="localhost:8080/ContactUs") Contact Us
+            if user
+                div
+                    a(href="/Users/" + user.id) My Profile
+            else
+                div
+                    a(href='/Login') Log In
+                div
+                    a(href='/Signup') Create Account
+    block content
