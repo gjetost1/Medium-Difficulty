@@ -14,6 +14,9 @@ module.exports = {
       edited: {
         type: Sequelize.BOOLEAN,
       },
+      liked: {
+        type: Sequelize.INTEGER,
+      },
       user_id: {
         allowNull: false,
         type: Sequelize.INTEGER,
