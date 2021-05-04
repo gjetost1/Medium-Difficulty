@@ -1,8 +1,28 @@
 const express = require('express');
 const router = express.Router();
 const { asyncHandler } = require('./utils')
-const { Follower } = require('../db/models')
+const { Follower, Story } = require('../db/models')
 
+//Collection Resource
+router.get('/:id/stories', asyncHandler(async (req, res, next)=>{
+    let stories = await User.findAll({
+        include: {
+            model: Story,
+        },
+        where: {
+            id: res.locals.user.id,
+        },
+        limit: 10
+    })
+    stories = stories[0].Stories
+
+    const currentUsersStories = false;
+    if (stories.author_id == res.locals.user) {
+        currentUsersStories = true;
+    };
+
+    res.render('User', {stories, currentUsersStories})
+}))
 
 router.get('/:id', asyncHandler(async (req, res, next) => {
     let currentUser = false;

@@ -1,9 +1,17 @@
-form(action="/Login" method='POST')
-    input(type='text' name='userIdentification' id='userIdentification' value=userIdentification)
-    input(type='password' name='password' id='password')
-    input(type='hidden' name='_csrf' value=csrfToken)
-    button(type='submit') Submit
-    div
-        if errors
-            each error in errors
-                p=error
+extends layout.pug
+
+block content
+    block description
+        form(action="/Login" method='POST' class="form__login")
+            label(class="form__label__login__useridentification") Enter your email or username
+            input(class="form__input__login__useridentification" type='text' name='userIdentification' id='userIdentification' value=userIdentification)
+
+            label(class="form__label__login__password") Enter your password
+            input(class="form__input__login__password" type='password' name='password' id='password')
+
+            input(type='hidden' name='_csrf' value=csrfToken)
+            button(class="form__button__login__submit" type='submit') Submit
+            div(class="div__errors__login")
+                if errors
+                    each error in errors
+                        p(class="div__p__error__login")=error

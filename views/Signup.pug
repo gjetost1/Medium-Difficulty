@@ -1,11 +1,25 @@
-form(action="/Signup" method='POST')
-    input(type='text' name='username' id='username' value=username)
-    input(type='text' name='email' id='email' value=email)
-    input(type='password' name='password' id='password')
-    input(type='password' name='confirmPassword' id='confirmPassword')
-    input(type='hidden' name='_csrf' value=csrfToken)
-    button(type='submit') Submit
-    div
-        if errors
-            each error in errors
-                p=error
+extends layout.pug
+
+block content
+    block description
+    h1(class='h1__signup') Sign up and enjoy top quality content!
+    form(action="/Signup" method='POST' class='form__signup')
+
+        label(class='form__label__signup__username') User Name
+        input(class='form__input__signup__username' type='text' name='username' id='username' value=username)
+
+        label(class='form__label__signup__email') Email
+        input(class='form__input__signup__email' type='text' name='email' id='email' value=email)
+
+        label(class='form__label__signup__password') Password
+        input(class='form__input__signup__password' type='password' name='password' id='password')
+
+        label(class='form__label__signup__confirmpassword') Confirm Password
+        input(class='form__input__signup__confirmpassword' type='password' name='confirmPassword' id='confirmPassword')
+
+        input(type='hidden' name='_csrf' value=csrfToken)
+        button(type='submit' class='form__button__signup__submit') Submit
+        div(class='div__errors__signup')
+            if errors
+                each error in errors
+                    p(class="div__p__error__signup")=error
