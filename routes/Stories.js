@@ -9,7 +9,7 @@ router.get('/', asyncHandler(async(req, res, next)=>{
     const stories = await Story.findAll({
         limit: 10
     })
-    res.render('Stories', {stories})
+    res.render('Stories', {stories, user: res.locals.user})
 }))
 
 
@@ -20,14 +20,14 @@ router.get('/:id', asyncHandler(async (req, res, next) => {
     if (story.author_id == res.locals.user) {
         currentUsersStory = true;
     };
-    res.render('Stories', { story, currentUsersStory })
+    res.render('Stories', { story, currentUsersStory, user: res.locals.user })
 }))
 
 
 router.get('/:id/Edit', asyncHandler(async (req, res, next) => { // TODO: Make sure 'Create-Story' has values for story.
     const story = await Story.findByPk(req.params.id);
     const edit = true;
-    res.render('Create-Story', { story, edit })
+    res.render('Create-Story', { story, edit, user: res.locals.user })
 }))
 
 
