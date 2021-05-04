@@ -15,7 +15,7 @@ router.post('/', asyncHandler(async(req, res, next) => {
     const story = await Story.create({
         title,
         story,
-        author_id: res.locals.user,
+        author_id: res.locals.user.id,
     })
 
     res.redirect(`/Stories/${story.id}`)
