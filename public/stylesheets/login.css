@@ -1,6 +1,8 @@
 @font-face {
     font-family: 'Arcade Interlaced';
-    src: url('../../fonts/ARCADE_I.TTF') format('truetype');
+    src: url('ARCADE_I.TTF') format('truetype'),
+    url('arcade_i-webfont.woff') format('woff'),
+    url('arcade_i-webfont.woff2') format('woff2')
 }
 
 @font-face {
@@ -13,9 +15,25 @@
     src: url('../../fonts/ARCADE_R.TTF') format('truetype')
 }
 
-.login__div__container > .login__div__containers {
-    background-color: #1fa7db;
+.login__div__container {
+    display:block;
+    border-radius: 25px;
+    background-color: #d0d1c9;
+    padding: 5%;
+    position: sticky;
+    box-shadow: 0 0 0 2pt #2b0b0b;
 }
+
+.login__div__containers {
+    display:block;
+    border-radius: 25px;
+    background-color: #deeee3;
+    padding-top: 5%;
+    padding-bottom: 10px;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
 
 .form__login > label {
     display: block;
@@ -28,20 +46,30 @@
 .form__login{
     display: flex;
     align-items: center;
+    border-radius: 25px;
+    background-color: #deeee3;
     justify-content: center;
     flex-direction: column;
+    padding-right: 13%;
+    padding-left: 13%;
+    box-shadow: 0 0 0 2pt #2b0b0b;
 }
 
 .form__button__submit__login{
     background-color: white;
     border: none;
-    margin-top: 20px;
     color: black;
-    padding: 10px 35px;
+    padding: 15px 35px;
     text-align: center;
     cursor: pointer;
+    width: 200px;
+    margin-top: 50px;
+    margin-bottom: 50px;
 }
 
+.form__label__login__useridentification{
+    margin-top: 100px;
+}
 
 .form__input__login__useridentification,
 .form__input__login__password {
@@ -52,7 +80,29 @@
 
 .form__label__login__useridentification,
 .form__label__login__password {
-    font-family: "Arcade Rounded";
-    margin-top: 10px;
-    margin-bottom: 10px;
+    font-family: "Arcade Interlaced";
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.login__div__design{
+    display: flex;
+    position: relative;
+    top: 20px;
+    margin: 0 auto;
+    width: 100%;
+    height: 30px;
+    outline-style: solid;
+    outline-color: #2b0b0b;
+    background-color: #d0d1c9;
+}
+
+.login__div__circle{
+    display: flex;
+    position: relative;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    background: yellow;
+    border: 3px solid red;
 }

@@ -2,15 +2,14 @@ extends navbar
 
 mixin form
     form(action="/Login" method='POST' class="form__login")
+        label(class="form__label__login__useridentification") ENTER USERNAME/EMAIL
+        input(class="form__input__login__useridentification" type='text' name='userIdentification' id='userIdentification' value=userIdentification)
 
-            label(class="form__label__login__useridentification") ENTER USERNAME/EMAIL
-            input(class="form__input__login__useridentification" type='text' name='userIdentification' id='userIdentification' value=userIdentification)
+        label(class="form__label__login__password") ENTER PASSWORD
+        input(class="form__input__login__password" type='password' name='password' id='password')
 
-            label(class="form__label__login__password") ENTER PASSWORD
-            input(class="form__input__login__password" type='password' name='password' id='password')
-
-            input(type='hidden' name='_csrf' value=csrfToken)
-            button(class="form__button__submit__login" type='submit') Login
+        input(type='hidden' name='_csrf' value=csrfToken)
+        button(class="form__button__submit__login" type='submit') Login
 
 mixin error
     div(class="div__errors__login")
@@ -18,13 +17,24 @@ mixin error
             each error in errors
                 p(class="div__p__error__login")=error
 
+mixin container
+    div(class="login__div__container")
+        +form
+
+mixin div_design
+    div(class='login__div__design')
+
+mixin div_circle
+    div(class='login__div__circle')
+
 block head
     style
         include ../public/stylesheets/login.css
 
 block content
     block description
-        div(class="login__div__container")
-            div(class="login__div__containers")
-            +form
-                +error
+        +container
+            block container
+            +error
+        +div_design
+        +div_circle
