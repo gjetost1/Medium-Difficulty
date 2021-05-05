@@ -19,22 +19,19 @@
     display:block;
     border-radius: 25px;
     background-color: #d0d1c9;
-    padding: 5%;
+    padding: 3%;
     position: sticky;
     box-shadow: 0 0 0 2pt #2b0b0b;
 }
 
 .container__layout{
     display: flex;
-    align-items: center;
     border-radius: 25px;
     background-color: #deeee3;
     flex-direction: column;
-    padding-right: 13%;
-    padding-left: 13%;
     box-shadow: 0 0 0 2pt #2b0b0b;
-    height: 500px;
-    width: 1200px;
+    height: 36.5rem;
+    width: 100%;
     overflow: scroll;
 }
 
