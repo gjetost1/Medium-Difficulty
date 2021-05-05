@@ -1,8 +1,11 @@
 extends layout.pug
 
 block content
+
     block description
-    h1(class="signup__h1") Sign up and enjoy top quality content!
+    style
+        include ../public/stylesheets/signup.css
+    h1(class="signup__h1") sign up for medium difficulty
     form(action="/Signup" method='POST' class="signup__form")
 
         label(class="signup__username__form__label") User Name
