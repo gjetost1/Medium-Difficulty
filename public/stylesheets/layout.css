@@ -1,18 +1,18 @@
 @font-face {
     font-family: 'Arcade Interlaced';
-    src: url('ARCADE_I.TTF') format('truetype'),
-    url('arcade_i-webfont.woff') format('woff'),
-    url('arcade_i-webfont.woff2') format('woff2')
+    src: url('/fonts/ARCADE_I.TTF') format('truetype'),
+    url('/fonts/arcade_i-webfont.woff') format('woff'),
+    url('/fonts/arcade_i-webfont.woff2') format('woff2')
 }
 
 @font-face {
     font-family: 'Arcade Normal';
-    src: url('../../fonts/ARCADE_N') format('truetype');
+    src: url('/fonts/ARCADE_N') format('truetype');
 }
 
 @font-face {
     font-family: "Arcade Rounded";
-    src: url('../../fonts/ARCADE_R.TTF') format('truetype')
+    src: url('/fonts/ARCADE_R.TTF') format('truetype')
 }
 
 .layout__div__container {
@@ -26,7 +26,7 @@
 
 .container__layout{
     display: flex;
-    border-radius: 25px;
+    /* border-radius: 25px; */
     background-color: #deeee3;
     flex-direction: column;
     box-shadow: 0 0 0 2pt #2b0b0b;

@@ -1,13 +1,12 @@
 extends layout
 
 append head
-    script(defer)
-        include ../public/javascripts/storycard.js
     style
         include ../public/stylesheets/storycard.css
 
 include utils.pug
 
 block content
-    //- each story in stories
-    //-     +storyCard(story)
+    div(class='storyCard_container')
+        each story in stories
+            +storyCard(story)
