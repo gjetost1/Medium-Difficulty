@@ -1,27 +1,47 @@
 @font-face {
     font-family: 'Arcade Interlaced';
-    src: url(fonts/ARCADE_I.TTF) format('truetype');
+    src: url('fonts/ARCADE_I.TTF') format('truetype'),
+         url()
+    ;
 }
 
 @font-face {
     font-family: 'Arcade Normal';
-    src: url(fonts/ARCADE_N.TTF) format('truetype');
+    src: url('fonts/ARCADE_N.TTF') format('truetype');
 }
 
 @font-face {
     font-family: 'Arcade Rounded';
-    src: url(fonts/ARCADE_R.TTF) format('truetype');
+    src: url('fonts/ARCADE_R.TTF') format('truetype');
 }
 
 body{
     background-color: #B0BBBF;
     margin-left: 50px;
     margin-right: 50px;
-    background-image: url('https://i.imgur.com/BTRifQm.jpeg');
+    /* background-image: url('https://i.imgur.com/BTRifQm.jpeg');
     background-repeat: no-repeat;
-    background-size: 100% auto;
+    background-size: 100% auto; */
     font-family: "Arcade Interlaced";
 }
+
+#bg {
+    position: fixed;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+  }
+  #bg img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    min-width: 50%;
+    min-height: 50%;
+  }
 
 #navbar{
     display: flex;
