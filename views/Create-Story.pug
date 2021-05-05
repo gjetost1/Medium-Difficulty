@@ -1,0 +1,14 @@
+extends navbar.pug
+
+block content
+  div(class="create__story")
+    form(action="/Create-Story", method="POST",  class="create__story__form")
+
+        p
+          label(for="create__story__title") Title
+          input(type='text' name="title" class="create__story__title" placeholder="e.g. My First MMO Guild")
+        p
+          label(for="create__story__content") Story Content
+          textarea(type="textarea" name="story" class="create__story__content" placeholder= 'Your story goes here!')
+        p
+          button(type="submit" class="create__story__form__submit") Submit

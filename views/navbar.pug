@@ -1,0 +1,58 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title=title
+        if user
+            script()
+                include ../public/javascripts/navbar.js
+        style
+            include ../public/stylesheets/navbar.css
+        block head
+    body
+        nav(id='navbar')
+            a(href="/" style='text-decoration: none; color:black;')
+                h3(id='navbar__title') Medium Difficulty
+            div(id='navbar__buttons__container')
+                div(class='navbar__link__container')
+                    form(action="/")
+                        input(type='submit' value='Home' class='navbar__link__button')
+                div(class='navbar__link__container')
+                    form(action='/AboutUs')
+                        input(type='submit' value='About Us' class='navbar__link__button')
+                div(class='navbar__link__container')
+                    form(action='/ContactUs')
+                        input(type='submit' value='Contact Us' class='navbar__link__button')
+                if user
+                    div(class='navbar__link__container' id='navbar__link__myProfile')
+                        button(id='navbar__profile__button' class='ignoreClick') My Profile
+                        div(class='hidden' id='user__id__holder')=user.id
+                        if user
+                            div(id='profile__popout' class='hidden ignoreClick')
+                                div(class='profile_popout_sub ignoreClick')
+                                    div(class='profile__popout__sub__a')
+                                        a(href="/Users/" + user.id) My Profile
+                                    div(class='profile__popout__sub__a')
+                                        a(href="/Create-Story") Write a Story
+                                    div(class='profile__popout__sub__a')
+                                        a(href="/Settings") Settings
+                                div(class='profile_popout_sub ignoreClick')
+                                    div(class='profile__popout__sub__a')
+                                        a(href="/Bookmarks") Bookmarks
+                                div(class='profile_popout_sub ignoreClick')
+                                    div(class='profile__popout__sub__a')
+                                        a(href="/Help") Help
+                                    div(class='profile__popout__sub__a')
+                                        a(href='/logout') Log Out
+                else
+                    div(class='navbar__link__container')
+                        form(action="/Login")
+                            input(type='submit' value='Log In' class='navbar__link__button')
+                    div(class='navbar__link__container')
+                        form(action="/Signup")
+                            input(type='submit' value='Create Account' class='navbar__link__button')
+    div(id="bg")
+    //- img(src="images/bg.jpg",class="bg")
+    block layout

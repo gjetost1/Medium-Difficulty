@@ -4,8 +4,9 @@ const { asyncHandler } = require('./utils')
 const { Story } = require('../db/models')
 
 
+
 router.get('/', async(req, res, next) => {
-    res.render('Create-Story');
+    res.render('Create-Story', {user: res.locals.user, title: 'MD - Create Story'});
 })
 
 
@@ -16,6 +17,8 @@ router.post('/', asyncHandler(async(req, res, next) => {
         title,
         story,
         author_id: res.locals.user.id,
+        liked: 0,
+        views: 0
     })
 
     res.redirect(`/Stories/${currentStory.id}`)

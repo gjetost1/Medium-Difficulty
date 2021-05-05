@@ -59,7 +59,8 @@ const userSignUpValidators = [
 
 router.get('/', csrfProtection, asyncHandler(async(req, res, next) => {
     res.render('Signup', {
-        csrfToken: req.csrfToken()
+        csrfToken: req.csrfToken(),
+        title: 'MD - Sign Up'
     })
 }))
 
@@ -70,6 +71,7 @@ router.post('/', userSignUpValidators, csrfProtection, asyncHandler(async(req, r
     const user = await User.build({
         username,
         email,
+        profileImage: '/default_profile_pic.jpg'
     })
 
     const validatorErrors = validationResult(req);
