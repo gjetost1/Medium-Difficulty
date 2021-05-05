@@ -4,25 +4,28 @@
          url()
     ;
 }
+
 @font-face {
     font-family: 'Arcade Normal';
     src: url('fonts/ARCADE_N.TTF') format('truetype');
 }
+
 @font-face {
     font-family: 'Arcade Rounded';
     src: url('fonts/ARCADE_R.TTF') format('truetype');
 }
+
 body{
     background-color: #B0BBBF;
     margin-left: 50px;
     margin-right: 50px;
-    /* background-image: url('https://i.imgur.com/BTRifQm.jpeg');
+    /* background-image: url('https://i.imgur.com/BTRifQm.jpeg'); */
     background-repeat: no-repeat;
     background-size: 100% auto; */
     font-family: "Arcade Interlaced";
 }
 
-/* #bg {
+#bg {
     position: fixed;
     top: -50%;
     left: -50%;
@@ -38,8 +41,8 @@ body{
     margin: auto;
     min-width: 50%;
     min-height: 50%;
-  } */
-  
+  }
+
 #navbar{
     display: flex;
     justify-content: space-between;
@@ -50,42 +53,51 @@ body{
     margin-bottom: 30px;
     background-color: #CADBC8;
 }
+
 .navbar__link__button{
     padding: 10px;
     border: 1px solid black;
     border-radius: 5px;
     margin: 10px;
 }
+
 .navbar__link__button:hover{
     background-color: lightgray;
 }
+
 #navbar__title{
     font-size: 26px;
     margin-bottom: 1px;
     margin-top: 1px;
     margin-left: 10px;
 }
+
 #navbar__profile__button{
     padding: 10px;
     border: 1px solid black;
     border-radius: 5px;
     margin: 10px;
 }
+
 #navbar__profile__button:hover{
     background-color: lightgray;
 }
+
 .hidden {
     display: none
 }
+
 #navbar__link__myProfile{
     position: relative;
 }
+
 #profile__popout{
     position:absolute;
     background-color: white;
     right: 0px;
     left: 0px;
 }
+
 .profile_popout_sub {
     border: 1px solid black;
     padding: 16px;
@@ -96,9 +108,11 @@ body{
     align-items: center;
     flex-wrap: wrap;
 }
+
 #navbar__buttons__container{
     display: flex;
 }
+
 .profile__popout__sub__a {
     margin-top: 5px;
     margin-bottom: 5px;
