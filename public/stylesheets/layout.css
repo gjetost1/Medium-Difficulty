@@ -32,7 +32,8 @@
     box-shadow: 0 0 0 2pt #2b0b0b;
     height: 36.5rem;
     width: 100%;
-    overflow: scroll;
+    overflow-x: hidden;
+    overflow-y: scroll;
 }
 
 
