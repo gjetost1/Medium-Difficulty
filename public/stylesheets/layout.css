@@ -1,0 +1,59 @@
+@font-face {
+    font-family: 'Arcade Interlaced';
+    src: url('ARCADE_I.TTF') format('truetype'),
+    url('arcade_i-webfont.woff') format('woff'),
+    url('arcade_i-webfont.woff2') format('woff2')
+}
+
+@font-face {
+    font-family: 'Arcade Normal';
+    src: url('ARCADE_N') format('truetype');
+}
+
+@font-face {
+    font-family: "Arcade Rounded";
+    src: url('ARCADE_R.TTF') format('truetype')
+}
+
+.layout__div__container {
+    display:block;
+    border-radius: 25px;
+    background-color: #d0d1c9;
+    padding: 3%;
+    position: sticky;
+    box-shadow: 0 0 0 2pt #2b0b0b;
+}
+
+.container__layout{
+    display: flex;
+    border-radius: 25px;
+    background-color: #deeee3;
+    flex-direction: column;
+    box-shadow: 0 0 0 2pt #2b0b0b;
+    height: 36.5rem;
+    width: 100%;
+    overflow: scroll;
+}
+
+
+.layout__div__design{
+    display: flex;
+    position: relative;
+    top: 20px;
+    margin: 0 auto;
+    width: 100%;
+    height: 30px;
+    outline-style: solid;
+    outline-color: #2b0b0b;
+    background-color: #d0d1c9;
+}
+
+.layout__div__circle{
+    display: flex;
+    position: relative;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    background: yellow;
+    border: 3px solid red;
+}
