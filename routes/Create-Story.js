@@ -4,6 +4,7 @@ const { asyncHandler } = require('./utils')
 const { Story } = require('../db/models')
 
 
+
 router.get('/', async(req, res, next) => {
     res.render('Create-Story', {user: res.locals.user});
 })

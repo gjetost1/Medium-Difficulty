@@ -7,8 +7,10 @@ const { asyncHandler } = require('./utils')
 //Collection Resource
 router.get('/', asyncHandler(async(req, res, next)=>{
     const stories = await Story.findAll({
+        include: { model: User },
         limit: 10
     })
+
     res.render('Stories', {stories, user: res.locals.user})
 }))
 
