@@ -24,31 +24,11 @@
     box-shadow: 0 0 0 2pt #2b0b0b;
 }
 
-.layout__div__containers {
-    display:block;
-    border-radius: 25px;
-    background-color: #deeee3;
-    padding-top: 5%;
-    padding-bottom: 10px;
-    padding-left: 50px;
-    padding-right: 50px;
-}
-
-
-.form__layout > label {
-    display: block;
-}
-
-.form__layout > input {
-    display: block;
-}
-
-.form__layout{
+.container__layout{
     display: flex;
     align-items: center;
     border-radius: 25px;
     background-color: #deeee3;
-    justify-content: center;
     flex-direction: column;
     padding-right: 13%;
     padding-left: 13%;
@@ -58,35 +38,6 @@
     overflow: scroll;
 }
 
-.form__button__submit__layout{
-    background-color: white;
-    border: none;
-    color: black;
-    padding: 15px 35px;
-    text-align: center;
-    cursor: pointer;
-    width: 200px;
-    margin-top: 50px;
-    margin-bottom: 50px;
-}
-
-.form__label__layout__useridentification{
-    margin-top: 100px;
-}
-
-.form__input__layout__useridentification,
-.form__input__layout__password {
-    background-color: white;
-    border: none;
-    padding: 5px 30px;
-}
-
-.form__label__layout__useridentification,
-.form__label__layout__password {
-    font-family: "Arcade Interlaced";
-    margin-top: 50px;
-    margin-bottom: 50px;
-}
 
 .layout__div__design{
     display: flex;
