@@ -1,0 +1,33 @@
+.storyCard__container {
+  display: flex;
+  margin-bottom: 50px;
+  margin-top: 50px;
+  flex-wrap: wrap;
+  width: 40%;
+  background-color: #d0a3bf;
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 15px;
+}
+
+.storyCard__subinfo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.storyCard__subinfo__spacer {
+  width: 500px;
+}
+
+.storyCard__author__profileImage {
+  height: 13px;
+  width: 13px;
+  margin-right: 10px;
+}
+
+.a {
+  text-decoration: none;
+  color: black;
+}

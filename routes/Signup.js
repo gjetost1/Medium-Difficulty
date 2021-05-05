@@ -70,6 +70,7 @@ router.post('/', userSignUpValidators, csrfProtection, asyncHandler(async(req, r
     const user = await User.build({
         username,
         email,
+        profileImage: '/default_profile_pic.jpg'
     })
 
     const validatorErrors = validationResult(req);

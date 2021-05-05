@@ -2,21 +2,29 @@ const express = require('express');
 const router = express.Router();
 const { asyncHandler } = require('./utils')
 const { User, Story, StoryLike } = require('../db/models')
-const fetch = require('node-fetch')
 
 
 /* GET home page. */
 router.get('/', asyncHandler(async (req, res, next) => {
 
-  //   const stories = await Story.findAll({
-  //     include: [{ model: User }, {model: StoryLike, include: [User]}],
-  //     limit: 10
-  // })
+  const stories = await Story.findAll({ include: User })
 
+  stories.forEach(story => {
+    storyText = story.story
+    if (storyText.length > 100){
+      if (storyText[97] == ' ') {
+        storyText = storyText.slice(0, 97) + '...'
+      } else {
+        storyText = storyText.slice(0, 96) + '...'
+      }
+
+    }
+    story.storySnip = storyText
+  })
+  // console.log(stories)
   res.render('Home', {
-    title: 'a/A Express Skeleton Home',
     user: res.locals.user,
-    thing: res.locals.authenticated,
+    stories
   });
 }));
 
