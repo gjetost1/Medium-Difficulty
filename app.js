@@ -15,6 +15,7 @@ const createstoryRouter = require('./routes/Create-Story');
 const logoutRouter = require('./routes/logout')
 const aboutusRouter = require('./routes/AboutUs')
 const categoriesRouter = require('./routes/Categories')
+const contactRouter = require('./routes/Contact')
 const { restoreUser } = require('./auth')
 
 const app = express();
@@ -52,6 +53,7 @@ app.use('/Create-Story', createstoryRouter);
 app.use('/Categories', categoriesRouter);
 app.use('/logout', logoutRouter)
 app.use('/AboutUs', aboutusRouter)
+app.use('/Contact', contactRouter)
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
