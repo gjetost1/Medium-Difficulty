@@ -76,6 +76,7 @@ module.exports = {
       Beth looked sleepy, her emotions blushing like a kaleidoscopic, keen kettle.
       Then Beth came inside for a nice beaker of squash.
       THE END`,
+      liked: 0,
       views: 10,
       author_id: 1,
       createdAt: new Date(),
@@ -98,6 +99,7 @@ module.exports = {
       Garth looked jumpy, his wallet blushing like a brief, beautiful banana.
       Then Garth came inside for a nice mug of cocoa.
       THE END`,
+      liked: 0,
       views: 200,
       author_id: 1,
       createdAt: new Date(),

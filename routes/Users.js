@@ -34,7 +34,7 @@ router.get('/:id', asyncHandler(async (req, res, next) => {
 
     let stories = await Story.findAll({where:{author_id:res.locals.user.id}})
 
-    res.render('User', { user: res.locals.user, currentUser, stories }) //if currentUser is true, giev extra privlages
+    res.render('User', { user: res.locals.user, currentUser, stories, title: `MD - ${res.locals.user.username}` }) //if currentUser is true, giev extra privlages
 }));
 
 

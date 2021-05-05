@@ -1,22 +1,13 @@
 extends navbar
 
-//- append nav
-//-   if user
-//-     div
-//-       a(href="/Users/" + user.id) My Profile
-//-   else
-//-     div
-//-       a(href='/Login') Log In
-//-     div
-//-       a(href='/Signup') Create Account
+append head
+    script(defer)
+        include ../public/javascripts/storycard.js
+    style
+        include ../public/stylesheets/storycard.css
+
+include utils.pug
 
 block content
-
-  //- if stories  // TODO: belongs in stories probably
-  //-   each story in stories
-  //-     p=story.title
-  //-     p=story.story
-  //-     p=story.liked
-  //-       each liker in story.StoryLikes
-  //-         //- button for likers
-  //-         p=liker.User.username
+    each story in stories
+        +storyCard(story)
