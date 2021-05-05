@@ -1,0 +1,43 @@
+.signup__h1{
+    display:flex;
+    justify-content: center;
+
+}
+
+.signup__form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+label,
+input{
+    display: flex;
+    justify-content: center;
+    max-width: 60%;
+    padding: .7%
+}
+
+button{
+    position: relative;
+    display: inline-block;
+    width: 80px;
+    height: 80px;
+    border: 0;
+    margin: 1em;
+    outline: none;
+    background-color: #d3254a;
+    border-radius: 60%;
+    cursor: pointer;
+    transition: box-shadow 2000ms;
+
+}
+
+button:hover {
+    background-color: #f9ac1e
+}
+button:active{
+    box-shadow: inset -2px -2px 3px rgba(255, 255, 255, .6),
+                inset 2px 2px 3px rgba(0, 0, 0, .6);
+}
