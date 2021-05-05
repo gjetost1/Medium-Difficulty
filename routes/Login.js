@@ -20,7 +20,8 @@ const loginValidators = [
 
 router.get('/', csrfProtection, asyncHandler(async (req, res, next) => {
     res.render('Login', {
-        csrfToken: req.csrfToken()
+        csrfToken: req.csrfToken(),
+        title: 'MD - Log In'
     });
 }))
 

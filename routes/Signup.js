@@ -59,7 +59,8 @@ const userSignUpValidators = [
 
 router.get('/', csrfProtection, asyncHandler(async(req, res, next) => {
     res.render('Signup', {
-        csrfToken: req.csrfToken()
+        csrfToken: req.csrfToken(),
+        title: 'MD - Sign Up'
     })
 }))
 

@@ -11,7 +11,7 @@ router.get('/', asyncHandler(async(req, res, next)=>{
         limit: 10
     })
 
-    res.render('Stories', {stories, user: res.locals.user})
+    res.render('Stories', {stories, user: res.locals.user, title: 'MD - Stories'})
 }))
 
 
@@ -22,7 +22,7 @@ router.get('/:id', asyncHandler(async (req, res, next) => {
     if (story.author_id == res.locals.user) {
         currentUsersStory = true;
     };
-    res.render('Stories', { story, currentUsersStory, user: res.locals.user })
+    res.render('Stories', { story, currentUsersStory, user: res.locals.user, title: `MD - ${story.title}` })
 }))
 
 

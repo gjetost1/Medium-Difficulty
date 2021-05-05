@@ -24,7 +24,8 @@ router.get('/', asyncHandler(async (req, res, next) => {
   // console.log(stories)
   res.render('Home', {
     user: res.locals.user,
-    stories
+    stories,
+    title: 'MD - Home'
   });
 }));
 
