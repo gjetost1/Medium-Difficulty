@@ -7,12 +7,12 @@
 
 @font-face {
     font-family: 'Arcade Normal';
-    src: url('../../fonts/ARCADE_N') format('truetype');
+    src: url('ARCADE_N') format('truetype');
 }
 
 @font-face {
     font-family: "Arcade Rounded";
-    src: url('../../fonts/ARCADE_R.TTF') format('truetype')
+    src: url('ARCADE_R.TTF') format('truetype')
 }
 
 .layout__div__container {
