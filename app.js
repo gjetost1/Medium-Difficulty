@@ -12,6 +12,7 @@ const loginRouter = require('./routes/Login');
 const signupRouter = require('./routes/Signup');
 const storiesRouter = require('./routes/Stories');
 const createstoryRouter = require('./routes/Create-Story');
+const logoutRouter = require('./routes/logout')
 const categoriesRouter = require('./routes/Categories')
 const { restoreUser } = require('./auth')
 
@@ -48,11 +49,13 @@ app.use('/Users', usersRouter);
 app.use('/Stories', storiesRouter);
 app.use('/Create-Story', createstoryRouter);
 app.use('/Categories', categoriesRouter);
+app.use('/logout', logoutRouter)
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
   next(createError(404));
 });
+
 
 // error handler
 app.use(function (err, req, res, next) {

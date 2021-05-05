@@ -34,11 +34,15 @@ router.get('/', asyncHandler(async (req, res, next) => {
 }));
 
 
-//----------------------------- //log out user tester
-router.post('/', (req,res,next)=>{
-  delete req.session.auth;
-  req.session.save(() => res.redirect("/"), {
-    title: 'a/A Express Skeleton Home'})
+//-----------------------------
+router.get('/Settings', (req, res) => {
+  res.send('Settings TODO')
+})
+router.get('/Bookmarks', (req, res) => {
+  res.send('Bookmarks TODO')
+})
+router.get('/Help', (req, res) => {
+  res.send('Help TODO')
 })
 //-----------------------------
 

@@ -1,1 +1,27 @@
-h1 hi
+extends navbar
+
+block head
+    style
+        include ./User.css
+
+block content
+    div(id='user__pageContainer')
+        h3 Hello #{user.username}
+        div
+            a(href='/Create-Story') Create a Story
+        div
+            ul My Stories:
+                for story in stories
+                    div(class='user__story__element')
+                        div(class='user__story__element__container')
+                            label(for='title') Title:
+                            li(id='title' class='user__story__element__sub')=story.title
+                        div(class='user__story__element__container')
+                            label(for='story') Story:
+                            li(id='story' class='user__story__element__sub')=story.story
+                        div(class='user__story__element__container')
+                            label(for='liked') Likes:
+                            li(id='liked' class='user__story__element__sub')=story.liked
+                        div(class='user__story__element__container')
+                            label(for='views') Views:
+                            li(id='views' class='user__story__element__sub')=story.views
