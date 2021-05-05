@@ -1,7 +1,26 @@
+@font-face {
+    font-family: 'Arcade Interlaced';
+    src: url(fonts/ARCADE_I.TTF) format('truetype');
+}
+
+@font-face {
+    font-family: 'Arcade Normal';
+    src: url(fonts/ARCADE_N.TTF) format('truetype');
+}
+
+@font-face {
+    font-family: 'Arcade Rounded';
+    src: url(fonts/ARCADE_R.TTF) format('truetype');
+}
+
 body{
     background-color: #B0BBBF;
     margin-left: 50px;
     margin-right: 50px;
+    background-image: url('https://i.imgur.com/BTRifQm.jpeg');
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    font-family: "Arcade Interlaced";
 }
 
 #navbar{
