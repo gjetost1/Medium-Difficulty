@@ -1,0 +1,43 @@
+
+.login__div__container > .login__div__containers {
+    background-color: #1fa7db;
+}
+
+.form__login > label {
+    display: block;
+}
+
+.form__login > input {
+    display: block;
+}
+
+.form__login{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.form__button__submit__login{
+    background-color: white;
+    border: none;
+    margin-top: 20px;
+    color: black;
+    padding: 10px 35px;
+    text-align: center;
+    cursor: pointer;
+}
+
+
+.form__input__login__useridentification,
+.form__input__login__password {
+    background-color: white;
+    border: none;
+    padding: 5px 30px;
+}
+
+.form__label__login__useridentification,
+.form__label__login__password {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
