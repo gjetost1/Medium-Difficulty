@@ -15,7 +15,7 @@
     src: url('../../fonts/ARCADE_R.TTF') format('truetype')
 }
 
-.login__div__container {
+.layout__div__container {
     display:block;
     border-radius: 25px;
     background-color: #d0d1c9;
@@ -24,7 +24,7 @@
     box-shadow: 0 0 0 2pt #2b0b0b;
 }
 
-.login__div__containers {
+.layout__div__containers {
     display:block;
     border-radius: 25px;
     background-color: #deeee3;
@@ -35,15 +35,15 @@
 }
 
 
-.form__login > label {
+.form__layout > label {
     display: block;
 }
 
-.form__login > input {
+.form__layout > input {
     display: block;
 }
 
-.form__login{
+.form__layout{
     display: flex;
     align-items: center;
     border-radius: 25px;
@@ -53,9 +53,12 @@
     padding-right: 13%;
     padding-left: 13%;
     box-shadow: 0 0 0 2pt #2b0b0b;
+    height: 500px;
+    width: 1200px;
+    overflow: scroll;
 }
 
-.form__button__submit__login{
+.form__button__submit__layout{
     background-color: white;
     border: none;
     color: black;
@@ -67,25 +70,25 @@
     margin-bottom: 50px;
 }
 
-.form__label__login__useridentification{
+.form__label__layout__useridentification{
     margin-top: 100px;
 }
 
-.form__input__login__useridentification,
-.form__input__login__password {
+.form__input__layout__useridentification,
+.form__input__layout__password {
     background-color: white;
     border: none;
     padding: 5px 30px;
 }
 
-.form__label__login__useridentification,
-.form__label__login__password {
+.form__label__layout__useridentification,
+.form__label__layout__password {
     font-family: "Arcade Interlaced";
     margin-top: 50px;
     margin-bottom: 50px;
 }
 
-.login__div__design{
+.layout__div__design{
     display: flex;
     position: relative;
     top: 20px;
@@ -97,7 +100,7 @@
     background-color: #d0d1c9;
 }
 
-.login__div__circle{
+.layout__div__circle{
     display: flex;
     position: relative;
     border-radius: 50%;
