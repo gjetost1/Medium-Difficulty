@@ -11,12 +11,21 @@ extends navbar
 //-       a(href='/Signup') Create Account
 
 block content
-  h1= title
-  p Welcome to your Project Skeleton
-  p=thing
-  p ^^^^ Is there valid user logged in?
-  form(action="/" method='POST')
-    button(type='submit') Logout
-  p Username
+  h1(class='home__h1')= title
+  p(class='home__p') Welcome to your Project Skeleton
+  p(class='home__p')=thing
+  p(class='home__p') ^^^^ Is there valid user logged in?
+  form(class="home__form" action="/" method='POST')
+    button(class="home__form__button__submit" type='submit') Logout
+  p(class='home__p') Username
   if user
-    p=user.username
+    p(class='home__user__p')=user.username
+
+  if stories
+    each story in stories
+      p=story.title
+      p=story.story
+      p=story.liked
+        each liker in story.StoryLikes
+          //- button for likers
+          p=liker.User.username

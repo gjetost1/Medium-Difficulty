@@ -46,7 +46,7 @@ router.post('/', loginValidators, csrfProtection, asyncHandler(async (req, res, 
     }
 
 
-
+    console.log("are we here", user)
     res.render('Login', {
         userIdentification,
         errors,
