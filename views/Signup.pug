@@ -1,24 +1,24 @@
 extends layout.pug
 
-block content
-
-    block description
+append head
     style
         include ../public/stylesheets/signup.css
+
+block content
     h1(class="signup__h1") sign up for medium difficulty
     form(action="/Signup" method='POST' class="signup__form")
 
-        label(class="signup__username__form__label") User Name
-        input(class="signup__username__form__input" type='text' name='username' id='username' value=username)
+        label(class="signup__username__form__label signup__form__label") User Name
+        input(class="signup__username__form__input signup__form__input" type='text' name='username' id='username' value=username)
 
-        label(class="signup__email__form__label") Email
-        input(class="signup__email__form__input" type='text' name='email' id='email' value=email)
+        label(class="signup__email__form__label signup__form__label") Email
+        input(class="signup__email__form__input signup__form__input" type='text' name='email' id='email' value=email)
 
-        label(class="signup__password__form__label") Password
-        input(class="signup__password__form__input" type='password' name='password' id='password')
+        label(class="signup__password__form__label signup__form__label") Password
+        input(class="signup__password__form__input signup__form__input" type='password' name='password' id='password')
 
-        label(class="signup__confirmpassword__form__label") Confirm Password
-        input(class="signup__confirmpassword__form__input" type='password' name='confirmPassword' id='confirmPassword')
+        label(class="signup__confirmpassword__form__label signup__form__label") Confirm Password
+        input(class="signup__confirmpassword__form__input signup__form__input" type='password' name='confirmPassword' id='confirmPassword')
 
         input(type='hidden' name='_csrf' value=csrfToken)
         button(type='submit' class="signup__form__button__submit") Submit

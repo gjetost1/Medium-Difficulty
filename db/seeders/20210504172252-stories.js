@@ -20,7 +20,8 @@ module.exports = {
       views: 100,
       author_id: 1,
       createdAt: new Date(),
-      updatedAt: new Date()
+      updatedAt: new Date(),
+      storyImage: '/exampleImgs/adventure.jpg'
     },{
       title: 'Charming Baby Leaf',
       story: `Baby Leaf had always loved damp Bangkok with its happy, handsome hills. It was a place where she felt ambivalent.
@@ -40,7 +41,8 @@ module.exports = {
       views: 1000,
       author_id: 2,
       createdAt: new Date(),
-      updatedAt: new Date()
+      updatedAt: new Date(),
+      storyImage: '/exampleImgs/babyLeaf.jpg'
     },{
       title: 'Hilarious Mozarella',
       story: `Mozarella had always loved grey West Boggins with its jolly, joyous jungle. It was a place where she felt happy.
@@ -60,7 +62,8 @@ module.exports = {
       views: 50,
       author_id: 3,
       createdAt: new Date(),
-      updatedAt: new Date()
+      updatedAt: new Date(),
+      storyImage: '/exampleImgs/funnyCheese.jpg'
     },{
       title: 'Two Adorable Uncles',
       story: `Luke Lakeman had always loved idyllic Dallas with its energetic, enthusiastic estuaries. It was a place where he felt surprised.
@@ -80,7 +83,8 @@ module.exports = {
       views: 10,
       author_id: 1,
       createdAt: new Date(),
-      updatedAt: new Date()
+      updatedAt: new Date(),
+      storyImage: '/exampleImgs/family.jpg'
     },{
       title: 'Two Virtuous Uncles',
       story: `Josh Trescothik looked at the weathered map in his hands and felt sleepy.
@@ -103,7 +107,8 @@ module.exports = {
       views: 200,
       author_id: 1,
       createdAt: new Date(),
-      updatedAt: new Date()
+      updatedAt: new Date(),
+      storyImage: '/exampleImgs/angryUncles.jpg'
     }
     ], {});
 

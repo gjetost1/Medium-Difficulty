@@ -30,10 +30,9 @@
     background-color: #deeee3;
     flex-direction: column;
     box-shadow: 0 0 0 2pt #2b0b0b;
-    height: 36.5rem;
+    height: 42rem;
     width: 100%;
-    overflow-x: hidden;
-    overflow-y: scroll;
+    overflow: auto;
 }
 
 

@@ -22,10 +22,10 @@ router.get('/:id', asyncHandler(async (req, res, next) => {
     stories.forEach(story => {
         storyText = story.story
         if (storyText.length > 100) {
-            if (storyText[97] == ' ') {
-                storyText = storyText.slice(0, 97) + '...'
+            if (storyText[78] == ' ') {
+                storyText = storyText.slice(0, 80) + '...'
             } else {
-                storyText = storyText.slice(0, 96) + '...'
+                storyText = storyText.slice(0, 79) + '...'
             }
         }
         story.storySnip = storyText

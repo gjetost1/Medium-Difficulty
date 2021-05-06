@@ -12,7 +12,8 @@ module.exports = (sequelize, DataTypes) => {
     liked: DataTypes.INTEGER,
     storyImage: DataTypes.TEXT,
     views: DataTypes.INTEGER,
-    author_id: DataTypes.INTEGER
+    author_id: DataTypes.INTEGER,
+    storyImage: DataTypes.STRING
   }, {});
   Story.associate = function(models) {
     Story.belongsTo(models.User, {
