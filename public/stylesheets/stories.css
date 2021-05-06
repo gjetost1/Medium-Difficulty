@@ -61,7 +61,8 @@
 .like__text__div{
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-around;
+    width: 100%;
 }
 
 .like__spacer{
@@ -71,3 +72,63 @@
 .hidden{
     display:none
 }
+
+.story__container{
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 5%;
+    margin-bottom: 15px;
+}
+
+ .comment_container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    padding: 5px;
+    background-color: #B4ADEA;
+ }
+
+ .comment__text{
+     min-width: 100%;
+     text-align: center;
+     padding-bottom: 10px;
+     padding-top: 10px;
+ }
+
+ .comment__like__container{
+     display: flex;
+     justify-content: space-between;
+     min-width: 100%;
+ }
+
+.comment__like__parent{
+    min-width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+ .comment__like__container__spacer{
+    min-width: 35%
+ }
+
+ .comment__like__amount{
+    min-width: 15%
+ }
+
+ #comment__form{
+     display: flex;
+     justify-content: space-evenly;
+ }
+
+ #comment__box{
+    min-width: 60%;
+ }
+
+ .comment__created{
+    min-width: 35%
+ }

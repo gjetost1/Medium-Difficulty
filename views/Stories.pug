@@ -30,4 +30,20 @@ block content
       p=story.story
     div(class='story__container')
       div(class='story__comments')
-        div comment
+        each comment in comments
+          div(class='comment_container')
+            div(class='comment__author') #{comment.User.username} says:
+            div(class='comment__text')=comment.comment
+            div(class='comment__like__parent')
+              div(class='comment__like__container')
+                div(class='comment__created')=comment.createdAtz
+                div(class='comment__like__amount') Likes: #{comment.liked}
+                button(class='comment__like__button' + comment.id) like
+                button(class='comment__dislike__button' + comment.id) dislike
+                div(class='comment__like__container__spacer')
+                if comment.mine
+                  button(class='comment__delete' id=comment.id) delete
+        form(action="/Stories/" + story.id id='comment__form')
+          label(for="comment__box") Comment:
+          input(type='text' id='comment__box')
+          button(type='submit') Submit
