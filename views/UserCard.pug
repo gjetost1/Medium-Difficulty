@@ -1,0 +1,28 @@
+mixin userCard(users)
+    each user in users
+        div(class='div__userCard__space')
+        +cardContainer(user)
+
+mixin tableCard(user)
+    table
+        thead
+            tr
+                th Followers
+                th Stories
+        tbody
+            tr
+                td=user.Followers.length
+                td=user.Stories.length
+
+mixin cardContainer(user)
+    div(class="cardContainer__userCard")
+        span(class="author") Author
+        img(class="round" src=`${user.profileImage}`)
+        h3(class='h3__userCard')=user.username
+        h6(class='h6__userCard') --Insert Bio Here--
+        div(class="div__buttons__userCard")
+            button(class='button__primary button__primary--active') Follow
+            a(class="a__userCard" href=`/Users/${user.id}/`)
+                button(class='button__primary' ) View Profile
+        div(class="div__listContainer__userCard")
+            +tableCard(user)
