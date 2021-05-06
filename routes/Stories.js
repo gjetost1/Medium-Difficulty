@@ -1,11 +1,11 @@
 const express = require('express');
 const { Result } = require('express-validator');
 const router = express.Router();
-const { Story, Comment, StoryLike, User } = require('../db/models')
-const { asyncHandler } = require('./utils')
+const { Story, Comment, StoryLike, User, CommentLike } = require('../db/models')
+const { asyncHandler, csrfProtection } = require('./utils')
 
 //Collection Resource
-router.get('/', asyncHandler(async(req, res, next)=>{
+router.get('/', asyncHandler(async (req, res, next) => {
     const stories = await Story.findAll({
         include: { model: User },
         limit: 10
@@ -14,7 +14,8 @@ router.get('/', asyncHandler(async(req, res, next)=>{
     res.render('Stories', {
         stories,
         user: res.locals.user,
-        title: 'MD - Stories'})
+        title: 'MD - Stories'
+    })
 }))
 
 
@@ -25,11 +26,47 @@ router.get('/:id', asyncHandler(async (req, res, next) => {
     if (story.author_id == res.locals.user) {
         currentUsersStory = true;
     };
+
+    let liked = await StoryLike.findOne({
+        where: {
+            user_id: res.locals.user.id,
+            story_id: req.params.id
+        }
+    })
+    let isLiked;
+    if (liked) {
+        isLiked = true;
+    } else {
+        isLiked = false;
+    }
+
+    const comments = await Comment.findAll({
+        where:{
+            story_id: req.params.id
+        },
+        include: User,
+        order: [
+            ['createdAt', 'ASC']
+        ]
+    })
+
+    comments.forEach(comment=>{
+        let c = comment.createdAt.toString().split(':')[0]
+        c = c.slice(0, (c.length - 2))
+        comment.createdAtz = c
+        if (comment.user_id == res.locals.user.id) {
+            comment.mine = true;
+        }
+    })
+
     res.render('Stories', {
         story,
         currentUsersStory,
         user: res.locals.user,
-        title: `MD - ${story.title}`
+        title: `MD - ${story.title}`,
+        isLiked,
+        liked,
+        comments
     })
 }))
 
@@ -40,7 +77,8 @@ router.get('/:id/Edit', asyncHandler(async (req, res, next) => { // TODO: Make s
     res.render('Create-Story', {
         story,
         edit,
-        user: res.locals.user })
+        user: res.locals.user
+    })
 }))
 
 
@@ -65,34 +103,72 @@ router.delete('/:id', asyncHandler(async (req, res, next) => {
 
 router.post('/:id/comment', asyncHandler(async (req, res, next) => {
     const { comment } = req.body
-
+    console.log(comment, '<<<comment')
     await Comment.create({
         comment,
         user_id: res.locals.user.id,
-        story_id: req.params.id
+        story_id: req.params.id,
+        edited: false,
+        liked: 0
     })
 
     res.redirect(`/Stories/${req.params.id}`)
 }))
 
 
-router.delete('/:id/comment:cid', asyncHandler(async (req, res, next) => {
+router.delete('/:id/deleteComment/:cid', asyncHandler(async (req, res, next) => {
+    console.log('working!');
     const comment = await Comment.findByPk(req.params.cid);
     await comment.destroy();
     res.redirect(`/Stories/${req.params.id}`)
 }))
 
 
-router.post('/:id/likes', asyncHandler(async (req, res, next) => {  // TODO: Change the Likes number in the views, then it will update properly on next refresh.
-    const like = await StoryLike.create({
+router.post('/:id/commentLikes/:cid', asyncHandler(async (req, res, next) => {
+    const comment = await Comment.findByPk(req.params.cid);
+    comment.liked += 1;
+    await comment.save()
+    await CommentLike.create({
+        user_id: res.locals.user.id,
+        comment_id: req.params.cid,
+    })
+}))
+
+
+router.put('/:id/commentDislike', asyncHandler(async (req, res, next) => {
+    comment.liked -= 1;
+    await comment.save()
+    const commentx = await CommentLike.findOne({
+        where: {
+            user_id: res.locals.user.id,
+            comment_id: req.params.cid
+        }
+    })
+    await commentx.destroy();
+}))
+
+
+router.post('/:id/likes', asyncHandler(async (req, res, next) => {
+    const story = await Story.findByPk(req.params.id);
+    story.liked += 1;
+    await story.save()
+    await StoryLike.create({
         user_id: res.locals.user.id,
         story_id: req.params.id,
     })
 }))
 
 
-router.delete('/:id/likes:lid', asyncHandler(async (req, res, next) => {  // TODO: Change the Likes number in the views, then it will update properly on next refresh.
-    const like = await StoryLike.findByPk(lid);
+router.put('/:id/dislike', asyncHandler(async (req, res, next) => {
+    const story = await Story.findByPk(req.params.id);
+    story.liked -= 1;
+    await story.save()
+    const like = await StoryLike.findOne({
+        where: {
+            user_id: res.locals.user.id,
+            story_id: req.params.id
+        }
+    })
     await like.destroy();
 }))
 
