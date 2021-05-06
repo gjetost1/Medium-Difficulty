@@ -63,7 +63,23 @@
 }
 
 .layout__div__curvedLine{
-    width:500px; height:100px;
-    border:solid 5px #000;
-    border-color:#000 transparent
+    position: relative;
+    top: 16px;
+    left: 1px;
+    width: 80px;
+    height: 50px;
+    border: solid 5px #000;
+    border-color: #000 transparent transparent transparent;
+    border-radius: 100%/110px 100px 0 0;
+    transform: rotate(320deg);
+}
+
+.layout__div__column{
+    position: relative;
+    top: 103px;
+    right: 71px;
+    width: 30px;
+    height: 120px;
+    background: white;
+    border: 3px solid #2b0b0b;
 }
