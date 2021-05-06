@@ -1,6 +1,6 @@
 @font-face {
     font-family: 'Arcade Interlaced';
-    src: url('ARCADE_I.TTF') format('truetype'),
+    src: url('/fonts/ARCADE_I.TTF') format('truetype'),
     url('/fonts/arcade_i-webfont.woff') format('woff'),
     url('/fonts/arcade_i-webfont.woff2') format('woff2')
 }
@@ -26,14 +26,13 @@
 
 .container__layout{
     display: flex;
-    border-radius: 25px;
+    /* border-radius: 25px; */
     background-color: #deeee3;
     flex-direction: column;
     box-shadow: 0 0 0 2pt #2b0b0b;
-    height: 36.5rem;
+    height: 42rem;
     width: 100%;
-    overflow-x: hidden;
-    overflow-y: scroll;
+    overflow: auto;
 }
 
 
@@ -49,12 +48,38 @@
     background-color: #d0d1c9;
 }
 
-.layout__div__circle{
+.layout__div__circleParent{
     display: flex;
+    justify-content: flex-end;
+}
+
+.layout__div__circle{
     position: relative;
     border-radius: 50%;
     width: 100px;
     height: 100px;
-    background: yellow;
-    border: 3px solid red;
+    background: red;
+    border: 3px solid #2b0b0b;
+}
+
+.layout__div__curvedLine{
+    position: relative;
+    top: 16px;
+    left: 1px;
+    width: 80px;
+    height: 50px;
+    border: solid 5px #000;
+    border-color: #000 transparent transparent transparent;
+    border-radius: 100%/110px 100px 0 0;
+    transform: rotate(320deg);
+}
+
+.layout__div__column{
+    position: relative;
+    top: 103px;
+    right: 71px;
+    width: 30px;
+    height: 120px;
+    background: white;
+    border: 3px solid #2b0b0b;
 }
