@@ -4,6 +4,8 @@ append head
   style
     include ../public/stylesheets/stories.css
     include ../public/stylesheets/navbar.css
+  script
+    include ../public/javascripts/story.js
 
 block content
   div(class='container')
@@ -12,10 +14,38 @@ block content
       div(class='title__div')
         h2(class='story__title')=story.title
       div(class='story__likes')
-        div Likes:
-        button(class='like__button')
+        div(class='like__spacer')
+        div(class='like__text__div')
+          span(class='like__text') Likes: #{story.liked}
+          if loggedIn
+            if isLiked
+              button(type='submit' class='like__button' id='like-button' disabled=true) Like
+            else
+              button(type='submit' class='like__button' id='like-button' disabled=false) Like
+            if isLiked
+              button(type='submit' class='like__button' id='dislike-button' disabled=false) Unlike
+            else
+              button(type='submit' class='like__button' id='dislike-button' disabled=true) Unlike
+        div(class='like__spacer')
+        input(id='info_input' class='hidden' value=story.id)
     div(class='story__div')
       p(class="story__text")=story.story
     div(class='story__container')
       div(class='story__comments')
-        div comment
+        each comment in comments
+          div(class='comment_container')
+            div(class='comment__author') #{comment.User.username} says:
+            div(class='comment__text')=comment.comment
+            div(class='comment__like__parent')
+              div(class='comment__like__container')
+                div(class='comment__created')=comment.createdAtz
+                div(class='comment__like__amount') Likes: #{comment.liked}
+                button(class='comment__like__button' + comment.id) like
+                button(class='comment__dislike__button' + comment.id) dislike
+                div(class='comment__like__container__spacer')
+                if comment.mine
+                  button(class='comment__delete' id=comment.id) delete
+        form(action="/Stories/" + story.id id='comment__form')
+          label(for="comment__box") Comment:
+          input(type='text' id='comment__box')
+          button(type='submit') Submit

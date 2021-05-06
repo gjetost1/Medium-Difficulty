@@ -16,7 +16,8 @@ module.exports = {
       comment_id: {
         type: Sequelize.INTEGER,
         allowNull: false,
-        references: {model: 'Comments'}
+        references: {model: 'Comments'},
+        onDelete: 'CASCADE',
       },
       createdAt: {
         allowNull: false,
