@@ -51,7 +51,7 @@ router.get('/:id', asyncHandler(async (req, res, next) => {
         order: [
             ['createdAt', 'ASC']
         ]
-    }) 
+    })
 
     comments.forEach(comment => {
         let c = comment.createdAt.toString().split(':')[0]
