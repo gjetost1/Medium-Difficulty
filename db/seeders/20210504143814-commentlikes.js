@@ -20,7 +20,17 @@ module.exports = {
     },{
       user_id: 3,
       comment_id: 6
-    }], {});
+    },{
+      user_id: 5,
+      comment_id: 7
+    },{
+      user_id: 3,
+      comment_id: 7
+    },{
+      user_id: 2,
+      comment_id: 5
+    }
+  ], {});
   },
 
   down: (queryInterface, Sequelize) => {
