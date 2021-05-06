@@ -108,37 +108,6 @@ module.exports = {
       author_id: 1,
       createdAt: new Date(),
       updatedAt: new Date()
-    },{
-      title: 'Two Adorable Uncles',
-      story: `Luke Lakeman had always loved idyllic Dallas with its energetic, enthusiastic estuaries. It was a place where he felt surprised.
-
-      He was a friendly, virtuous, squash drinker with brunette eyebrows and moist lips. His friends saw him as a leaking, lonely lawyer. Once, he had even helped a difficult puppy cross the road. That's the sort of man he was.
-
-      Luke walked over to the window and reflected on his quiet surroundings. The rain hammered like chatting flamingos.
-
-      Then he saw something in the distance, or rather someone. It was the figure of Beth Gloop. Beth was a hungry ogre with brunette eyebrows and feathery lips.
-
-      Luke gulped. He was not prepared for Beth.
-
-      As Luke stepped outside and Beth came closer, he could see the spluttering glint in her eye.
-
-      Beth gazed with the affection of 4251 helpful round rats. She said, in hushed tones, "I love you and I want some more Twitter followers."
-
-      Luke looked back, even more irritable and still fingering the bendy sausage. "Beth, what's up Doc," he replied.
-
-      They looked at each other with sleepy feelings, like two funny, faint frogs partying at a very adorable birthday party, which had jazz music playing in the background and two adorable uncles thinking to the beat.
-
-      Luke regarded Beth's brunette eyebrows and feathery lips. "I feel the same way!" revealed Luke with a delighted grin.
-
-      Beth looked sleepy, her emotions blushing like a kaleidoscopic, keen kettle.
-
-      Then Beth came inside for a nice beaker of squash.
-
-      THE END`,
-      views: 10,
-      author_id: 1,
-      createdAt: new Date(),
-      updatedAt: new Date()
     }, {
       title: 'Whatever Happened To Roguelikes?',
       story: `Back when I was a kid, all we needed to have fun was a procedurally generated map and whole mess of RNG loot. Ahhh, the good old days.
