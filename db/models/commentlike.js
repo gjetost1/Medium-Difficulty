@@ -12,7 +12,8 @@ module.exports = (sequelize, DataTypes) => {
   }, {});
   CommentLike.associate = function(models) {
     CommentLike.belongsTo(models.Comment, {
-      foreignKey: 'comment_id'
+      foreignKey: 'comment_id',
+      onDelete: 'cascade'
     })
     CommentLike.belongsTo(models.User, {
       foreignKey: 'user_id'

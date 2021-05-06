@@ -1,25 +1,26 @@
 @font-face {
     font-family: 'Arcade Interlaced';
-    src: url('fonts/ARCADE_I.TTF') format('truetype'),
+    src: url('/fonts/ARCADE_I.TTF') format('truetype'),
          url()
     ;
 }
 @font-face {
     font-family: 'Arcade Normal';
-    src: url('fonts/ARCADE_N.TTF') format('truetype');
+    src: url('/fonts/ARCADE_N.TTF') format('truetype');
 }
 @font-face {
     font-family: 'Arcade Rounded';
-    src: url('fonts/ARCADE_R.TTF') format('truetype');
+    src: url('/fonts/ARCADE_R.TTF') format('truetype');
 }
 body{
+    font-family: "Arcade Rounded";
     background-color: #B0BBBF;
     margin-left: 50px;
     margin-right: 50px;
     /* background-image: url('https://i.imgur.com/BTRifQm.jpeg');
     background-repeat: no-repeat;
     background-size: 100% auto; */
-    font-family: "Arcade Interlaced";
+
 }
 
 /* #bg {
@@ -41,6 +42,7 @@ body{
   } */
 
 #navbar{
+    font-family: "Arcade Interlaced";
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -51,6 +53,7 @@ body{
     background-color: #CADBC8;
 }
 .navbar__link__button{
+    font-family: "Arcade Interlaced";
     padding: 10px;
     border: 1px solid black;
     border-radius: 5px;
@@ -61,12 +64,15 @@ body{
     cursor: pointer;
 }
 #navbar__title{
+    font-family: "Arcade Interlaced";
     font-size: 26px;
     margin-bottom: 1px;
     margin-top: 1px;
     margin-left: 10px;
 }
 #navbar__profile__button{
+    font-family: "Arcade Interlaced";
+    font-size: 12px;
     padding: 10px;
     border: 1px solid black;
     border-radius: 5px;
@@ -112,4 +118,18 @@ body{
 .profile__popout__sub__a > a{
     text-decoration: none;
     color: black;
+}
+
+
+.search__form{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 7%;
+
+}
+
+.search {
+    font-family: "Arcade Interlaced";
 }

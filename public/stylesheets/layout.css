@@ -16,6 +16,7 @@
 }
 
 .layout__div__container {
+    font-family: "Arcade Normal";
     display:block;
     border-radius: 25px;
     background-color: #d0d1c9;
@@ -25,6 +26,7 @@
 }
 
 .container__layout{
+
     display: flex;
     /* border-radius: 25px; */
     background-color: #deeee3;
