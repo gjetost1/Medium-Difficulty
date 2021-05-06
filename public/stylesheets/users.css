@@ -6,6 +6,59 @@
 .user__info{
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: center;
     width: 100%;
+    margin: 50px;
+}
+
+.profile__picture{
+    max-height: 75px;
+    max-width: 75px;
+    margin-right: 50px;
+}
+
+.user__info__holder{
+    display: flex;
+    min-width: 100%;
+}
+
+.profile__spacer{
+    min-width: 30%;
+}
+
+.follower__container__button{
+    min-width: 15%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.follower__button{
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    padding: 5px;
+    text-align: center;
+}
+
+.follower__button:hover{
+    cursor: pointer;
+}
+
+.follower__list__container{
+    min-width: 15%;
+    overflow: auto;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-wrap: wrap;
+}
+
+.follower__div{
+    min-width: 100%;
+    max-height: 20%;
+    text-align: center;
+}
+
+.hidden > a{
+    display: none;
 }

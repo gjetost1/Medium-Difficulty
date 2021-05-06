@@ -4,17 +4,23 @@ append head
     style
         include ../public/stylesheets/storycard.css
         include ../public/stylesheets/users.css
+    script
+        include ../public/javascripts/users.js
 
 include utils.pug
 
 block content
     div(class='user__container')
-        div(class='user__info')
-            img(src=profileUser.profileImage)
-            h1=profileUser.username
-            div Followers: #{followerAmount}
+        div(class='user__info__holder')
+            div(class='profile__spacer')
+            div(class='user__info')
+                img(class='profile__picture' src=profileUser.profileImage)
+                h1=profileUser.username
+            div(class='follower__container__button')
+                div(class='follower__button') Followers: #{followerAmount}
+            div(class='follower__list__container hidden')
                 each follower in followers
-                    div=follower.User.username
+                    a(href='/Users/' + follower.User.id class='follower__div')=follower.User.username
         div(class='storyCard_container')
             each story in stories
                 +storyCard(story)

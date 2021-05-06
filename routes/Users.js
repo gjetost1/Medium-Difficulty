@@ -72,5 +72,4 @@ router.delete('/:id/follow', async (req, res, next) => {
     })
 })
 
-
 module.exports = router;

@@ -14,15 +14,40 @@
     background-color: white;
     border-radius: 3px;
     border: 1px solid black;
-    width: 80%;
-    padding-top: 15px;
-    padding-bottom: 15px;
-    padding-left: 25px;
-    padding-right: 25px;
+    width: 100%;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 35px;
+    padding-right: 35px;
+    margin-bottom: 15px;
+    margin-left: 7%;
+    margin-right: 7%;
+
 }
 
 .container{
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+}
+
+.title__container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 100%;
+}
+
+.title__div{
+    min-width: 40%;
+    padding: 10px;
+}
+
+.title__spacer{
+    min-width: 30%;
+}
+
+.story__likes{
+    min-width: 30%;
+    text-align: center;
 }

@@ -1,0 +1,91 @@
+@font-face {
+    font-family: 'Arcade Interlaced';
+    src: url('../fonts/ARCADE_I.TTF') format('truetype'),
+    url('arcade_i-webfont.woff') format('woff'),
+    url('arcade_i-webfont.woff2') format('woff2')
+}
+
+@font-face {
+    font-family: 'Arcade Normal';
+    src: url('../fonts/ARCADE_N') format('truetype');
+}
+
+@font-face {
+    font-family: "Arcade Rounded";
+    src: url('../fonts/ARCADE_R.TTF') format('truetype')
+}
+
+.a__userCard {
+    text-decoration: none;
+}
+
+.h3__userCard {
+	margin: 10px 0;
+}
+
+.h6__userCard {
+	margin: 5px 0;
+	text-transform: uppercase;
+}
+
+.div__userCard__space{
+    margin: .5%;
+}
+
+.cardContainer__userCard {
+	background-color: #6c349d;
+	border-radius: 5px;
+	box-shadow: 0px 10px 20px -10px rgba(117, 22, 22, 0.75);
+	color: #B3B8CD;
+	padding-top: 30px;
+	position: relative;
+	width: 350px;
+	max-width: 100%;
+	text-align: center;
+}
+
+.div__searchResults{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.cardContainer__userCard .author {
+	color: #231E39;
+	background-color: #FEBB0B;
+	border-radius: 3px;
+	font-size: 14px;
+	font-weight: bold;
+	padding: 3px 7px;
+	position: absolute;
+	top: 30px;
+	left: 30px;
+}
+
+.cardContainer__userCard .round {
+	border: 1px solid #03BFCB;
+	border-radius: 50%;
+	padding: 7px;
+}
+
+.button__primary {
+	background-color: #03BFCB;
+	border: 1px solid #03BFCB;
+	border-radius: 3px;
+	color: #231E39;
+	font-family: "Arcade Normal", sans-serif;
+	font-weight: 500;
+	padding: 10px 25px;
+}
+
+.button__primary--active {
+	background-color: transparent;
+	color: #02899C;
+}
+
+.div__listContainer__userCard {
+	background-color: rgb(167, 21, 123);
+	text-align: left;
+	padding: 15px;
+	margin-top: 30px;
+}

@@ -2,12 +2,29 @@ const express = require('express');
 const router = express.Router();
 const { Op } = require('sequelize');
 const { asyncHandler } = require('./utils')
-const { User, Story} = require('../db/models')
-
+const { User, Story, Follower } = require('../db/models')
 
 router.get('/', asyncHandler(async (req, res, next) => {
 
-  const stories = await Story.findAll({ include: User })
+  let stories = [];
+
+
+  if (res.locals.user) {
+    const followers = await Follower.findAll({
+      where: {
+        following_user_id: res.locals.user.id
+      },
+      include: [{
+        model: User, as: 'User'
+      }]
+    })
+    const ids = followers.map(follower => follower.follower_user_id)
+    console.log(ids)
+    stories = await Story.findAll({where:{author_id: {[Op.in]: ids}}, include: User })
+  } else {
+    stories = await Story.findAll({ include: User })
+  }
+
 
   stories.forEach(story => {
     storyText = story.story
@@ -34,8 +51,10 @@ router.post('/search', asyncHandler(async(req, res, next)=>{
   const users = await User.findAll({
     where: {
       username: { [Op.like]: `%${user}%`}
-    }
+    },
+    include: [Follower, Story]
   })
+
   if(users.length){
     res.render('Search',  {users})
   }
@@ -43,6 +62,7 @@ router.post('/search', asyncHandler(async(req, res, next)=>{
     res.render('SearchFail')
   }
 }))
+
 
 //-----------------------------
 router.get('/Settings', (req, res) => {

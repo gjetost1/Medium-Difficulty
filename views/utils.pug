@@ -3,11 +3,9 @@ mixin storyCard(story)
         div(class='storyCard__text__container')
             div(class='storyCard__author__container')
                 div(class='storyCard__author__container__subdiv')
-                    a(href="/Users/" + story.author_id)
+                    a(href="/Users/" + story.author_id )
                         img(src=story.User.profileImage, alt="", class='storyCard__author__profileImage')
                     a(href="/Users/" + story.author_id class='a')=story.User.username
-
-
 
             a(href="/Stories/" + story.id class='a')
 
