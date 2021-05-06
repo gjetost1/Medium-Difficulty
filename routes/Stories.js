@@ -59,6 +59,8 @@ router.get('/:id', asyncHandler(async (req, res, next) => {
         }
     })
 
+//fixes
+
     res.render('Stories', {
         story,
         currentUsersStory,
