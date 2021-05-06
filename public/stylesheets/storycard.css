@@ -28,6 +28,7 @@
 }
 
 .a {
+  font-family: "Arcade Rounded";
   text-decoration: none;
   color: black;
 }
@@ -63,6 +64,10 @@
   min-height: 60%;
 }
 
+.storyCard__storyTitle{
+  font-family: "Arcade Interlaced";
+}
+
 .img__holder{
   display:flex;
   align-items: center;
@@ -82,4 +87,8 @@
   display: flex;
   align-items: center;
   flex-wrap: wrap;
+}
+
+h2{
+  font-family: "Arcade Rounded";
 }

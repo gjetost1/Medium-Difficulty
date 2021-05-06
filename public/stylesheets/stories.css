@@ -51,3 +51,10 @@
     min-width: 30%;
     text-align: center;
 }
+.story__title{
+    font-family: "Arcade Interlaced";
+}
+.story__text{
+    font-family: "Arcade Rounded";
+    font-size: 70%;
+}

@@ -17,9 +17,9 @@ html(lang="en")
                 h3(id='navbar__title') Medium Difficulty
             div(id='navbar__buttons__container')
                 div(class='navbar__link__container')
-                    form(action="/search" method='post')
+                    form(action="/search" method='post' class="search__form")
                         input(type='text' name='user')
-                        button(type='submit') Search
+                        button(type='submit' class="search") Search
                 div(class='navbar__link__container')
                     form(action="/")
                         input(type='submit' value='Home' class='navbar__link__button')

@@ -12,7 +12,8 @@ mixin storyCard(story)
                 div(style='display:flex; align-items: center')
 
                     div(class='story__div__container__text')
-
+                        div(class='img__holder')
+                            img(src=story.storyImage class='story__image')
                         div(class='storyCard__storyTitle__div')
                             h2(class='storyCard__storyTitle a')=story.title
 
@@ -20,8 +21,7 @@ mixin storyCard(story)
                             div(class='storyCard__storyText__container')
                             h3(class='storyCard__storyText a')=story.storySnip
 
-                    div(class='img__holder')
-                        img(src=story.storyImage class='story__image')
+
 
 
 
