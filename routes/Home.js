@@ -4,8 +4,6 @@ const { Op } = require('sequelize');
 const { asyncHandler } = require('./utils')
 const { User, Story, Follower } = require('../db/models')
 
-
-
 router.get('/', asyncHandler(async (req, res, next) => {
 
   let stories = [];
@@ -53,8 +51,10 @@ router.post('/search', asyncHandler(async(req, res, next)=>{
   const users = await User.findAll({
     where: {
       username: { [Op.like]: `%${user}%`}
-    }
+    },
+    include: [Follower, Story]
   })
+
   if(users.length){
     res.render('Search',  {users})
   }
@@ -62,6 +62,7 @@ router.post('/search', asyncHandler(async(req, res, next)=>{
     res.render('SearchFail')
   }
 }))
+
 
 //-----------------------------
 router.get('/Settings', (req, res) => {

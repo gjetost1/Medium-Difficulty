@@ -1,6 +1,11 @@
 extends layout
 
+append head
+    style
+        include ../public/stylesheets/usercard.css
+
+include UserCard.pug
+
 block content
     div(class='div__searchResults')
-        each user in users
-            p=user.username
+        +userCard(users)
