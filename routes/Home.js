@@ -3,7 +3,7 @@ const router = express.Router();
 const { Op } = require('sequelize');
 const { asyncHandler } = require('./utils')
 const { User, Story, Follower } = require('../db/models')
-const { Op } = require('sequelize');
+
 
 
 router.get('/', asyncHandler(async (req, res, next) => {
