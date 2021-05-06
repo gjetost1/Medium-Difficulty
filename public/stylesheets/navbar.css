@@ -12,6 +12,7 @@
     font-family: 'Arcade Rounded';
     src: url('fonts/ARCADE_R.TTF') format('truetype');
 }
+
 body{
     background-color: #B0BBBF;
     margin-left: 50px;

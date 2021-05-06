@@ -57,8 +57,8 @@ router.get('/:id', asyncHandler(async (req, res, next) => {
 
 router.post('/:id/follow', asyncHandler(async (req, res, next) => {
     await Follower.create({
-        follower_userid: res.locals.user.id,
-        following_userid: req.params.id,
+        follower_user_id: res.locals.user.id,
+        following_user_id: req.params.id,
     })
 }))
 
@@ -66,10 +66,32 @@ router.post('/:id/follow', asyncHandler(async (req, res, next) => {
 router.delete('/:id/follow', async (req, res, next) => {
     await Follower.delete({
         where: {
-            follower_userid: res.locals.user.id,
-            following_userid: req.params.id,
+            follower_user_id: res.locals.user.id,
+            following_user_id: req.params.id,
         }
     })
 })
+
+router.post('/follow', asyncHandler(async(req, res, next)=>{
+
+    await Follower.create({
+        follower_user_id: follower_id,
+        following_user_id: following_id
+    })
+
+    res.json({success: 'true'})
+    
+}))
+
+router.delete('/unfollow', asyncHandler(async(req, res, next)=>{
+    const {follower_id, following_id} = req.body
+    await Follower.delete({
+        where:{
+            follower_user_id: follower_id,
+            following_user_id: following_id
+        }
+    })
+    res.json({success: 'true'})
+}))
 
 module.exports = router;

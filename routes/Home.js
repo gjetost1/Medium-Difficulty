@@ -19,7 +19,6 @@ router.get('/', asyncHandler(async (req, res, next) => {
       }]
     })
     const ids = followers.map(follower => follower.follower_user_id)
-    console.log(ids)
     stories = await Story.findAll({where:{author_id: {[Op.in]: ids}}, include: User })
   } else {
     stories = await Story.findAll({ include: User })
@@ -46,8 +45,8 @@ router.get('/', asyncHandler(async (req, res, next) => {
 }));
 
 router.post('/search', asyncHandler(async(req, res, next)=>{
+  let loggedOn = false
   const {user} = req.body
-  console.log(user, 'user')
   const users = await User.findAll({
     where: {
       username: { [Op.like]: `%${user}%`}
@@ -55,12 +54,27 @@ router.post('/search', asyncHandler(async(req, res, next)=>{
     include: [Follower, Story]
   })
 
-  if(users.length){
+  try{
+    if(res.locals.user.id){
+      loggedOn = true
+    }
+  } catch(err){
+    console.log('No user logged on')
+  }
+
+  if(loggedOn){
+    const currentUser = res.locals.user.id
+    if(users.length){
+      res.render('Search', {users, currentUser})
+    }
+  }
+  else if(users.length){
     res.render('Search',  {users})
   }
   else{
     res.render('SearchFail')
   }
+
 }))
 
 

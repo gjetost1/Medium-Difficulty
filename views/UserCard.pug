@@ -1,7 +1,9 @@
-mixin userCard(users)
+
+
+mixin userCard(users, currentUser)
     each user in users
         div(class='div__userCard__space')
-        +cardContainer(user)
+        +cardContainer(user, currentUser)
 
 mixin tableCard(user)
     table
@@ -14,14 +16,20 @@ mixin tableCard(user)
                 td=user.Followers.length
                 td=user.Stories.length
 
-mixin cardContainer(user)
+mixin cardContainer(user, currentUser)
     div(class="cardContainer__userCard")
         span(class="author") Author
         img(class="round" src=`${user.profileImage}`)
         h3(class='h3__userCard')=user.username
         h6(class='h6__userCard') --Insert Bio Here--
         div(class="div__buttons__userCard")
-            button(class='button__primary button__primary--active') Follow
+            -var follow = true;
+            each follower in user.Followers
+                if currentUser == follower.following_user_id
+                    button(class='button__primary button__primary--active button__primary__unfollow' value=`${user.id} ${currentUser}`) Unfollow
+                    -follow = false
+            if currentUser !== user.id && follow == true && currentUser
+                button(class='button__primary button__primary--active button__primary__follow' value=`${user.id} ${currentUser}`) Follow
             a(class="a__userCard" href=`/Users/${user.id}/`)
                 button(class='button__primary' ) View Profile
         div(class="div__listContainer__userCard")
