@@ -1,0 +1,6 @@
+extends layout
+
+block content
+    div(class='div__searchResults')
+        each user in users
+            p=user.username
