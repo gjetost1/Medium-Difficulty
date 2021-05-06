@@ -1,5 +1,6 @@
 const express = require('express');
 const router = express.Router();
+const { Op } = require('sequelize');
 const { asyncHandler } = require('./utils')
 const { User, Story, Follower } = require('../db/models')
 const { Op } = require('sequelize');
@@ -46,6 +47,21 @@ router.get('/', asyncHandler(async (req, res, next) => {
   });
 }));
 
+router.post('/search', asyncHandler(async(req, res, next)=>{
+  const {user} = req.body
+  console.log(user, 'user')
+  const users = await User.findAll({
+    where: {
+      username: { [Op.like]: `%${user}%`}
+    }
+  })
+  if(users.length){
+    res.render('Search',  {users})
+  }
+  else{
+    res.render('SearchFail')
+  }
+}))
 
 //-----------------------------
 router.get('/Settings', (req, res) => {
