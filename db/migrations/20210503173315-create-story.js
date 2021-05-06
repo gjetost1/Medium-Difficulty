@@ -38,6 +38,9 @@ module.exports = {
         allowNull: false,
         type: Sequelize.DATE,
       },
+      storyImage: {
+        type: Sequelize.STRING,
+      }
     });
   },
   down: (queryInterface, Sequelize) => {

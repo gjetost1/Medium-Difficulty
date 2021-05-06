@@ -1,8 +1,14 @@
-doctype html
-html
-  head
-      block head
-        title="Express Starter App"
-        link(rel='stylesheet' href='/stylesheets/reset.css')
-  body
-    block content
+extends navbar
+
+block head
+    style
+        include ../public/stylesheets/layout.css
+
+block layout
+    div(class="layout__div__container")
+        div(class="container__layout")
+            block content
+    div(class='layout__div__design')
+    div(class='layout__div__circleParent')
+        div(class='layout__div__circle')
+            div(class='layout__div__curvedLine')

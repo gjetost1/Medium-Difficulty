@@ -1,0 +1,11 @@
+.user__container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.user__info{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+}

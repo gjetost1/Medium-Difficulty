@@ -1,0 +1,28 @@
+.title__div{
+    text-align: center;
+    background-color: white;
+    border-radius: 3px;
+    border: 1px solid black;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    width: 20%;
+}
+
+.story__div{
+    font-size: 24px;
+    text-align: center;
+    background-color: white;
+    border-radius: 3px;
+    border: 1px solid black;
+    width: 80%;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 25px;
+    padding-right: 25px;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}

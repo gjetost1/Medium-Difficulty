@@ -1,0 +1,35 @@
+mixin storyCard(story)
+    div(class='storyCard__container')
+        div(class='storyCard__text__container')
+            div(class='storyCard__author__container')
+                div(class='storyCard__author__container__subdiv')
+                    a(href="/Users/" + story.author_id)
+                        img(src=story.User.profileImage, alt="", class='storyCard__author__profileImage')
+                    a(href="/Users/" + story.author_id class='a')=story.User.username
+
+
+
+            a(href="/Stories/" + story.id class='a')
+
+                div(style='display:flex; align-items: center')
+
+                    div(class='story__div__container__text')
+
+                        div(class='storyCard__storyTitle__div')
+                            h2(class='storyCard__storyTitle a')=story.title
+
+                        div(class='storyCard__storyText__div')
+                            div(class='storyCard__storyText__container')
+                            h3(class='storyCard__storyText a')=story.storySnip
+
+                    div(class='img__holder')
+                        img(src=story.storyImage class='story__image')
+
+
+
+        div(class='storyCard__subinfo')
+            span(class='storyCard__subinfo__likes') #{story.liked} Likes
+            div(class='storyCard__subinfo__seperator') .
+            span(class='storyCard__subinfo__views') #{story.views} Views
+            div(class='storyCard__subinfo__spacer')
+            button(class='storyCard__subinfo__bookmark') bookmark

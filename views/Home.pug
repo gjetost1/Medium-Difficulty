@@ -1,18 +1,12 @@
 extends layout
 
 append head
-  //- add page specific styles by appending to the head
-  link(rel="stylesheet" href="/stylesheets/index.css")
-  //- add page specific js
-  script(src="/javascripts/index.js" type="module" defer)
+    style
+        include ../public/stylesheets/storycard.css
+
+include utils.pug
 
 block content
-  h1= title
-  p Welcome to your Project Skeleton
-  p=thing
-  p ^^^^ Is there valid user logged in?
-  form(action="/" method='POST')
-    button(type='submit') Logout
-  p Username
-  if user
-    p=user.username
+    div(class='storyCard_container')
+        each story in stories
+            +storyCard(story)

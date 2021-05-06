@@ -1,0 +1,1084 @@
+@font-face {
+    font-family: 'Arcade Interlaced';
+    src: url('../fonts/ARCADE_I.TTF') format('truetype'),
+    url('arcade_i-webfont.woff') format('woff'),
+    url('arcade_i-webfont.woff2') format('woff2')
+}
+
+@font-face {
+    font-family: 'Arcade Normal';
+    src: url('../fonts/ARCADE_N') format('truetype');
+}
+
+@font-face {
+    font-family: "Arcade Rounded";
+    src: url('../fonts/ARCADE_R.TTF') format('truetype')
+}
+
+
+.form__login > label {
+    display: block;
+}
+
+.form__login > input {
+    display: block;
+}
+
+.form__login{
+    display: flex;
+    align-items: center;
+    position: absolute;
+    background-color: #deeee3;
+    justify-content: center;
+    flex-direction: column;
+    padding-right: 13%;
+    padding-left: 13%;
+    box-shadow: 0 0 0 2pt #2b0b0b;
+    width: 68%;
+    height: 36.5rem;
+}
+
+.form__login > *{
+    position: relative;
+    bottom: 70px;
+}
+
+.form__button__submit__login{
+    font-family: 'Arcade Normal';
+    font-size: inherit;
+    background-color: white;
+    border: none;
+    color: black;
+    padding: 25px 35px;
+    text-align: center;
+    cursor: pointer;
+    width: 200px;
+    position: relative;
+    top: 30px;
+}
+
+.form__label__login__useridentification{
+    margin-top: 100px;
+}
+
+.form__input__login__useridentification,
+.form__input__login__password {
+    background-color: white;
+    border: none;
+    padding: 5px 30px;
+    width: 300px;
+    height: 30px;
+}
+
+.form__input__login__useridentification[type='text'],
+.form__input__login__password[type='text'] {
+    font-family: 'Courier New', monospace;
+    font-size: large;
+}
+
+.form__label__login__useridentification,
+.form__label__login__password {
+    font-size: 2vw;
+    font-family: "Arcade Rounded";
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+@media screen and (max-width: 31.4em) {
+    .form__input__login__useridentification,
+    .form__input__login__password {
+        background-color: white;
+        border: none;
+        padding: 5px 30px;
+        width: 50px;
+        height: 5px;
+    }
+    .form__label__login__useridentification,
+    .form__label__login__password {
+        font-size: 2.5vw;
+        font-family: "Arcade Rounded";
+        margin-top: 50px;
+        margin-bottom: 50px;
+    }
+
+    .form__button__submit__login{
+        width: 60px;
+        padding: 15px 15px;
+    }
+
+    .form__input__login__useridentification[type='text'],
+    .form__input__login__password[type='text'] {
+        font-family: 'Courier New', monospace;
+        font-size: large;
+    }
+}
+
+@media screen and (max-device-width: 62em) and (min-device-width: 31.5em){
+    .form__input__login__useridentification,
+    .form__input__login__password {
+        background-color: white;
+        border: none;
+        padding: 5px 30px;
+        width: 100px;
+        height: 10px;
+    }
+    .form__label__login__useridentification,
+    .form__label__login__password {
+        font-size: 2.5vw;
+        font-family: "Arcade Rounded";
+        margin-top: 50px;
+        margin-bottom: 50px;
+    }
+
+    .form__button__submit__login{
+        width: 100px;
+        padding: 25px 25px;
+    }
+
+    .form__input__login__useridentification[type='text'],
+    .form__input__login__password[type='text'] {
+        font-family: 'Courier New', monospace;
+        font-size: large;
+    }
+}
+
+
+/* ----------- iPhone 4 and 4S ----------- */
+
+/* Portrait and Landscape */
+@media only screen
+  and (min-device-width: 320px)
+  and (max-device-width: 480px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+    .form__input__login__useridentification,
+    .form__input__login__password {
+        background-color: white;
+        border: none;
+        padding: 5px 30px;
+        width: 50px;
+        height: 10px;
+    }
+    .form__label__login__useridentification,
+    .form__label__login__password {
+        font-size: 2.5vw;
+        font-family: "Arcade Rounded";
+        margin-top: 50px;
+        margin-bottom: 50px;
+    }
+
+    .form__button__submit__login{
+        width: 150px;
+        padding: 15px 15px;
+    }
+
+    .form__input__login__useridentification[type='text'],
+    .form__input__login__password[type='text'] {
+        font-family: 'Courier New', monospace;
+        font-size: small;
+    }
+}
+
+/* Portrait */
+@media only screen
+  and (min-device-width: 320px)
+  and (max-device-width: 480px)
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: portrait) {
+    .form__input__login__useridentification,
+    .form__input__login__password {
+        background-color: white;
+        border: none;
+        padding: 5px 30px;
+        width: 50px;
+        height: 10px;
+    }
+    .form__label__login__useridentification,
+    .form__label__login__password {
+        font-size: 2.5vw;
+        font-family: "Arcade Rounded";
+        margin-top: 50px;
+        margin-bottom: 50px;
+    }
+
+    .form__button__submit__login{
+        width: 150px;
+        padding: 15px 15px;
+    }
+
+    .form__input__login__useridentification[type='text'],
+    .form__input__login__password[type='text'] {
+        font-family: 'Courier New', monospace;
+        font-size: small;
+    }
+}
+
+/* Landscape */
+@media only screen
+  and (min-device-width: 320px)
+  and (max-device-width: 480px)
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: landscape) {
+    .form__input__login__useridentification,
+    .form__input__login__password {
+        background-color: white;
+        border: none;
+        padding: 5px 30px;
+        width: 50px;
+        height: 10px;
+    }
+    .form__label__login__useridentification,
+    .form__label__login__password {
+        font-size: 2.5vw;
+        font-family: "Arcade Rounded";
+        margin-top: 50px;
+        margin-bottom: 50px;
+    }
+
+    .form__button__submit__login{
+        width: 150px;
+        padding: 15px 15px;
+    }
+
+    .form__input__login__useridentification[type='text'],
+    .form__input__login__password[type='text'] {
+        font-family: 'Courier New', monospace;
+        font-size: small;
+    }
+
+}
+
+/* ----------- iPhone 5, 5S, 5C and 5SE ----------- */
+
+/* Portrait and Landscape */
+@media only screen
+  and (min-device-width: 320px)
+  and (max-device-width: 568px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+    .form__input__login__useridentification,
+    .form__input__login__password {
+        background-color: white;
+        border: none;
+        padding: 5px 30px;
+        width: 50px;
+        height: 10px;
+    }
+    .form__label__login__useridentification,
+    .form__label__login__password {
+        font-size: 2.5vw;
+        font-family: "Arcade Rounded";
+        margin-top: 50px;
+        margin-bottom: 50px;
+    }
+
+    .form__button__submit__login{
+        width: 150px;
+        padding: 15px 15px;
+    }
+
+    .form__input__login__useridentification[type='text'],
+    .form__input__login__password[type='text'] {
+        font-family: 'Courier New', monospace;
+        font-size: small;
+    }
+
+}
+
+/* Portrait */
+@media only screen
+  and (min-device-width: 320px)
+  and (max-device-width: 568px)
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: portrait) {
+    .form__input__login__useridentification,
+    .form__input__login__password {
+        background-color: white;
+        border: none;
+        padding: 5px 30px;
+        width: 50px;
+        height: 10px;
+    }
+    .form__label__login__useridentification,
+    .form__label__login__password {
+        font-size: 2.5vw;
+        font-family: "Arcade Rounded";
+        margin-top: 50px;
+        margin-bottom: 50px;
+    }
+
+    .form__button__submit__login{
+        width: 150px;
+        padding: 15px 15px;
+    }
+
+    .form__input__login__useridentification[type='text'],
+    .form__input__login__password[type='text'] {
+        font-family: 'Courier New', monospace;
+        font-size: small;
+    }
+}
+
+/* Landscape */
+@media only screen
+  and (min-device-width: 320px)
+  and (max-device-width: 568px)
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: landscape) {
+    .form__input__login__useridentification,
+    .form__input__login__password {
+        background-color: white;
+        border: none;
+        padding: 5px 30px;
+        width: 50px;
+        height: 10px;
+    }
+    .form__label__login__useridentification,
+    .form__label__login__password {
+        font-size: 2.5vw;
+        font-family: "Arcade Rounded";
+        margin-top: 50px;
+        margin-bottom: 50px;
+    }
+
+    .form__button__submit__login{
+        width: 150px;
+        padding: 15px 15px;
+    }
+
+    .form__input__login__useridentification[type='text'],
+    .form__input__login__password[type='text'] {
+        font-family: 'Courier New', monospace;
+        font-size: small;
+    }
+
+}
+
+/* ----------- iPhone 6, 6S, 7 and 8 ----------- */
+
+/* Portrait and Landscape */
+@media only screen
+  and (min-device-width: 375px)
+  and (max-device-width: 667px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+    .form__input__login__useridentification,
+    .form__input__login__password {
+        background-color: white;
+        border: none;
+        padding: 5px 30px;
+        width: 50px;
+        height: 10px;
+    }
+    .form__label__login__useridentification,
+    .form__label__login__password {
+        font-size: 2.5vw;
+        font-family: "Arcade Rounded";
+        margin-top: 50px;
+        margin-bottom: 50px;
+    }
+
+    .form__button__submit__login{
+        width: 150px;
+        padding: 15px 15px;
+    }
+
+    .form__input__login__useridentification[type='text'],
+    .form__input__login__password[type='text'] {
+        font-family: 'Courier New', monospace;
+        font-size: small;
+    }
+}
+
+/* Portrait */
+@media only screen
+  and (min-device-width: 375px)
+  and (max-device-width: 667px)
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: portrait) {
+    .form__input__login__useridentification,
+    .form__input__login__password {
+        background-color: white;
+        border: none;
+        padding: 5px 30px;
+        width: 50px;
+        height: 10px;
+    }
+    .form__label__login__useridentification,
+    .form__label__login__password {
+        font-size: 2.5vw;
+        font-family: "Arcade Rounded";
+        margin-top: 50px;
+        margin-bottom: 50px;
+    }
+
+    .form__button__submit__login{
+        width: 150px;
+        padding: 15px 15px;
+    }
+
+    .form__input__login__useridentification[type='text'],
+    .form__input__login__password[type='text'] {
+        font-family: 'Courier New', monospace;
+        font-size: small;
+    }
+}
+
+/* Landscape */
+@media only screen
+  and (min-device-width: 375px)
+  and (max-device-width: 667px)
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: landscape) {
+    .form__input__login__useridentification,
+    .form__input__login__password {
+        background-color: white;
+        border: none;
+        padding: 5px 30px;
+        width: 50px;
+        height: 10px;
+    }
+    .form__label__login__useridentification,
+    .form__label__login__password {
+        font-size: 2.5vw;
+        font-family: "Arcade Rounded";
+        margin-top: 50px;
+        margin-bottom: 50px;
+    }
+
+    .form__button__submit__login{
+        width: 150px;
+        padding: 15px 15px;
+    }
+
+    .form__input__login__useridentification[type='text'],
+    .form__input__login__password[type='text'] {
+        font-family: 'Courier New', monospace;
+        font-size: small;
+    }
+}
+
+/* ----------- iPhone 6+, 7+ and 8+ ----------- */
+
+/* Portrait and Landscape */
+@media only screen
+  and (min-device-width: 414px)
+  and (max-device-width: 736px)
+  and (-webkit-min-device-pixel-ratio: 3) {
+    .form__input__login__useridentification,
+    .form__input__login__password {
+        background-color: white;
+        border: none;
+        padding: 5px 30px;
+        width: 50px;
+        height: 10px;
+    }
+    .form__label__login__useridentification,
+    .form__label__login__password {
+        font-size: 2.5vw;
+        font-family: "Arcade Rounded";
+        margin-top: 50px;
+        margin-bottom: 50px;
+    }
+
+    .form__button__submit__login{
+        width: 150px;
+        padding: 15px 15px;
+    }
+
+    .form__input__login__useridentification[type='text'],
+    .form__input__login__password[type='text'] {
+        font-family: 'Courier New', monospace;
+        font-size: small;
+    }
+}
+
+/* Portrait */
+@media only screen
+  and (min-device-width: 414px)
+  and (max-device-width: 736px)
+  and (-webkit-min-device-pixel-ratio: 3)
+  and (orientation: portrait) {
+    .form__input__login__useridentification,
+    .form__input__login__password {
+        background-color: white;
+        border: none;
+        padding: 5px 30px;
+        width: 50px;
+        height: 10px;
+    }
+    .form__label__login__useridentification,
+    .form__label__login__password {
+        font-size: 2.5vw;
+        font-family: "Arcade Rounded";
+        margin-top: 50px;
+        margin-bottom: 50px;
+    }
+
+    .form__button__submit__login{
+        width: 150px;
+        padding: 15px 15px;
+    }
+
+    .form__input__login__useridentification[type='text'],
+    .form__input__login__password[type='text'] {
+        font-family: 'Courier New', monospace;
+        font-size: small;
+    }
+}
+
+/* Landscape */
+@media only screen
+  and (min-device-width: 414px)
+  and (max-device-width: 736px)
+  and (-webkit-min-device-pixel-ratio: 3)
+  and (orientation: landscape) {
+    .form__input__login__useridentification,
+    .form__input__login__password {
+        background-color: white;
+        border: none;
+        padding: 5px 30px;
+        width: 50px;
+        height: 10px;
+    }
+    .form__label__login__useridentification,
+    .form__label__login__password {
+        font-size: 2.5vw;
+        font-family: "Arcade Rounded";
+        margin-top: 50px;
+        margin-bottom: 50px;
+    }
+
+    .form__button__submit__login{
+        width: 150px;
+        padding: 15px 15px;
+    }
+
+    .form__input__login__useridentification[type='text'],
+    .form__input__login__password[type='text'] {
+        font-family: 'Courier New', monospace;
+        font-size: small;
+    }
+}
+
+/* ----------- iPhone X ----------- */
+
+/* Portrait and Landscape */
+@media only screen
+  and (min-device-width: 375px)
+  and (max-device-width: 812px)
+  and (-webkit-min-device-pixel-ratio: 3) {
+    .form__input__login__useridentification,
+    .form__input__login__password {
+        background-color: white;
+        border: none;
+        padding: 5px 30px;
+        width: 50px;
+        height: 10px;
+    }
+    .form__label__login__useridentification,
+    .form__label__login__password {
+        font-size: 2.5vw;
+        font-family: "Arcade Rounded";
+        margin-top: 50px;
+        margin-bottom: 50px;
+    }
+
+    .form__button__submit__login{
+        width: 150px;
+        padding: 15px 15px;
+    }
+
+    .form__input__login__useridentification[type='text'],
+    .form__input__login__password[type='text'] {
+        font-family: 'Courier New', monospace;
+        font-size: small;
+    }
+}
+
+/* Portrait */
+@media only screen
+  and (min-device-width: 375px)
+  and (max-device-width: 812px)
+  and (-webkit-min-device-pixel-ratio: 3)
+  and (orientation: portrait) {
+    .form__input__login__useridentification,
+    .form__input__login__password {
+        background-color: white;
+        border: none;
+        padding: 5px 30px;
+        width: 50px;
+        height: 10px;
+    }
+    .form__label__login__useridentification,
+    .form__label__login__password {
+        font-size: 2.5vw;
+        font-family: "Arcade Rounded";
+        margin-top: 50px;
+        margin-bottom: 50px;
+    }
+
+    .form__button__submit__login{
+        width: 150px;
+        padding: 15px 15px;
+    }
+
+    .form__input__login__useridentification[type='text'],
+    .form__input__login__password[type='text'] {
+        font-family: 'Courier New', monospace;
+        font-size: small;
+    }
+}
+
+/* Landscape */
+@media only screen
+  and (min-device-width: 375px)
+  and (max-device-width: 812px)
+  and (-webkit-min-device-pixel-ratio: 3)
+  and (orientation: landscape) {
+    .form__input__login__useridentification,
+    .form__input__login__password {
+        background-color: white;
+        border: none;
+        padding: 5px 30px;
+        width: 50px;
+        height: 10px;
+    }
+    .form__label__login__useridentification,
+    .form__label__login__password {
+        font-size: 2.5vw;
+        font-family: "Arcade Rounded";
+        margin-top: 50px;
+        margin-bottom: 50px;
+    }
+
+    .form__button__submit__login{
+        width: 200px;
+        padding: 20px 20px;
+    }
+
+    .form__input__login__useridentification[type='text'],
+    .form__input__login__password[type='text'] {
+        font-family: 'Courier New', monospace;
+        font-size: small;
+    }
+}
+
+
+/* ----------- iPad 1, 2, Mini and Air ----------- */
+
+/* Portrait and Landscape */
+@media only screen
+  and (min-device-width: 768px)
+  and (max-device-width: 1024px)
+  and (-webkit-min-device-pixel-ratio: 1) {
+
+    .form__input__login__useridentification,
+    .form__input__login__password {
+        background-color: white;
+        border: none;
+        padding: 5px 30px;
+        width: 200px;
+        height: 20px;
+    }
+    .form__label__login__useridentification,
+    .form__label__login__password {
+        font-size: 2.5vw;
+        font-family: "Arcade Rounded";
+        margin-top: 50px;
+        margin-bottom: 50px;
+    }
+
+    .form__button__submit__login{
+        width: 150px;
+        padding: 15px 15px;
+    }
+
+    .form__input__login__useridentification[type='text'],
+    .form__input__login__password[type='text'] {
+        font-family: 'Courier New', monospace;
+        font-size: large;
+    }
+}
+
+/* Portrait */
+@media only screen
+  and (min-device-width: 768px)
+  and (max-device-width: 1024px)
+  and (orientation: portrait)
+  and (-webkit-min-device-pixel-ratio: 1) {
+    .form__input__login__useridentification,
+    .form__input__login__password {
+        background-color: white;
+        border: none;
+        padding: 5px 30px;
+        width: 200px;
+        height: 20px;
+    }
+    .form__label__login__useridentification,
+    .form__label__login__password {
+        font-size: 2.5vw;
+        font-family: "Arcade Rounded";
+        margin-top: 50px;
+        margin-bottom: 50px;
+    }
+
+    .form__button__submit__login{
+        width: 150px;
+        padding: 15px 15px;
+    }
+
+    .form__input__login__useridentification[type='text'],
+    .form__input__login__password[type='text'] {
+        font-family: 'Courier New', monospace;
+        font-size: large;
+    }
+}
+
+/* Landscape */
+@media only screen
+  and (min-device-width: 768px)
+  and (max-device-width: 1024px)
+  and (orientation: landscape)
+  and (-webkit-min-device-pixel-ratio: 1) {
+    .form__input__login__useridentification,
+    .form__input__login__password {
+        background-color: white;
+        border: none;
+        padding: 5px 30px;
+        width: 200px;
+        height: 20px;
+    }
+    .form__label__login__useridentification,
+    .form__label__login__password {
+        font-size: 2.5vw;
+        font-family: "Arcade Rounded";
+        margin-top: 50px;
+        margin-bottom: 50px;
+    }
+
+    .form__button__submit__login{
+        width: 150px;
+        padding: 15px 15px;
+    }
+
+    .form__input__login__useridentification[type='text'],
+    .form__input__login__password[type='text'] {
+        font-family: 'Courier New', monospace;
+        font-size: large;
+    }
+}
+
+/* ----------- iPad 3, 4 and Pro 9.7" ----------- */
+
+/* Portrait and Landscape */
+@media only screen
+  and (min-device-width: 768px)
+  and (max-device-width: 1024px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+    .form__input__login__useridentification,
+    .form__input__login__password {
+        background-color: white;
+        border: none;
+        padding: 5px 30px;
+        width: 200px;
+        height: 20px;
+    }
+    .form__label__login__useridentification,
+    .form__label__login__password {
+        font-size: 2.5vw;
+        font-family: "Arcade Rounded";
+        margin-top: 50px;
+        margin-bottom: 50px;
+    }
+
+    .form__button__submit__login{
+        width: 150px;
+        padding: 15px 15px;
+    }
+
+    .form__input__login__useridentification[type='text'],
+    .form__input__login__password[type='text'] {
+        font-family: 'Courier New', monospace;
+        font-size: large;
+    }
+}
+
+/* Portrait */
+@media only screen
+  and (min-device-width: 768px)
+  and (max-device-width: 1024px)
+  and (orientation: portrait)
+  and (-webkit-min-device-pixel-ratio: 2) {
+    .form__input__login__useridentification,
+    .form__input__login__password {
+        background-color: white;
+        border: none;
+        padding: 5px 30px;
+        width: 200px;
+        height: 20px;
+    }
+    .form__label__login__useridentification,
+    .form__label__login__password {
+        font-size: 2.5vw;
+        font-family: "Arcade Rounded";
+        margin-top: 50px;
+        margin-bottom: 50px;
+    }
+
+    .form__button__submit__login{
+        width: 150px;
+        padding: 15px 15px;
+    }
+
+    .form__input__login__useridentification[type='text'],
+    .form__input__login__password[type='text'] {
+        font-family: 'Courier New', monospace;
+        font-size: large;
+    }
+}
+
+/* Landscape */
+@media only screen
+  and (min-device-width: 768px)
+  and (max-device-width: 1024px)
+  and (orientation: landscape)
+  and (-webkit-min-device-pixel-ratio: 2) {
+    .form__input__login__useridentification,
+    .form__input__login__password {
+        background-color: white;
+        border: none;
+        padding: 5px 30px;
+        width: 200px;
+        height: 20px;
+    }
+    .form__label__login__useridentification,
+    .form__label__login__password {
+        font-size: 2.5vw;
+        font-family: "Arcade Rounded";
+        margin-top: 50px;
+        margin-bottom: 50px;
+    }
+
+    .form__button__submit__login{
+        width: 150px;
+        padding: 15px 15px;
+    }
+
+    .form__input__login__useridentification[type='text'],
+    .form__input__login__password[type='text'] {
+        font-family: 'Courier New', monospace;
+        font-size: large;
+    }
+}
+
+/* ----------- iPad Pro 10.5" ----------- */
+
+/* Portrait and Landscape */
+@media only screen
+  and (min-device-width: 834px)
+  and (max-device-width: 1112px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+    .form__input__login__useridentification,
+    .form__input__login__password {
+        background-color: white;
+        border: none;
+        padding: 5px 30px;
+        width: 200px;
+        height: 20px;
+    }
+    .form__label__login__useridentification,
+    .form__label__login__password {
+        font-size: 2.5vw;
+        font-family: "Arcade Rounded";
+        margin-top: 50px;
+        margin-bottom: 50px;
+    }
+
+    .form__button__submit__login{
+        width: 150px;
+        padding: 15px 15px;
+    }
+
+    .form__input__login__useridentification[type='text'],
+    .form__input__login__password[type='text'] {
+        font-family: 'Courier New', monospace;
+        font-size: large;
+    }
+}
+
+/* Portrait */
+/* Declare the same value for min- and max-width to avoid colliding with desktops */
+/* Source: https://medium.com/connect-the-dots/css-media-queries-for-ipad-pro-8cad10e17106*/
+@media only screen
+  and (min-device-width: 834px)
+  and (max-device-width: 834px)
+  and (orientation: portrait)
+  and (-webkit-min-device-pixel-ratio: 2) {
+    .form__input__login__useridentification,
+    .form__input__login__password {
+        background-color: white;
+        border: none;
+        padding: 5px 30px;
+        width: 200px;
+        height: 20px;
+    }
+    .form__label__login__useridentification,
+    .form__label__login__password {
+        font-size: 2.5vw;
+        font-family: "Arcade Rounded";
+        margin-top: 50px;
+        margin-bottom: 50px;
+    }
+
+    .form__button__submit__login{
+        width: 150px;
+        padding: 15px 15px;
+    }
+
+    .form__input__login__useridentification[type='text'],
+    .form__input__login__password[type='text'] {
+        font-family: 'Courier New', monospace;
+        font-size: large;
+    }
+}
+
+/* Landscape */
+/* Declare the same value for min- and max-width to avoid colliding with desktops */
+/* Source: https://medium.com/connect-the-dots/css-media-queries-for-ipad-pro-8cad10e17106*/
+@media only screen
+  and (min-device-width: 1112px)
+  and (max-device-width: 1112px)
+  and (orientation: landscape)
+  and (-webkit-min-device-pixel-ratio: 2) {
+    .form__input__login__useridentification,
+    .form__input__login__password {
+        background-color: white;
+        border: none;
+        padding: 5px 30px;
+        width: 200px;
+        height: 20px;
+    }
+    .form__label__login__useridentification,
+    .form__label__login__password {
+        font-size: 2.5vw;
+        font-family: "Arcade Rounded";
+        margin-top: 50px;
+        margin-bottom: 50px;
+    }
+
+    .form__button__submit__login{
+        width: 150px;
+        padding: 15px 15px;
+    }
+
+    .form__input__login__useridentification[type='text'],
+    .form__input__login__password[type='text'] {
+        font-family: 'Courier New', monospace;
+        font-size: large;
+    }
+}
+
+/* ----------- iPad Pro 12.9" ----------- */
+
+/* Portrait and Landscape */
+@media only screen
+  and (min-device-width: 1024px)
+  and (max-device-width: 1366px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+    .form__input__login__useridentification,
+    .form__input__login__password {
+        background-color: white;
+        border: none;
+        padding: 5px 30px;
+        width: 200px;
+        height: 20px;
+    }
+    .form__label__login__useridentification,
+    .form__label__login__password {
+        font-size: 2.5vw;
+        font-family: "Arcade Rounded";
+        margin-top: 50px;
+        margin-bottom: 50px;
+    }
+
+    .form__button__submit__login{
+        width: 150px;
+        padding: 15px 15px;
+    }
+
+    .form__input__login__useridentification[type='text'],
+    .form__input__login__password[type='text'] {
+        font-family: 'Courier New', monospace;
+        font-size: large;
+    }
+}
+
+/* Portrait */
+/* Declare the same value for min- and max-width to avoid colliding with desktops */
+/* Source: https://medium.com/connect-the-dots/css-media-queries-for-ipad-pro-8cad10e17106*/
+@media only screen
+  and (min-device-width: 1024px)
+  and (max-device-width: 1024px)
+  and (orientation: portrait)
+  and (-webkit-min-device-pixel-ratio: 2) {
+    .form__input__login__useridentification,
+    .form__input__login__password {
+        background-color: white;
+        border: none;
+        padding: 5px 30px;
+        width: 200px;
+        height: 20px;
+    }
+    .form__label__login__useridentification,
+    .form__label__login__password {
+        font-size: 2.5vw;
+        font-family: "Arcade Rounded";
+        margin-top: 50px;
+        margin-bottom: 50px;
+    }
+
+    .form__button__submit__login{
+        width: 150px;
+        padding: 15px 15px;
+    }
+
+    .form__input__login__useridentification[type='text'],
+    .form__input__login__password[type='text'] {
+        font-family: 'Courier New', monospace;
+        font-size: large;
+    }
+}
+
+/* Landscape */
+/* Declare the same value for min- and max-width to avoid colliding with desktops */
+/* Source: https://medium.com/connect-the-dots/css-media-queries-for-ipad-pro-8cad10e17106*/
+@media only screen
+  and (min-device-width: 1366px)
+  and (max-device-width: 1366px)
+  and (orientation: landscape)
+  and (-webkit-min-device-pixel-ratio: 2) {
+    .form__input__login__useridentification,
+    .form__input__login__password {
+        background-color: white;
+        border: none;
+        padding: 5px 30px;
+        width: 200px;
+        height: 20px;
+    }
+    .form__label__login__useridentification,
+    .form__label__login__password {
+        font-size: 2.5vw;
+        font-family: "Arcade Rounded";
+        margin-top: 50px;
+        margin-bottom: 50px;
+    }
+
+    .form__button__submit__login{
+        width: 150px;
+        padding: 15px 15px;
+    }
+
+    .form__input__login__useridentification[type='text'],
+    .form__input__login__password[type='text'] {
+        font-family: 'Courier New', monospace;
+        font-size: large;
+    }
+}

@@ -20,7 +20,8 @@ const loginValidators = [
 
 router.get('/', csrfProtection, asyncHandler(async (req, res, next) => {
     res.render('Login', {
-        csrfToken: req.csrfToken()
+        csrfToken: req.csrfToken(),
+        title: 'MD - Log In'
     });
 }))
 
@@ -46,7 +47,7 @@ router.post('/', loginValidators, csrfProtection, asyncHandler(async (req, res, 
     }
 
 
-
+    console.log("are we here", user)
     res.render('Login', {
         userIdentification,
         errors,

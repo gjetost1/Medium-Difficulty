@@ -1,31 +1,42 @@
 const express = require('express');
 const router = express.Router();
 const { asyncHandler } = require('./utils')
-const { User } = require('../db/models')
+const { User, Story} = require('../db/models')
 
-/* GET home page. */
+
 router.get('/', asyncHandler(async (req, res, next) => {
 
-/*
-  * TODO: find out what data to send to the home page pug
-*/
+  const stories = await Story.findAll({ include: User })
+
+  stories.forEach(story => {
+    storyText = story.story
+    if (storyText.length > 100) {
+      if (storyText[78] == ' ') {
+        storyText = storyText.slice(0, 80) + '...'
+      } else {
+        storyText = storyText.slice(0, 79) + '...'
+      }
+    }
+    story.storySnip = storyText
+  })
 
   res.render('Home', {
-    title: 'a/A Express Skeleton Home',
     user: res.locals.user,
-    thing: res.locals.authenticated
+    stories,
+    title: 'MD - Home'
   });
 }));
 
 
-//----------------------------- //log out user tester
-router.post('/', (req,res,next)=>{
-  delete req.session.auth;
-  res.render('Home', {
-    title: 'a/A Express Skeleton Home',
-    user: res.locals.user,
-    thing: res.locals.authenticated
-  })
+//-----------------------------
+router.get('/Settings', (req, res) => {
+  res.send('Settings TODO')
+})
+router.get('/Bookmarks', (req, res) => {
+  res.send('Bookmarks TODO')
+})
+router.get('/Help', (req, res) => {
+  res.send('Help TODO')
 })
 //-----------------------------
 

@@ -1,0 +1,12 @@
+extends layout.pug
+
+append head
+  style
+    include ../public/stylesheets/stories.css
+
+block content
+  div(class='container')
+    div(class='title__div')
+      h2=story.title
+    div(class='story__div')
+      p=story.story
