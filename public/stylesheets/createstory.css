@@ -1,0 +1,40 @@
+.create__story__form{
+    font-family: "Arcade Normal";
+    display:flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 3%;
+}
+
+.create__story__title,
+.create__story__title__label{
+    display: flex;
+    justify-content: space-between;
+    max-width: 60%;
+    padding: .7%
+}
+
+.create__story__content,
+.create__story__content__label{
+    display: flex;
+    justify-content: space-between;
+    max-width: 60%;
+    padding: .7%
+}
+
+
+
+.create__story__form__submit{
+    position: relative;
+    display: inline-block;
+    width: 80px;
+    height: 80px;
+    border: 0;
+    margin: 1em;
+    outline: none;
+    background-color: #d3254a;
+    border-radius: 60%;
+    cursor: pointer;
+    transition: box-shadow 2000ms;
+}
