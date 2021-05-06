@@ -17,14 +17,15 @@ block content
         div(class='like__spacer')
         div(class='like__text__div')
           span(class='like__text') Likes: #{story.liked}
-          if isLiked
-            button(type='submit' class='like__button' id='like-button' disabled=true) Like
-          else
-            button(type='submit' class='like__button' id='like-button' disabled=false) Like
-          if isLiked
-            button(type='submit' class='like__button' id='dislike-button' disabled=false) Unlike
-          else
-            button(type='submit' class='like__button' id='dislike-button' disabled=true) Unlike
+          if loggedIn
+            if isLiked
+              button(type='submit' class='like__button' id='like-button' disabled=true) Like
+            else
+              button(type='submit' class='like__button' id='like-button' disabled=false) Like
+            if isLiked
+              button(type='submit' class='like__button' id='dislike-button' disabled=false) Unlike
+            else
+              button(type='submit' class='like__button' id='dislike-button' disabled=true) Unlike
         div(class='like__spacer')
         input(id='info_input' class='hidden' value=story.id)
     div(class='story__div')

@@ -26,13 +26,16 @@ router.get('/:id', asyncHandler(async (req, res, next) => {
     if (story.author_id == res.locals.user) {
         currentUsersStory = true;
     };
+    let liked;
+    if (res.locals.user) {
+        liked = await StoryLike.findOne({
+            where: {
+                user_id: res.locals.user.id,
+                story_id: req.params.id
+            }
+        })
+    }
 
-    let liked = await StoryLike.findOne({
-        where: {
-            user_id: res.locals.user.id,
-            story_id: req.params.id
-        }
-    })
     let isLiked;
     if (liked) {
         isLiked = true;
@@ -41,23 +44,31 @@ router.get('/:id', asyncHandler(async (req, res, next) => {
     }
 
     const comments = await Comment.findAll({
-        where:{
+        where: {
             story_id: req.params.id
         },
         include: User,
         order: [
             ['createdAt', 'ASC']
         ]
-    })
+    }) 
 
-    comments.forEach(comment=>{
+    comments.forEach(comment => {
         let c = comment.createdAt.toString().split(':')[0]
         c = c.slice(0, (c.length - 2))
         comment.createdAtz = c
-        if (comment.user_id == res.locals.user.id) {
-            comment.mine = true;
+        if (res.locals.user) {
+            if (comment.user_id == res.locals.user.id) {
+                comment.mine = true;
+            }
         }
+
     })
+
+    let loggedIn = false;
+    if(res.locals.user) {
+        loggedIn = true
+    }
 
     res.render('Stories', {
         story,
@@ -66,7 +77,8 @@ router.get('/:id', asyncHandler(async (req, res, next) => {
         title: `MD - ${story.title}`,
         isLiked,
         liked,
-        comments
+        comments,
+        loggedIn
     })
 }))
 
