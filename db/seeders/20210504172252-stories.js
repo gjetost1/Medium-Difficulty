@@ -107,74 +107,31 @@ module.exports = {
       views: 200,
       author_id: 1,
       createdAt: new Date(),
-
-      updatedAt: new Date()
-    },{
-      title: 'Two Adorable Uncles',
-      story: `Luke Lakeman had always loved idyllic Dallas with its energetic, enthusiastic estuaries. It was a place where he felt surprised.
-
-      He was a friendly, virtuous, squash drinker with brunette eyebrows and moist lips. His friends saw him as a leaking, lonely lawyer. Once, he had even helped a difficult puppy cross the road. That's the sort of man he was.
-
-      Luke walked over to the window and reflected on his quiet surroundings. The rain hammered like chatting flamingos.
-
-      Then he saw something in the distance, or rather someone. It was the figure of Beth Gloop. Beth was a hungry ogre with brunette eyebrows and feathery lips.
-
-      Luke gulped. He was not prepared for Beth.
-
-      As Luke stepped outside and Beth came closer, he could see the spluttering glint in her eye.
-
-      Beth gazed with the affection of 4251 helpful round rats. She said, in hushed tones, "I love you and I want some more Twitter followers."
-
-      Luke looked back, even more irritable and still fingering the bendy sausage. "Beth, what's up Doc," he replied.
-
-      They looked at each other with sleepy feelings, like two funny, faint frogs partying at a very adorable birthday party, which had jazz music playing in the background and two adorable uncles thinking to the beat.
-
-      Luke regarded Beth's brunette eyebrows and feathery lips. "I feel the same way!" revealed Luke with a delighted grin.
-
-      Beth looked sleepy, her emotions blushing like a kaleidoscopic, keen kettle.
-
-      Then Beth came inside for a nice beaker of squash.
-
-      THE END`,
-      views: 10,
-      author_id: 1,
-      createdAt: new Date(),
-      updatedAt: new Date()
+      updatedAt: new Date(),
+      storyImage: '/exampleImgs/family.jpg'
     }, {
       title: 'Whatever Happened To Roguelikes?',
       story: `Back when I was a kid, all we needed to have fun was a procedurally generated map and whole mess of RNG loot. Ahhh, the good old days.
-
       Truly, I miss those days. Back when a young person could spend days losing themself in Nethack without a thought or care in the world for the mundanity of modern life.
-
       Nowadays it's all fast-paced battle royale games, with gamers hopped up on vape smoke and energy drinks, ripping around on their Razers and Rosewills.
-
       I heard a statistic the other day, in fact. Cherry Reds are all the rage, and over 60% of gamers now use a specialized gaming mouse and keyboard. What happened to the shallow, insanely repetitive gameplay?
-
       What happened to the blocky, difficult to interpret graphics? To the uneven and asymmetrical AI enemies? To the simplistic map design?
-
       What happened to the joy of gaming? It's all been ruined, if you ask me. And you are asking me! I'm right here.
-
       Okay, grandpa, let's get you to bed.
-
       Sorry about that. Pawpaw got onto my account again. See, my grandfather tends to wax rhapsodic about the old days, but he doesn't seem to understand that we still have roguelikes.
-
       We still have all the stuff he liked, in fact. He just has a little trouble with information diffusion and filtering. The huge glut of games makes it hard for him to keep track of what's what.
-
       And I can't blame him! There were a lot less options back in the day. People still like Miller Lite, after all. Sometimes they didn't have any other options!
-
       I've been telling Pawpaw there's no reason to get upset, but he just tells me to turn up the Dig Dug. What can you do? I still love him.
-
       Not a huge problem, though. He still comes around once in awhile, for a really good game. One day, I hope I'm like him. I hope I can still enjoy the novelty and innovation.
-
       Even if it's hard to admit.
-
       And it might be.
-
       THE END`,
+      liked: 0,
       views: 2000,
       author_id: 1,
       createdAt: new Date(),
-      updatedAt: new Date()
+      updatedAt: new Date(),
+      storyImage: '/exampleImgs/family.jpg'
     }, {
       title: 'Designing Player Punishment',
       story: `My studio is designing a video game where you watch the contestants slowly gaining weight, endure insults and curses, and try to win the game back!
@@ -183,10 +140,12 @@ module.exports = {
       Then once they make it, you are allowed to put them in your game and play them on their behalf.
        I plan on 2d survival games, but might expand it to 3rd/4th depending on market share.
       Thank you for reading! I don't know how hard this will probably be to make, but basically i ground my ideas flat on the floor, then waited it out, hoping something crazy wil`,
+      liked: 0,
       views: 10,
-      author_id: 5,
+      author_id: 2,
       createdAt: new Date(),
-      updatedAt: new Date()
+      updatedAt: new Date(),
+      storyImage: '/exampleImgs/family.jpg'
     }, {
       title: 'Modern Horror Games',
       story: `I would like to program a new video game that could be made from this concept.
@@ -195,10 +154,12 @@ module.exports = {
       Also, there are a very very very small amount of clay planet types in this world out there, so there may or may not be dungeons or pits, or even entire continents. I think that for the most part, these are the types of things we're going to be putting into place for this game to make it feel natural.
       Also, there are a very very very long amount of ways to go this game will go, and you can't really get good at it until you're 40, which is when you really start getting into character development.
       This is all I can write for now, please let me know what you all think!`,
+      liked: 0,
       views: 1004,
-      author_id: 6,
+      author_id: 3,
       createdAt: new Date(),
-      updatedAt: new Date()
+      updatedAt: new Date(),
+      storyImage: '/exampleImgs/family.jpg'
     }, {
       title: 'We Need More Wizards',
       story: `I have an idea for a video game where the player watches the wizard interacting with the world, he talks to the character dialog, does battle doing some exercise occasionally, eats some food, sleeps, etc. The idea is that the video player would be able to hear the character do various tasks, but not just fight, err, do some chores, answer a call, walk around, do some shopping, etc. The watcher would be able to see character's movement as well as the character's face. And the display would be retina-forming so that the character looks like a wizened teenager.
@@ -211,10 +172,12 @@ module.exports = {
       So for example, you would have three players in a table tennis match between three players, and after a little while they both count out and the match is called.
       It would be video game like sports, but you can't penalize a play if your player doesn't have a showing in the sport.
       In summary, this is a fun little game that players can experience and train for 3 - 5 hours.`,
+      liked: 0,
       views: 976,
-      author_id: 7,
+      author_id: 4,
       createdAt: new Date(),
-      updatedAt: new Date()
+      updatedAt: new Date(),
+      storyImage: '/exampleImgs/family.jpg'
     }, {
       title: 'Mastering Fighting Games',
       story: `Fighting games are about more than just mastering move combinations and mashing buttons.
@@ -227,48 +190,35 @@ module.exports = {
       The focus would be on developing skills over time so you could advance through the sport without getting caught.
       The catch would be that you're caught and you have to continue getting better at the sport.
       In addition getting better at the sport would also unlock more special moves or powers. For example, if you win the match you can move on to the next round.`,
+      liked: 0,
       views: 1276,
-      author_id: 8,
+      author_id: 4,
       createdAt: new Date(),
       updatedAt: new Date(),
       storyImage: '/exampleImgs/angryUncles.jpg'
-
     }, {
       title: 'Whatever Happened To Roguelikes?',
       story: `Back when I was a kid, all we needed to have fun was a procedurally generated map and whole mess of RNG loot. Ahhh, the good old days.
-
       Truly, I miss those days. Back when a young person could spend days losing themself in Nethack without a thought or care in the world for the mundanity of modern life.
-
       Nowadays it's all fast-paced battle royale games, with gamers hopped up on vape smoke and energy drinks, ripping around on their Razers and Rosewills.
-
       I heard a statistic the other day, in fact. Cherry Reds are all the rage, and over 60% of gamers now use a specialized gaming mouse and keyboard. What happened to the shallow, insanely repetitive gameplay?
-
       What happened to the blocky, difficult to interpret graphics? To the uneven and asymmetrical AI enemies? To the simplistic map design?
-
       What happened to the joy of gaming? It's all been ruined, if you ask me. And you are asking me! I'm right here.
-
       Okay, grandpa, let's get you to bed.
-
       Sorry about that. Pawpaw got onto my account again. See, my grandfather tends to wax rhapsodic about the old days, but he doesn't seem to understand that we still have roguelikes.
-
       We still have all the stuff he liked, in fact. He just has a little trouble with information diffusion and filtering. The huge glut of games makes it hard for him to keep track of what's what.
-
       And I can't blame him! There were a lot less options back in the day. People still like Miller Lite, after all. Sometimes they didn't have any other options!
-
       I've been telling Pawpaw there's no reason to get upset, but he just tells me to turn up the Dig Dug. What can you do? I still love him.
-
       Not a huge problem, though. He still comes around once in awhile, for a really good game. One day, I hope I'm like him. I hope I can still enjoy the novelty and innovation.
-
       Even if it's hard to admit.
-
       And it might be.
-
       THE END`,
+      liked: 0,
       views: 2000,
-      storyImage: '/exampleImgs/angryUncles.jpg',
       author_id: 1,
       createdAt: new Date(),
-      updatedAt: new Date()
+      updatedAt: new Date(),
+      storyImage: '/exampleImgs/angryUncles.jpg',
     }, {
       title: 'Designing Player Punishment',
       story: `My studio is designing a video game where you watch the contestants slowly gaining weight, endure insults and curses, and try to win the game back!
@@ -277,11 +227,12 @@ module.exports = {
       Then once they make it, you are allowed to put them in your game and play them on their behalf.
        I plan on 2d survival games, but might expand it to 3rd/4th depending on market share.
       Thank you for reading! I don't know how hard this will probably be to make, but basically i ground my ideas flat on the floor, then waited it out, hoping something crazy wil`,
+      liked: 0,
       views: 10,
-      author_id: 5,
-      storyImage: '/exampleImgs/angryUncles.jpg',
+      author_id: 1,
       createdAt: new Date(),
-      updatedAt: new Date()
+      updatedAt: new Date(),
+      storyImage: '/exampleImgs/angryUncles.jpg'
     }, {
       title: 'Modern Horror Games',
       story: `I would like to program a new video game that could be made from this concept.
@@ -290,11 +241,12 @@ module.exports = {
       Also, there are a very very very small amount of clay planet types in this world out there, so there may or may not be dungeons or pits, or even entire continents. I think that for the most part, these are the types of things we're going to be putting into place for this game to make it feel natural.
       Also, there are a very very very long amount of ways to go this game will go, and you can't really get good at it until you're 40, which is when you really start getting into character development.
       This is all I can write for now, please let me know what you all think!`,
+      liked: 0,
       views: 1004,
-      author_id: 6,
-      storyImage: '/exampleImgs/angryUncles.jpg',
+      author_id: 3,
       createdAt: new Date(),
-      updatedAt: new Date()
+      updatedAt: new Date(),
+      storyImage: '/exampleImgs/angryUncles.jpg'
     }, {
       title: 'We Need More Wizards',
       story: `I have an idea for a video game where the player watches the wizard interacting with the world, he talks to the character dialog, does battle doing some exercise occasionally, eats some food, sleeps, etc. The idea is that the video player would be able to hear the character do various tasks, but not just fight, err, do some chores, answer a call, walk around, do some shopping, etc. The watcher would be able to see character's movement as well as the character's face. And the display would be retina-forming so that the character looks like a wizened teenager.
@@ -307,11 +259,12 @@ module.exports = {
       So for example, you would have three players in a table tennis match between three players, and after a little while they both count out and the match is called.
       It would be video game like sports, but you can't penalize a play if your player doesn't have a showing in the sport.
       In summary, this is a fun little game that players can experience and train for 3 - 5 hours.`,
+      liked: 0,
       views: 976,
-      author_id: 7,
-      storyImage: '/exampleImgs/angryUncles.jpg',
+      author_id: 3,
       createdAt: new Date(),
-      updatedAt: new Date()
+      updatedAt: new Date(),
+      storyImage: '/exampleImgs/angryUncles.jpg'
     }, {
       title: 'Mastering Fighting Games',
       story: `Fighting games are about more than just mastering move combinations and mashing buttons.
@@ -324,11 +277,12 @@ module.exports = {
       The focus would be on developing skills over time so you could advance through the sport without getting caught.
       The catch would be that you're caught and you have to continue getting better at the sport.
       In addition getting better at the sport would also unlock more special moves or powers. For example, if you win the match you can move on to the next round.`,
+      liked: 0,
       views: 1276,
-      author_id: 8,
-      storyImage: '/exampleImgs/angryUncles.jpg',
+      author_id: 4,
       createdAt: new Date(),
-      updatedAt: new Date()
+      updatedAt: new Date(),
+      storyImage: '/exampleImgs/angryUncles.jpg'
     }
     ], {});
   },
