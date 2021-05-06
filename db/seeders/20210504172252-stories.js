@@ -107,7 +107,7 @@ module.exports = {
       views: 200,
       author_id: 1,
       createdAt: new Date(),
-<<<<<<< HEAD:db/seeders/20210504143755-stories.js
+
       updatedAt: new Date()
     },{
       title: 'Two Adorable Uncles',
@@ -230,14 +230,8 @@ module.exports = {
       views: 1276,
       author_id: 8,
       createdAt: new Date(),
-      updatedAt: new Date()
-=======
       updatedAt: new Date(),
-<<<<<<< HEAD
       storyImage: '/exampleImgs/angryUncles.jpg'
->>>>>>> a1d4e1df4f398ec4df3b8959d3eefb3a6c71db1b:db/seeders/20210504172252-stories.js
-=======
-      storyImage: '/exampleImgs/angryUncles.jpg',
 
     }, {
       title: 'Whatever Happened To Roguelikes?',
@@ -335,10 +329,8 @@ module.exports = {
       storyImage: '/exampleImgs/angryUncles.jpg',
       createdAt: new Date(),
       updatedAt: new Date()
->>>>>>> 1f62b1d8eaedca9590c059841b81b3c5772a4f16
     }
     ], {});
-
   },
 
   down: (queryInterface, Sequelize) => {
