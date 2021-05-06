@@ -58,6 +58,7 @@ body{
 }
 .navbar__link__button:hover{
     background-color: lightgray;
+    cursor: pointer;
 }
 #navbar__title{
     font-size: 26px;
@@ -73,6 +74,7 @@ body{
 }
 #navbar__profile__button:hover{
     background-color: lightgray;
+    cursor: pointer;
 }
 .hidden {
     display: none
@@ -104,4 +106,10 @@ body{
     margin-top: 5px;
     margin-bottom: 5px;
     text-align: center;
+
+}
+
+.profile__popout__sub__a > a{
+    text-decoration: none;
+    color: black;
 }
