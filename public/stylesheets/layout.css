@@ -39,7 +39,7 @@
 .layout__div__design{
     display: flex;
     position: relative;
-    top: 20px;
+    top: 15px;
     margin: 0 auto;
     width: 100%;
     height: 30px;
@@ -60,6 +60,7 @@
     height: 100px;
     background: red;
     border: 3px solid #2b0b0b;
+    bottom: 13px;
 }
 
 .layout__div__curvedLine{
@@ -76,10 +77,103 @@
 
 .layout__div__column{
     position: relative;
-    top: 103px;
+    top: 89px;
     right: 71px;
     width: 30px;
     height: 120px;
     background: white;
+    border: 3px solid #2b0b0b;
+}
+
+.layout__div__innerPad{
+    position: absolute;
+    border-radius: 50%;
+    width: 40px;
+    height: 60px;
+    background: #2b0b0b;
+    border: 3px solid #2b0b0b;
+    transform: rotate(-45deg);
+    z-index: -1;
+    top: 45px;
+    right: 41px;
+    top: 76px;
+    right: -4px;
+}
+
+.layout__div__outerPad{
+    position: relative;
+    border-radius: 50%;
+    width: 100px;
+    height: 120px;
+    background: #b8b9ae;
+    border: 3px solid #2b0b0b;
+    transform: rotate(-45deg);
+    z-index: -2;
+    top: 45px;
+    right: 41px;
+}
+
+.layout__div__rightAngle{
+    position: relative;
+    width: 0;
+    height: 0;
+    border-bottom: 25px solid #2b0b0b;
+    border-right: 25px solid transparent;
+    bottom: 29px;
+    right: 2px;
+}
+
+.layout__div__gamePad{
+    display: flex;
+    position: relative;
+    width: 99%;
+	height: 200px;
+	transform: skew(22deg);
+    border: 3px solid #2b0b0b;
+	background: #b8b9ae;
+    z-index: -3;
+    right: -18px;
+    top: -33px;
+}
+
+.layout__div__gamePad__buttonPad{
+    display: flex;
+    width: 50%;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.layout__div__gamePad__button1{
+    position: relative;
+    border-radius: 50%;
+    width: 85px;
+    height: 85px;
+    background: yellow;
+    border: 3px solid #2b0b0b;
+
+}
+
+.layout__div__gamePad__button2{
+    position: relative;
+    border-radius: 50%;
+    width: 85px;
+    height: 85px;
+    background: rgb(144, 245, 104);
+    border: 3px solid #2b0b0b;
+}
+.layout__div__gamePad__button3{
+    position: relative;
+    border-radius: 50%;
+    width: 85px;
+    height: 85px;
+    background: rgb(80, 198, 238);
+    border: 3px solid #2b0b0b;
+}
+.layout__div__gamePad__button4{
+    position: relative;
+    border-radius: 50%;
+    width: 85px;
+    height: 85px;
+    background: darkred;
     border: 3px solid #2b0b0b;
 }
