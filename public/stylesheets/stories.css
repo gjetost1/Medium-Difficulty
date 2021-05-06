@@ -50,4 +50,24 @@
 .story__likes{
     min-width: 30%;
     text-align: center;
+    display: flex;
+    justify-content: space-around;
+}
+
+.like__button{
+    font-size: 30px;
+}
+
+.like__text__div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.like__spacer{
+    min-width: 12%;
+}
+
+.hidden{
+    display:none
 }

@@ -3,6 +3,8 @@ extends layout.pug
 append head
   style
     include ../public/stylesheets/stories.css
+  script
+    include ../public/javascripts/story.js
 
 block content
   div(class='container')
@@ -11,8 +13,19 @@ block content
       div(class='title__div')
         h2=story.title
       div(class='story__likes')
-        div Likes:
-        button(class='like__button')
+        div(class='like__spacer')
+        div(class='like__text__div')
+          span(class='like__text') Likes: #{story.liked}
+          if isLiked
+            button(type='submit' class='like__button' id='like-button' disabled=true) Like
+          else
+            button(type='submit' class='like__button' id='like-button' disabled=false) Like
+          if isLiked
+            button(type='submit' class='like__button' id='dislike-button' disabled=false) Unlike
+          else
+            button(type='submit' class='like__button' id='dislike-button' disabled=true) Unlike
+        div(class='like__spacer')
+        input(id='info_input' class='hidden' value=story.id)
     div(class='story__div')
       p=story.story
     div(class='story__container')
