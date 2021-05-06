@@ -1,6 +1,8 @@
 extends layout
 
 append head
+    script()
+        include ../public/javascripts/usercard.js
     style
         include ../public/stylesheets/usercard.css
 
@@ -8,4 +10,7 @@ include UserCard.pug
 
 block content
     div(class='div__searchResults')
-        +userCard(users)
+        if currentUser
+            +userCard(users, currentUser)
+        else
+            +userCard(users)
