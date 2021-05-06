@@ -37,7 +37,43 @@ module.exports = {
       story_id: 5,
       createdAt: new Date(),
       updatedAt: new Date()
-    }], {});
+    },{
+      user_id: 2,
+      story_id: 6,
+      createdAt: new Date(),
+      updatedAt: new Date()
+    },{
+      user_id: 6,
+      story_id: 7,
+      createdAt: new Date(),
+      updatedAt: new Date()
+    },{
+      user_id: 4,
+      story_id: 7,
+      createdAt: new Date(),
+      updatedAt: new Date()
+    },{
+      user_id: 1,
+      story_id: 7,
+      createdAt: new Date(),
+      updatedAt: new Date()
+    },{
+      user_id: 2,
+      story_id: 7,
+      createdAt: new Date(),
+      updatedAt: new Date()
+    },{
+      user_id: 3,
+      story_id: 6,
+      createdAt: new Date(),
+      updatedAt: new Date()
+    }, {
+      user_id: 6,
+      story_id: 5,
+      createdAt: new Date(),
+      updatedAt: new Date()
+    },
+  ], {});
   },
 
   down: (queryInterface, Sequelize) => {
