@@ -1,29 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const { asyncHandler } = require('./utils')
-
 const { User, Follower, Story } = require('../db/models')
-
-
-// const { Follower, Story, User } = require('../db/models')
-
-// //Collection Resource
-// router.get('/stories', asyncHandler(async (req, res, next)=>{
-//     let stories = await User.findAll({
-//         include: {
-//             model: Story,
-//         },
-//         where: {
-//             id: res.locals.user.id,
-//         },
-//         limit: 10
-//     })
-//     stories = stories[0].Stories
-
-//     const user = true;
-
-//     res.render('Home', {stories, user})
-// }))
 
 
 router.get('/:id', asyncHandler(async (req, res, next) => {
@@ -32,9 +10,48 @@ router.get('/:id', asyncHandler(async (req, res, next) => {
         currentUser = true
     };
 
-    let stories = await Story.findAll({where:{author_id:res.locals.user.id}})
+    const profileUser = await User.findByPk(req.params.id)
 
-    res.render('User', { user: res.locals.user, currentUser, stories, title: `MD - ${res.locals.user.username}` }) //if currentUser is true, giev extra privlages
+    const stories = await Story.findAll({
+        where:{
+            author_id: profileUser.id
+        },
+        include: User
+    })
+
+    stories.forEach(story => {
+        storyText = story.story
+        if (storyText.length > 100) {
+            if (storyText[78] == ' ') {
+                storyText = storyText.slice(0, 80) + '...'
+            } else {
+                storyText = storyText.slice(0, 79) + '...'
+            }
+        }
+        story.storySnip = storyText
+    })
+
+    const followers = await Follower.findAll({
+        where:{
+            following_user_id: profileUser.id
+        },
+        include: [{
+            model: User, as: 'User'
+        }]
+    })
+
+    const followerAmount = followers.length
+
+    console.log(followers)
+    res.render('User', {
+        user: res.locals.user,
+        stories,
+        title: `MD - ${profileUser.username}`,
+        profileUser,
+        currentUser,
+        followers,
+        followerAmount
+    })
 }));
 
 

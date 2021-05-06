@@ -11,15 +11,15 @@
     align-items: center;
 }
 
-label,
-input{
+.signup__form__label,
+.signup__form__input{
     display: flex;
     justify-content: center;
     max-width: 60%;
     padding: .7%
 }
 
-button{
+.signup__form__button__submit{
     position: relative;
     display: inline-block;
     width: 80px;
@@ -34,10 +34,10 @@ button{
 
 }
 
-button:hover {
+.signup__form__button__submit:hover {
     background-color: #f9ac1e
 }
-button:active{
+.signup__form__button__submit:active{
     box-shadow: inset -2px -2px 3px rgba(255, 255, 255, .6),
                 inset 2px 2px 3px rgba(0, 0, 0, .6);
 }
