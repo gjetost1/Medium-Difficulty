@@ -107,7 +107,9 @@ module.exports = {
       views: 200,
       author_id: 1,
       createdAt: new Date(),
-      updatedAt: new Date()
+      updatedAt: new Date(),
+      storyImage: '/exampleImgs/angryUncles.jpg',
+
     }, {
       title: 'Whatever Happened To Roguelikes?',
       story: `Back when I was a kid, all we needed to have fun was a procedurally generated map and whole mess of RNG loot. Ahhh, the good old days.
@@ -140,6 +142,7 @@ module.exports = {
 
       THE END`,
       views: 2000,
+      storyImage: '/exampleImgs/angryUncles.jpg',
       author_id: 1,
       createdAt: new Date(),
       updatedAt: new Date()
@@ -153,6 +156,7 @@ module.exports = {
       Thank you for reading! I don't know how hard this will probably be to make, but basically i ground my ideas flat on the floor, then waited it out, hoping something crazy wil`,
       views: 10,
       author_id: 5,
+      storyImage: '/exampleImgs/angryUncles.jpg',
       createdAt: new Date(),
       updatedAt: new Date()
     }, {
@@ -165,6 +169,7 @@ module.exports = {
       This is all I can write for now, please let me know what you all think!`,
       views: 1004,
       author_id: 6,
+      storyImage: '/exampleImgs/angryUncles.jpg',
       createdAt: new Date(),
       updatedAt: new Date()
     }, {
@@ -181,6 +186,7 @@ module.exports = {
       In summary, this is a fun little game that players can experience and train for 3 - 5 hours.`,
       views: 976,
       author_id: 7,
+      storyImage: '/exampleImgs/angryUncles.jpg',
       createdAt: new Date(),
       updatedAt: new Date()
     }, {
@@ -197,6 +203,7 @@ module.exports = {
       In addition getting better at the sport would also unlock more special moves or powers. For example, if you win the match you can move on to the next round.`,
       views: 1276,
       author_id: 8,
+      storyImage: '/exampleImgs/angryUncles.jpg',
       createdAt: new Date(),
       updatedAt: new Date()
     }
