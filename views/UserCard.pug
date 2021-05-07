@@ -1,11 +1,26 @@
 
 
-mixin userCard(users, currentUser)
+mixin userCard(users, followers, currentUser)
+    -var id = 0;
     each user in users
+        - ++id
         div(class='div__userCard__space')
-        +cardContainer(user, currentUser)
+        +cardContainer(user, followers, currentUser, id)
 
-mixin tableCard(user)
+
+mixin followUserButton(user, followers, currentUser, id)
+    -var follow = true;
+    if followers[user.id]
+        each follower in followers[user.id]
+            if currentUser == follower
+                button(id=`${id} unfollowButton` class='button__primary button__primary--active button__primary__unfollow' value=`${user.id} ${currentUser}`) Unfollow
+                button(id=`${id} followButton` class='button__primary button__primary--active button__primary__follow button__primary--hidden' value=`${user.id} ${currentUser}`) Follow
+                -follow = false
+    if currentUser !== user.id && follow == true
+        button(id=`${id} followButton` class='button__primary button__primary--active button__primary__follow' value=`${user.id} ${currentUser}`) Follow
+        button(id=`${id} unfollowButton` class='button__primary button__primary--active button__primary__unfollow button__primary--hidden' value=`${user.id} ${currentUser}`) Unfollow
+
+mixin tableCard(user, followers)
     table
         thead
             tr
@@ -13,24 +28,24 @@ mixin tableCard(user)
                 th Stories
         tbody
             tr
-                td=user.Followers.length
+            if followers[user.id]
+                td=followers[user.id].length
+                td=user.Stories.length
+            else
+                td 0
                 td=user.Stories.length
 
-mixin cardContainer(user, currentUser)
+mixin cardContainer(user, followers, currentUser, id)
     div(class="cardContainer__userCard")
-        span(class="author") Author
+        if user.Stories.length > 0
+            span(class="author") Author
         img(class="round" src=`${user.profileImage}`)
         h3(class='h3__userCard')=user.username
         h6(class='h6__userCard') --Insert Bio Here--
         div(class="div__buttons__userCard")
-            -var follow = true;
-            each follower in user.Followers
-                if currentUser == follower.following_user_id
-                    button(class='button__primary button__primary--active button__primary__unfollow' value=`${user.id} ${currentUser}`) Unfollow
-                    -follow = false
-            if currentUser !== user.id && follow == true && currentUser
-                button(class='button__primary button__primary--active button__primary__follow' value=`${user.id} ${currentUser}`) Follow
+            if currentUser
+                +followUserButton(user, followers, currentUser, id)
             a(class="a__userCard" href=`/Users/${user.id}/`)
                 button(class='button__primary' ) View Profile
         div(class="div__listContainer__userCard")
-            +tableCard(user)
+            +tableCard(user, followers)
