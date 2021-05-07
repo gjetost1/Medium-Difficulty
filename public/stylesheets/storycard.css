@@ -81,6 +81,7 @@
   display: flex;
   flex-wrap: wrap;
   align-items: center;
+  justify-content: center;
 }
 
 .story__div__container{
