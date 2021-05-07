@@ -11,7 +11,7 @@ router.get('/', async(req, res, next) => {
 
 
 router.post('/', asyncHandler(async(req, res, next) => {
-    const {title, story} = req.body
+    const {title, story, picture} = req.body
 
     const currentStory = await Story.create({
         title,
@@ -19,6 +19,7 @@ router.post('/', asyncHandler(async(req, res, next) => {
         author_id: res.locals.user.id,
         liked: 0,
         views: 0,
+        storyImage: picture
     })
 
     res.redirect(`/Stories/${currentStory.id}`)
