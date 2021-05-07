@@ -3,13 +3,20 @@ window.addEventListener('DOMContentLoaded', (event) => {
 
 
 const followersButton = document.querySelector('.follower__button')
-const followers = document.querySelector('.follower__list__container')
+const followers = document.querySelectorAll('.follower__div')
+let clicked = false;
 
 followersButton.addEventListener('click', e => {
-    if (followers.classList.contains('hidden')) {
-        followers.classList.remove('hidden')
+    if (!clicked) {
+        followers.forEach(a=>{
+            a.classList.remove('hidden')
+        })
+        clicked = true;
     } else {
-        followers.classList.add('hidden')
+        followers.forEach(a=>{
+            a.classList.add('hidden')
+        })
+        clicked = false;
     }
 })
 
