@@ -44,6 +44,7 @@ router.get('/', asyncHandler(async (req, res, next) => {
   });
 }));
 
+
 router.post('/search', asyncHandler(async(req, res, next)=>{
   let loggedOn = false
   let followers = {};
@@ -75,8 +76,6 @@ router.post('/search', asyncHandler(async(req, res, next)=>{
   } catch(err){
     console.log('No user logged on')
   }
-
-  console.log(followers)
 
   if(loggedOn){
     const currentUser = res.locals.user.id

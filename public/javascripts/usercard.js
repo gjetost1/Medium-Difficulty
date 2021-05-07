@@ -23,6 +23,7 @@ window.addEventListener('DOMContentLoaded', (event)=>{
             headers: {'Content-Type' : 'application/json'},
             body: JSON.stringify({following_id: following, follower_id: follower})
         })
+
         const json = await response.json();
         if(json.success){
             updateFollow(targetButton)
