@@ -4,7 +4,7 @@ mixin userCard(users, followers, currentUser)
     -var id = 0;
     each user in users
         - ++id
-        div(class='div__userCard__space')
+        //- div(class='div__userCard__space')
         +cardContainer(user, followers, currentUser, id)
 
 
@@ -21,19 +21,17 @@ mixin followUserButton(user, followers, currentUser, id)
         button(id=`${id} unfollowButton` class='button__primary button__primary--active button__primary__unfollow button__primary--hidden' value=`${user.id} ${currentUser}`) Unfollow
 
 mixin tableCard(user, followers)
-    table
-        thead
-            tr
-                th Followers
-                th Stories
-        tbody
-            tr
+    div(class='table')
+        div
+            div(class='table__text') Followers:
+            div(class='table__text') Stories:
+        div
             if followers[user.id]
-                td=followers[user.id].length
-                td=user.Stories.length
+                div=followers[user.id].length
+                div=user.Stories.length
             else
-                td 0
-                td=user.Stories.length
+                div 0
+                div=user.Stories.length
 
 mixin cardContainer(user, followers, currentUser, id)
     div(class="cardContainer__userCard")

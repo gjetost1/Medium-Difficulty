@@ -19,7 +19,7 @@ router.get('/', asyncHandler(async (req, res, next) => {
       }]
     })
     const ids = followers.map(follower => follower.follower_user_id)
-    stories = await Story.findAll({where:{author_id: {[Op.in]: ids}}, include: User })
+    stories = await Story.findAll({ where: { author_id: { [Op.in]: ids } }, include: User })
   } else {
     stories = await Story.findAll({ include: User })
   }
@@ -45,23 +45,41 @@ router.get('/', asyncHandler(async (req, res, next) => {
 }));
 
 
-router.post('/search', asyncHandler(async(req, res, next)=>{
+router.post('/search', asyncHandler(async (req, res, next) => {
   let loggedOn = false
   let followers = {};
 
-  const {user} = req.body
-  const users = await User.findAll({
-    where: {
-      username: { [Op.iLike]: `%${user}%`}
-    },
-    include: [{
-      model: Follower,
-    }, Story]
-  })
+  const { user } = req.body
 
-  users.forEach(user=>{
-    user.Followers.forEach(follower=>{
-      if(followers[follower.following_user_id]){
+  let users;
+
+  if (res.locals.user) {
+    users = await User.findAll({
+      where: {
+        username: { [Op.iLike]: `%${user}%` },
+        [Op.not]: [
+          { id: res.locals.user.id }
+        ]
+      },
+      include: [{
+        model: Follower,
+      }, Story]
+    })
+  } else {
+    users = await User.findAll({
+      where: {
+        username: { [Op.iLike]: `%${user}%` }
+      },
+      include: [{
+        model: Follower,
+      }, Story]
+    })
+  }
+
+
+  users.forEach(user => {
+    user.Followers.forEach(follower => {
+      if (followers[follower.following_user_id]) {
         followers[follower.following_user_id].push(follower.follower_user_id)
       } else {
         followers[follower.following_user_id] = [follower.follower_user_id]
@@ -69,25 +87,24 @@ router.post('/search', asyncHandler(async(req, res, next)=>{
     })
   })
 
-  try{
-    if(res.locals.user.id){
+  try {
+    if (res.locals.user.id) {
       loggedOn = true
     }
-  } catch(err){
+  } catch (err) {
     console.log('No user logged on')
   }
 
-  if(loggedOn){
+  if (loggedOn) {
     const currentUser = res.locals.user.id
-    console.log(currentUser)
-    if(users.length){
-      res.render('Search', {users, followers, currentUser})
+    if (users.length) {
+      res.render('Search', { users, followers, currentUser })
     }
   }
-  else if(users.length){
-    res.render('Search',  {users, followers})
+  else if (users.length) {
+    res.render('Search', { users, followers })
   }
-  else{
+  else {
     res.render('SearchFail')
   }
 
