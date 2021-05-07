@@ -19,9 +19,9 @@ block content
                 h1=profileUser.username
             div(class='follower__container__button')
                 div(class='follower__button') Followers: #{followerAmount}
-            div(class='follower__list__container hidden')
+            div(class='follower__list__container')
                 each follower in followers
-                    a(href='/Users/' + follower.User.id class='follower__div')=follower.User.username
+                    a(href='/Users/' + follower.User.id class='follower__div hidden')=follower.User.username
         div(class='storyCard_container')
             each story in stories
                 +storyCard(story)
