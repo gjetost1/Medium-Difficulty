@@ -105,6 +105,7 @@ body{
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
+    flex-direction: column;
 }
 #navbar__buttons__container{
     display: flex;

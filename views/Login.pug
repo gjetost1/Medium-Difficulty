@@ -9,7 +9,9 @@ mixin form
         input(class="form__input__login__password" type='password' name='password' id='password')
 
         input(type='hidden' name='_csrf' value=csrfToken)
-        button(class="form__button__submit__login" type='submit') Log in
+        button(class="form__button__submit__login" id='formS' type='submit') Log in
+        
+        button(class="form__button__submit__login__demo") Demo User
 
 mixin error
     div(class="div__errors__login")
@@ -24,6 +26,8 @@ mixin container
 append head
     style
         include ../public/stylesheets/login.css
+    script
+        include ../public/javascripts/login.js
 
 block content
     +form
