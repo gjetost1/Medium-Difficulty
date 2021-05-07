@@ -48,7 +48,6 @@ window.addEventListener('DOMContentLoaded', (event) => {
 
     if (commentDelete) {
         commentDelete.addEventListener('click', async e => {
-            console.log('work')
             if (e.target.classList.contains('comment__delete__button')) {
                 await fetch(`/Stories/${storyId}/deleteComment/${e.target.id}`, {
                     method: 'DELETE'

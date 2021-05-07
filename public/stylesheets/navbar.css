@@ -95,6 +95,7 @@ body{
     right: 0px;
     left: 0px;
     z-index: 1;
+    top: 100%;
 }
 .profile_popout_sub {
     border: 1px solid black;
@@ -128,10 +129,16 @@ body{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-top: 7%;
 
 }
 
 .search {
     font-family: "Arcade Normal";
+}
+
+.navbar__link__container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
 }

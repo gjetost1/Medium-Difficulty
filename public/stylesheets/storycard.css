@@ -1,9 +1,9 @@
 .storyCard__container {
   display: flex;
-  margin-bottom: 17px;
+  margin-bottom: 16px;
   margin-top: 18px;
   flex-wrap: wrap;
-  max-width: 40%;
+  max-width: 45%;
   background-color: #d0a3bf;
   border: 1px solid black;
   border-radius: 5px;
@@ -49,23 +49,9 @@
   border-radius: 5px;
 }
 
-.storyCard__storyTitle__div{
-  max-width: 445px;
-  max-height: 60px;
-  min-width: 40%;
-  min-height: 40%;
-  margin-bottom: 25px;
-}
-
-.storyCard__storyText__div{
-  max-width: 445px;
-  min-width: 445px;
-  max-height: 60%;
-  min-height: 60%;
-}
-
 .storyCard__storyTitle{
   font-family: "Arcade Interlaced";
+
 }
 
 .img__holder{
@@ -81,7 +67,8 @@
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
+  flex-direction: row;
 }
 
 .story__div__container{
@@ -96,4 +83,10 @@ h2{
 
 button{
   font-family: "Arcade Rounded";
+}
+
+.story__Card__text__holder{
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 65%;
 }
