@@ -27,6 +27,7 @@
 
 .create__story__form__submit{
     position: relative;
+    font-size: 70%;
     display: inline-block;
     width: 80px;
     height: 80px;
@@ -37,4 +38,17 @@
     border-radius: 60%;
     cursor: pointer;
     transition: box-shadow 2000ms;
+}
+.create__story__form__submit{
+    font-family: "Arcade Normal";
+}
+
+.create__story__form__submit:hover{
+    font-family: "Arcade Normal";
+    background-color: green;
+}
+
+.create__story__form__submit:active{
+    box-shadow: inset -2px -2px 3px rgba(255, 255, 255, .6),
+                inset 2px 2px 3px rgba(0, 0, 0, .6);
 }
