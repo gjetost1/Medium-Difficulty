@@ -25,6 +25,26 @@
 
 }
 
+.follow__title{
+    display:flex;
+    position: relative;
+    align-items: center;
+    left: 93px;
+}
+
+.follow__button{
+    font-size: 30px;
+    width: 250px;
+    height: 40px;
+}
+
+.unfollow__button{
+
+    font-size: 30px;
+    width: 250px;
+    height: 40px;
+}
+
 .container{
     display: flex;
     justify-content: center;

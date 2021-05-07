@@ -10,6 +10,10 @@ append head
 block content
   div(class='container')
     div(class='title__container')
+      div(class='title__spacer')
+        div(class='follow__title')
+        if user
+          label(class='label__follow__info hidden') #{user.id} #{story.author_id}
       div(class='title__edit')
         if currentUsersStory
           button(id='story__delete__button') Delete Story
