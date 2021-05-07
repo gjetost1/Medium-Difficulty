@@ -43,7 +43,7 @@ body{
   } */
 
 #navbar{
-    font-family: "Arcade Interlaced";
+    font-family: "Arcade Normal";
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -54,7 +54,7 @@ body{
     background-color: #CADBC8;
 }
 .navbar__link__button{
-    font-family: "Arcade Interlaced";
+    font-family: "Arcade Normal";
     padding: 10px;
     border: 1px solid black;
     border-radius: 5px;
@@ -65,14 +65,14 @@ body{
     cursor: pointer;
 }
 #navbar__title{
-    font-family: "Arcade Interlaced";
+    font-family: "Arcade Normal";
     font-size: 26px;
     margin-bottom: 1px;
     margin-top: 1px;
     margin-left: 10px;
 }
 #navbar__profile__button{
-    font-family: "Arcade Interlaced";
+    font-family: "Arcade Normal";
     font-size: 12px;
     padding: 10px;
     border: 1px solid black;
@@ -133,5 +133,5 @@ body{
 }
 
 .search {
-    font-family: "Arcade Interlaced";
+    font-family: "Arcade Normal";
 }

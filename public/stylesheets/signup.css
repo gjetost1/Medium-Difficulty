@@ -22,6 +22,8 @@
 }
 
 .signup__form__button__submit{
+    font-family: "Arcade Normal";
+    font-size: 70%;
     position: relative;
     display: inline-block;
     width: 80px;
@@ -37,7 +39,7 @@
 }
 
 .signup__form__button__submit:hover {
-    background-color: #f9ac1e
+    background-color: green;
 }
 .signup__form__button__submit:active{
     box-shadow: inset -2px -2px 3px rgba(255, 255, 255, .6),
