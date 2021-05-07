@@ -3,7 +3,7 @@
   margin-bottom: 16px;
   margin-top: 18px;
   flex-wrap: wrap;
-  max-width: 45%;
+  max-width: 48rem;
   background-color: #d0a3bf;
   border: 1px solid black;
   border-radius: 5px;
@@ -90,4 +90,3 @@ button{
   flex-wrap: wrap;
   max-width: 65%;
 }
-

@@ -1,7 +1,7 @@
 const express = require('express');
 const { Result } = require('express-validator');
 const router = express.Router();
-const { Story, Comment, StoryLike, User } = require('../db/models')
+const { Story, Comment, StoryLike, User, Follower } = require('../db/models')
 const { asyncHandler, csrfProtection } = require('./utils')
 
 //Collection Resource
@@ -36,6 +36,10 @@ router.get('/:id', asyncHandler(async (req, res, next) => {
             }
         })
     }
+    let isFollowing = false;
+    if (await Follower.findOne({where:{follower_user_id: res.locals.user.id, following_user_id: story.author_id}})) {
+        isFollowing = true
+    }
 
     let isLiked;
     if (liked) {
@@ -63,13 +67,15 @@ router.get('/:id', asyncHandler(async (req, res, next) => {
                 comment.mine = true;
             }
         }
-
     })
 
     let loggedIn = false;
     if(res.locals.user) {
         loggedIn = true
     }
+
+    let authorObj = await User.findByPk(story.author_id)
+    const author = authorObj.username
 
     res.render('Stories', {
         story,
@@ -79,7 +85,9 @@ router.get('/:id', asyncHandler(async (req, res, next) => {
         isLiked,
         liked,
         comments,
-        loggedIn
+        loggedIn,
+        isFollowing,
+        author
     })
 }))
 

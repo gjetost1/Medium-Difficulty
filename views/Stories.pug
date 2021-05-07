@@ -11,14 +11,21 @@ block content
   div(class='container')
     div(class='title__container')
       div(class='title__spacer')
-        div(class='follow__title')
-        if user
-          label(class='label__follow__info hidden') #{user.id} #{story.author_id}
-      div(class='title__edit')
-        if currentUsersStory
-          button(id='story__delete__button') Delete Story
-          form(action="/Stories/" + story.id + '/Edit' method='GET')
-            button(type='submit') Edit Story
+        a(href='/Users/' + story.author_id id='author__name')=author
+        div(class='title__edit')
+          if currentUsersStory
+            button(id='story__delete__button') Delete Story
+            form(action="/Stories/" + story.id + '/Edit' method='GET')
+              button(type='submit' id='form__submit__button__edit') Edit Story
+          else
+            if isFollowing
+              input(class='hidden userID' value=user.id)
+              button(class='hidden button__primary button__primary--active' id='follow') Follow
+              button(class='button__primary button__primary--active' id='unfollow') Unfollow
+            else
+              input(class='hidden userID' value=user.id)
+              button(class='button__primary button__primary--active' id='follow') Follow
+              button(class='hidden button__primary button__primary--active' id='unfollow') Unfollow
       div(class='title__div')
         h2(class='story__title')=story.title
       div(class='story__likes')
