@@ -94,4 +94,20 @@ router.delete('/unfollow', asyncHandler(async(req, res, next)=>{
     res.json({success: 'true'})
 }))
 
+router.post('/followers', asyncHandler(async(req, res, next)=>{
+    const {user_id} = req.body
+    const following = []
+    console.log(user_id, 'user_IDDD')
+    const followersDB = await Follower.findAll({
+        where:{
+            follower_user_id: user_id
+        }
+    })
+    
+    followersDB.forEach(follower=>{
+        following.push(follower.following_user_id)
+    })
+    res.json({following: following})
+}))
+
 module.exports = router;

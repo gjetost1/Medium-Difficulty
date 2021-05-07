@@ -30,13 +30,15 @@ mixin tableCard(user, followers)
             tr
             if followers[user.id]
                 td=followers[user.id].length
+                td=user.Stories.length
             else
                 td 0
                 td=user.Stories.length
 
 mixin cardContainer(user, followers, currentUser, id)
     div(class="cardContainer__userCard")
-        span(class="author") Author
+        if user.Stories.length > 0
+            span(class="author") Author
         img(class="round" src=`${user.profileImage}`)
         h3(class='h3__userCard')=user.username
         h6(class='h6__userCard') --Insert Bio Here--
