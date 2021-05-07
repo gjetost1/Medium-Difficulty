@@ -49,7 +49,7 @@ router.post('/search', asyncHandler(async(req, res, next)=>{
   const {user} = req.body
   const users = await User.findAll({
     where: {
-      username: { [Op.like]: `%${user}%`}
+      username: { [Op.iLike]: `%${user}%`}
     },
     include: [Follower, Story]
   })
