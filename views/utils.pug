@@ -13,13 +13,15 @@ mixin storyCard(story)
 
                     div(class='story__div__container__text')
 
-                        div(class='storyCard__storyTitle__div')
-                            h2(class='storyCard__storyTitle a')=story.title
+                        div(class='story__Card__text__holder')
+                            div(class='storyCard__storyTitle__div')
+                                h2(class='storyCard__storyTitle a')=story.title
+                            div(class='storyCard__storyText__div')
+                                div(class='storyCard__storyText__container')
+                                h3(class='storyCard__storyText a')=story.storySnip
+
                         div(class='img__holder')
                             img(src=story.storyImage class='story__image')
-                        div(class='storyCard__storyText__div')
-                            div(class='storyCard__storyText__container')
-                            h3(class='storyCard__storyText a')=story.storySnip
 
 
 

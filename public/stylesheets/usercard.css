@@ -39,15 +39,18 @@
 	color: #B3B8CD;
 	padding-top: 30px;
 	position: relative;
-	width: 350px;
+	width: 15%;
 	max-width: 100%;
 	text-align: center;
+	margin: 2%;
 }
 
 .div__searchResults{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
+	flex-wrap: wrap;
+	justify-content: center;
 }
 
 .cardContainer__userCard .author {
@@ -97,4 +100,19 @@
 	text-align: left;
 	padding: 15px;
 	margin-top: 30px;
+}
+
+.table{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+  }
+
+.table__text{
+	margin-right: 5px;
+}
+
+.hidden{
+	display: none
 }

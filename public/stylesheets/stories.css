@@ -51,7 +51,7 @@
 }
 
 .story__likes{
-    min-width: 30%;
+    min-width: 28%;
     text-align: center;
     display: flex;
     justify-content: space-around;
@@ -83,8 +83,11 @@
     background-color: white;
     border: 1px solid black;
     border-radius: 5px;
-    padding: 5%;
+    padding: 2%;
     margin-bottom: 15px;
+    margin-left: 20%;
+    margin-right: 20%;
+    min-width: 50%;
 }
 
  .comment_container{
@@ -94,7 +97,7 @@
     align-items: center;
     border: 1px solid black;
     border-radius: 5px;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
     padding: 5px;
     background-color: #B4ADEA;
  }
@@ -104,6 +107,11 @@
      text-align: center;
      padding-bottom: 10px;
      padding-top: 10px;
+     margin-top: 5px;
+     margin-bottom: 5px;
+     border: 1px solid black;
+    border-radius: 5px;
+    background-color: lightpink;
  }
 
  .comment__like__container{

@@ -64,12 +64,13 @@ router.post('/:id/follow', asyncHandler(async (req, res, next) => {
 
 
 router.delete('/:id/follow', async (req, res, next) => {
-    await Follower.delete({
+    const follow = await Follower.findOne({
         where: {
             follower_user_id: res.locals.user.id,
             following_user_id: req.params.id,
         }
     })
+    follow.destroy()
 })
 
 router.post('/follow', asyncHandler(async(req, res, next)=>{
