@@ -19,13 +19,15 @@ block content
               button(type='submit' id='form__submit__button__edit') Edit Story
           else
             if isFollowing
-              input(class='hidden userID' value=user.id)
-              button(class='hidden button__primary button__primary--active' id='follow') Follow
-              button(class='button__primary button__primary--active' id='unfollow') Unfollow
+              if loggedIn
+                input(class='hidden userID' value=user.id)
+                button(class='hidden button__primary button__primary--active' id='follow') Follow
+                button(class='button__primary button__primary--active' id='unfollow') Unfollow
             else
-              input(class='hidden userID' value=user.id)
-              button(class='button__primary button__primary--active' id='follow') Follow
-              button(class='hidden button__primary button__primary--active' id='unfollow') Unfollow
+              if loggedIn
+                input(class='hidden userID' value=user.id)
+                button(class='button__primary button__primary--active' id='follow') Follow
+                button(class='hidden button__primary button__primary--active' id='unfollow') Unfollow
       div(class='title__div')
         h2(class='story__title')=story.title
       div(class='story__likes')

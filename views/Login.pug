@@ -3,14 +3,14 @@ extends layout
 mixin form
     form(action="/Login" method='POST' class="form__login")
         label(class="form__label__login__useridentification") ENTER USERNAME/EMAIL
-        input(class="form__input__login__useridentification" type='text' name='userIdentification' id='userIdentification' value=userIdentification)
+        input(class="form__input__login__useridentification" style='border: 1px solid black; border-radius: 5px' type='text' name='userIdentification' id='userIdentification' value=userIdentification)
 
         label(class="form__label__login__password") ENTER PASSWORD
-        input(class="form__input__login__password" type='password' name='password' id='password')
+        input(class="form__input__login__password" style='border: 1px solid black; border-radius: 5px' type='password' name='password' id='password')
 
         input(type='hidden' name='_csrf' value=csrfToken)
-        button(class="form__button__submit__login" id='formS' type='submit') Log in
-        
+        button(class="form__button__submit__login" id='formS' type='submit' style='border-radius: 5px;') Log in
+
         button(class="form__button__submit__login__demo") Demo User
 
 mixin error

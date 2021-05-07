@@ -63,7 +63,8 @@ router.post('/search', asyncHandler(async (req, res, next) => {
       },
       include: [{
         model: Follower,
-      }, Story]
+      }, Story],
+      order: [['id', "ASC"]]
     })
   } else {
     users = await User.findAll({
@@ -77,13 +78,16 @@ router.post('/search', asyncHandler(async (req, res, next) => {
   }
 
   for (aUser of users) {
-    let followers = await Follower.findAll({where: {following_user_id: aUser.id}})
+    let followers = await Follower.findAll({ where: { following_user_id: aUser.id } })
     aUser.followersNumber = followers.length;
-    if (await Follower.findOne({where:{follower_user_id: res.locals.user.id, following_user_id: aUser.id}})) {
-      aUser.isFollowed = true
-    } else {
-      aUser.isFollowed = false
+    if (res.locals.user) {
+      if (await Follower.findOne({ where: { follower_user_id: res.locals.user.id, following_user_id: aUser.id } })) {
+        aUser.isFollowed = true
+      } else {
+        aUser.isFollowed = false
+      }
     }
+
     await aUser.save()
   }
 
