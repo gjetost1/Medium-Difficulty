@@ -9,8 +9,6 @@ window.addEventListener('DOMContentLoaded', (event) => {
     const commentDelete = document.querySelector('.comment__delete')
 
     const followTitle = document.querySelector('.follow__title')
-    const followButton = document.querySelector('.follow__button')
-    const unfollowButton = document.querySelector('.unfollow__button')
     const followInfoLabel = document.querySelector('.label__follow__info')
     let hiddenLabelData = followInfoLabel.innerHTML
 
@@ -88,20 +86,27 @@ window.addEventListener('DOMContentLoaded', (event) => {
             if(following){
                 follow.classList.add('follow__button')
                 follow.classList.add('hidden')
+                follow.setAttribute('value', `${user_id} ${author_id}`)
                 follow.innerHTML = 'Follow'
 
                 unfollow.classList.add('unfollow__button')
+                unfollow.setAttribute('value', `${user_id} ${author_id}`)
                 unfollow.innerHTML = 'Unfollow'
 
                 followTitle.appendChild(unfollow)
                 followTitle.appendChild(follow)
             }
+            else if(author_id === user_id){
+                console.log("can't follow self")
+            }
             else{
                 follow.classList.add('follow__button')
+                follow.setAttribute('value', `${user_id} ${author_id}`)
                 follow.innerHTML = 'Follow'
 
                 unfollow.classList.add('unfollow__button')
                 unfollow.classList ='hidden'
+                unfollow.setAttribute('value', `${user_id} ${author_id}`)
                 unfollow.innerHTML = 'Unfollow'
 
                 followTitle.appendChild(unfollow)
@@ -112,19 +117,80 @@ window.addEventListener('DOMContentLoaded', (event) => {
 
     isFollowing(hiddenLabelData)
 
-    async function actionFollow(user_id, action){
-        const response = await fetch('/users/follow',{
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body:  JSON.stringify({ follower_user_id: follower_user_id, following_user_id: following_user_id })
-        })
+    async function actionFollow(follower_id, following_id, action){
+
+        if(action === 'follow'){
+            const response = await fetch('/users/follow',{
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body:  JSON.stringify({ follower_id: follower_id, following_id: following_id })
+            })
+
+            const json = await response.json()
+            return json
+        }
+        else if(action === 'unfollow'){
+            const response = await fetch('/users/unfollow',{
+                method: 'DELETE',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body:  JSON.stringify({ follower_id: follower_id, following_id: following_id })
+            })
+
+            const json = await response.json()
+            return json
+        }
+
     }
 
-    followButton.addEventListener('click', event=>{
-        const button = event.target
-        const action = 'follow'
+    followTitle.addEventListener('click', async event=>{
+        if(event.target && event.target.matches('button.unfollow__button') ){
+            const followButton = document.querySelector('.follow__button')
+            const unfollowButton = document.querySelector('.unfollow__button')
+            const button = event.target
+            const action = 'unfollow'
+            const follower_id = button.value.split(' ')[0]
+            const following_id = button.value.split(' ')[1]
+            const json = await actionFollow(follower_id,following_id, action)
 
+            if(json.success){
+                followButton.classList.remove('hidden')
+                unfollowButton.classList.add('hidden')
+            }
+
+        } else if(event.target && event.target.matches('button.follow__button')){
+            const followButton = document.querySelector('.follow__button')
+            const unfollowButton = document.querySelector('.unfollow__button')
+            const button = event.target
+            const action = 'follow'
+            const follower_id = button.value.split(' ')[0]
+            const following_id = button.value.split(' ')[1]
+            const json = await actionFollow(follower_id,following_id, action)
+
+            if(json.success){
+                followButton.classList.add('hidden')
+                unfollowButton.classList.remove('hidden')
+            }
+        }
     })
+
+    // followButton.addEventListener('click', event=>{
+    //     const button = event.target
+    //     const action = 'follow'
+    //     const follower_id = button.value.split(' ')[0]
+    //     const following_id = button.value.split(' ')[1]
+    //     actionFollow(follower_id,following_id, action)
+
+    // })
+
+    // unfollowButton.addEventListener('click', event=>{
+    //     const button = event.target
+    //     const action = 'unfollow'
+    //     const follower_id = button.value.split(' ')[0]
+    //     const following_id = button.value.split(' ')[1]
+    //     actionFollow(follower_id,following_id, action)
+    // })
 });
