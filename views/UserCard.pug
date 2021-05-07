@@ -7,13 +7,13 @@ mixin userCard(users, followers, currentUser)
 
 mixin followUserButton(user)
     if user.isFollowed
-        input(class='hidden userID' value=user.id)
-        button(class='hidden button__primary button__primary--active' id='follow') Follow
-        button(class='button__primary button__primary--active' id='unfollow') Unfollow
+        input(class='hidden' id=user.id value=user.id)
+        button(class='hidden button__primary button__primary--active' id='follow' + user.id) Follow
+        button(class='button__primary button__primary--active' id='unfoll' + user.id) Unfollow
     else
         input(class='hidden userID' value=user.id)
-        button(class='button__primary button__primary--active' id='follow') Follow
-        button(class='hidden button__primary button__primary--active' id='unfollow') Unfollow
+        button(class='button__primary button__primary--active' id='follow' + user.id) Follow
+        button(class='hidden button__primary button__primary--active' id='unfoll' + user.id) Unfollow
 
 mixin tableCard(user)
     div(class='table')

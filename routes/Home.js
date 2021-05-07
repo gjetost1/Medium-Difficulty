@@ -12,13 +12,13 @@ router.get('/', asyncHandler(async (req, res, next) => {
   if (res.locals.user) {
     const followers = await Follower.findAll({
       where: {
-        following_user_id: res.locals.user.id
+        follower_user_id: res.locals.user.id
       },
       include: [{
         model: User, as: 'User'
       }]
     })
-    const ids = followers.map(follower => follower.follower_user_id)
+    const ids = followers.map(follower => follower.following_user_id)
     stories = await Story.findAll({ where: { author_id: { [Op.in]: ids } }, include: User })
   } else {
     stories = await Story.findAll({ include: User })
