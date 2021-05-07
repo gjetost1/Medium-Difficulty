@@ -1,7 +1,7 @@
 const express = require('express');
 const { Result } = require('express-validator');
 const router = express.Router();
-const { Story, Comment, StoryLike, User, CommentLike } = require('../db/models')
+const { Story, Comment, StoryLike, User } = require('../db/models')
 const { asyncHandler, csrfProtection } = require('./utils')
 
 //Collection Resource
@@ -22,8 +22,9 @@ router.get('/', asyncHandler(async (req, res, next) => {
 //Single Resource
 router.get('/:id', asyncHandler(async (req, res, next) => {
     const story = await Story.findByPk(req.params.id);
-    const currentUsersStory = false;
-    if (story.author_id == res.locals.user) {
+    let currentUsersStory = false;
+
+    if (story.author_id == res.locals.user.id) {
         currentUsersStory = true;
     };
     let liked;
@@ -86,36 +87,39 @@ router.get('/:id', asyncHandler(async (req, res, next) => {
 router.get('/:id/Edit', asyncHandler(async (req, res, next) => { // TODO: Make sure 'Create-Story' has values for story.
     const story = await Story.findByPk(req.params.id);
     const edit = true;
+    let permission = false;
+    if (story.author_id == res.locals.user.id) {
+        permission = true
+    }
     res.render('Create-Story', {
         story,
         edit,
+        permission,
         user: res.locals.user
     })
 }))
 
 
-router.put('/:id', asyncHandler(async (req, res, next) => {
+router.post('/:id', asyncHandler(async (req, res, next) => {
     const currentStory = await Story.findByPk(req.params.id);
     const { title, story } = req.body;
 
-    currentStory.title = title;
-    currentStory.story = story;
+    await currentStory.update({title: title, story: story})
 
-    await story.save();
-    res.redirect(`/Stories/${story.id}`)
+    await currentStory.save();
+    res.redirect(`/Stories/${currentStory.id}`)
 }))
 
 
-router.delete('/:id', asyncHandler(async (req, res, next) => {
+router.delete('/Delete/:id', asyncHandler(async (req, res, next) => {
     const story = await Story.findByPk(req.params.id);
-    await story.destroy()
-    res.redirect('/')
+    await story.destroy();
+    res.redirect('/');
 }))
 
 
 router.post('/:id/comment', asyncHandler(async (req, res, next) => {
     const { comment } = req.body
-    console.log(comment, '<<<comment')
     await Comment.create({
         comment,
         user_id: res.locals.user.id,
@@ -129,34 +133,9 @@ router.post('/:id/comment', asyncHandler(async (req, res, next) => {
 
 
 router.delete('/:id/deleteComment/:cid', asyncHandler(async (req, res, next) => {
-    console.log('working!');
     const comment = await Comment.findByPk(req.params.cid);
     await comment.destroy();
     res.redirect(`/Stories/${req.params.id}`)
-}))
-
-
-router.post('/:id/commentLikes/:cid', asyncHandler(async (req, res, next) => {
-    const comment = await Comment.findByPk(req.params.cid);
-    comment.liked += 1;
-    await comment.save()
-    await CommentLike.create({
-        user_id: res.locals.user.id,
-        comment_id: req.params.cid,
-    })
-}))
-
-
-router.put('/:id/commentDislike', asyncHandler(async (req, res, next) => {
-    comment.liked -= 1;
-    await comment.save()
-    const commentx = await CommentLike.findOne({
-        where: {
-            user_id: res.locals.user.id,
-            comment_id: req.params.cid
-        }
-    })
-    await commentx.destroy();
 }))
 
 

@@ -20,10 +20,10 @@ module.exports = (sequelize, DataTypes) => {
       foreignKey: 'author_id'
     })
     Story.hasMany(models.Comment,{
-      foreignKey: 'story_id'
+      foreignKey: 'story_id', onDelete: 'cascade'
     })
     Story.hasMany(models.StoryLike, {
-      foreignKey: 'story_id'
+      foreignKey: 'story_id' , onDelete: 'cascade'
     })
   };
   return Story;

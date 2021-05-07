@@ -6,7 +6,8 @@ window.addEventListener('DOMContentLoaded', (event) => {
     const commentForm = document.querySelector('#comment__form')
     const commentBox = document.querySelector('#comment__box')
     let storyId = info.value
-    const commentDelete = document.querySelector('.comment__delete')
+    const commentDelete = document.querySelector('.story__comments')
+    const deleteStory = document.querySelector('#story__delete__button')
 
 
     likeButton.addEventListener('click', async e => {
@@ -47,14 +48,22 @@ window.addEventListener('DOMContentLoaded', (event) => {
 
     if (commentDelete) {
         commentDelete.addEventListener('click', async e => {
-            await fetch(`/Stories/${storyId}/deleteComment/${e.target.id}`, {
-                method: 'DELETE'
-            })
-            location.reload()
+            console.log('work')
+            if (e.target.classList.contains('comment__delete__button')) {
+                await fetch(`/Stories/${storyId}/deleteComment/${e.target.id}`, {
+                    method: 'DELETE'
+                })
+                location.reload()
+            }
+
         })
     }
 
-
-
+    deleteStory.addEventListener('click', async e =>{
+        await fetch(`/Stories/Delete/${storyId}`, {
+            method: 'DELETE'
+        })
+        window.location.replace('/')
+    })
 
 });
