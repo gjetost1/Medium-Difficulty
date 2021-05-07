@@ -46,8 +46,6 @@ router.post('/', loginValidators, csrfProtection, asyncHandler(async (req, res, 
         errors = validatorErrors.array().map(e=>e.msg)
     }
 
-
-    console.log("are we here", user)
     res.render('Login', {
         userIdentification,
         errors,
