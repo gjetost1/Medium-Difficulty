@@ -77,8 +77,10 @@
 	font-family: "Arcade Normal", sans-serif;
 	font-weight: 500;
 	padding: 10px 25px;
+	margin: 5px;
 	height: 45px;
 	width: 220px;
+	cursor: pointer;
 }
 
 .button__primary--active {
