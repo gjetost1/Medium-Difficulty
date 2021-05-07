@@ -10,7 +10,11 @@ append head
 block content
   div(class='container')
     div(class='title__container')
-      div(class='title__spacer')
+      div(class='title__edit')
+        if currentUsersStory
+          button(id='story__delete__button') Delete Story
+          form(action="/Stories/" + story.id + '/Edit' method='GET')
+            button(type='submit') Edit Story
       div(class='title__div')
         h2(class='story__title')=story.title
       div(class='story__likes')
@@ -39,12 +43,8 @@ block content
             div(class='comment__like__parent')
               div(class='comment__like__container')
                 div(class='comment__created')=comment.createdAtz
-                div(class='comment__like__amount') Likes: #{comment.liked}
-                button(class='comment__like__button' + comment.id) like
-                button(class='comment__dislike__button' + comment.id) dislike
-                div(class='comment__like__container__spacer')
                 if comment.mine
-                  button(class='comment__delete' id=comment.id) delete
+                  button(class='comment__delete__button' id=comment.id) delete
         form(action="/Stories/" + story.id id='comment__form')
           label(for="comment__box") Comment:
           input(type='text' id='comment__box')

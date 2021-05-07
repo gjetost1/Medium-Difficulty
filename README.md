@@ -17,17 +17,17 @@ CSS COLORS
 3 fonts available:
 @font-face {
     font-family: 'Arcade Interlaced';
-    src: url(fonts/ARCADE_I.TTF) format('truetype');
+    src: url(/fonts/ARCADE_I.TTF) format('truetype');
 }
 
 @font-face {
     font-family: 'Arcade Normal';
-    src: url(fonts/ARCADE_N.TTF) format('truetype');
+    src: url(/fonts/ARCADE_N.TTF) format('truetype');
 }
 
 @font-face {
     font-family: 'Arcade Rounded';
-    src: url(fonts/ARCADE_R.TTF) format('truetype');
+    src: url(/fonts/ARCADE_R.TTF) format('truetype');
 }
 
 Import, then use font-family of choice

@@ -43,8 +43,11 @@
     padding: 10px;
 }
 
-.title__spacer{
+.title__edit{
+    display: flex;
     min-width: 30%;
+    justify-content: space-evenly;
+    align-items: center;
 }
 
 .story__likes{
@@ -52,10 +55,6 @@
     text-align: center;
     display: flex;
     justify-content: space-around;
-}
-
-.like__button{
-    font-size: 30px;
 }
 
 .like__text__div{
@@ -120,7 +119,7 @@
 }
 
  .comment__like__container__spacer{
-    min-width: 35%
+    min-width: 20%
  }
 
  .comment__like__amount{
@@ -141,5 +140,6 @@
  }
 
  button{
-    font-family: 'Arcade Normal'
- }
+    font-family: 'Arcade Normal';
+    font-size: 100%;
+}

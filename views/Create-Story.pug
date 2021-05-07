@@ -6,12 +6,26 @@ append head
 
 block content
   div(class="create__story")
-    form(action="/Create-Story", method="POST",  class="create__story__form")
+    if edit
+      if permission
+        form(action="/Stories/" + story.id method="POST" class="create__story__form")
 
-      label(for="create__story__title" class="create__story__title__label") Title
-      input(type='text' name="title" class="create__story__title" placeholder="e.g. My First MMO Guild")
+          label(for="create__story__title" class="create__story__title__label") Title
+          input(type='text' name="title" class="create__story__title" value=story.title)
 
-      label(for="create__story__content" class="create__story__content__label") Story Content
-      textarea(type="textarea" rows="10"  name="story" class="create__story__content" placeholder= 'Your story goes here!')
+          label(for="create__story__content" class="create__story__content__label") Story Content
+          textarea(type="textarea" rows="15"  name="story" class="create__story__content")=story.story
 
-      button(type="submit" class="create__story__form__submit") Submit
+          button(type="submit" class="create__story__form__submit") Submit
+      else
+        p You cant
+    else
+      form(action="/Create-Story", method="POST",  class="create__story__form")
+
+        label(for="create__story__title" class="create__story__title__label") Title
+        input(type='text' name="title" class="create__story__title" placeholder="e.g. My First MMO Guild")
+
+        label(for="create__story__content" class="create__story__content__label") Story Content
+        textarea(type="textarea" rows="15"  name="story" class="create__story__content" placeholder= 'Your story goes here!')
+
+        button(type="submit" class="create__story__form__submit") Submit
