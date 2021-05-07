@@ -3,6 +3,8 @@ extends layout.pug
 append head
     style
         include ../public/stylesheets/createstory.css
+    script
+        include ../public/javascripts/createstory.js
 
 block content
   div(class="create__story")
@@ -14,18 +16,53 @@ block content
           input(type='text' name="title" class="create__story__title" value=story.title)
 
           label(for="create__story__content" class="create__story__content__label") Story Content
-          textarea(type="textarea" rows="15"  name="story" class="create__story__content")=story.story
+          textarea(type="textarea" rows="10"  name="story" class="create__story__content")=story.story
 
           button(type="submit" class="create__story__form__submit") Submit
       else
         p You cant
     else
-      form(action="/Create-Story", method="POST",  class="create__story__form")
+      form(action="/Create-Story" method="POST" class="create__story__form")
+        div(class="create__story__container")
+          img(class="create__story__img" src="/storyImgs/mario.png")
+          label(for="create__story__img__select" class="create__story__img__label") Select Story Image
+            select(class="create__story__img__select" name="picture" id="s")
+              option(class="create__story__select__1" value='/storyImgs/mario.png') 1
+              option(class="create__story__select__2" value='/storyImgs/beetlejuice.png') 2
+              option(class="create__story__select__3" value='/storyImgs/boat.png') 3
+              option(class="create__story__select__4" value='/storyImgs/cabin.png') 4
+              option(class="create__story__select__5" value='/storyImgs/cardgame.png') 5
+              option(class="create__story__select__6" value='/storyImgs/castlevania.png') 6
+              option(class="create__story__select__7" value='/storyImgs/chess.png') 7
+              option(class="create__story__select__8" value='/storyImgs/dark.png') 8
+              option(class="create__story__select__9" value='/storyImgs/donkey.png') 9
+              option(class="create__story__select__10" value='/storyImgs/fight.png') 10
+              option(class="create__story__select__11" value='/storyImgs/flight.png') 11
+              option(class="create__story__select__12" value='/storyImgs/flintstones.png') 12
+              option(class="create__story__select__13" value='/storyImgs/food.png') 13
+              option(class="create__story__select__14" value='/storyImgs/football.png') 14
+              option(class="create__story__select__15" value='/storyImgs/megaman.png') 15
+              option(class="create__story__select__16" value='/storyImgs/mickey.png') 16
+              option(class="create__story__select__17" value='/storyImgs/nightmare.png') 17
+              option(class="create__story__select__18" value='/storyImgs/pinball.png') 18
+              option(class="create__story__select__19" value='/storyImgs/pirate.png') 19
+              option(class="create__story__select__20" value='/storyImgs/prince.png') 20
+              option(class="create__story__select__21" value='/storyImgs/punch.png') 21
+              option(class="create__story__select__22" value='/storyImgs/racing.png') 22
+              option(class="create__story__select__23" value='/storyImgs/rpg.png') 23
+              option(class="create__story__select__24" value='/storyImgs/rpg2.png') 24
+              option(class="create__story__select__25" value='/storyImgs/spaceshuttle.png') 25
+              option(class="create__story__select__26" value='/storyImgs/spyhunter.png') 26
+              option(class="create__story__select__27" value='/storyImgs/stage.png') 27
+              option(class="create__story__select__28" value='/storyImgs/starwars.png') 28
+              option(class="create__story__select__29" value='/storyImgs/uncles.png') 29
+              option(class="create__story__select__30" value='/storyImgs/wrestling.png') 30
+              option(class="create__story__select__31" value='/storyImgs/zorldo.png') 31
 
         label(for="create__story__title" class="create__story__title__label") Title
         input(type='text' name="title" class="create__story__title" placeholder="e.g. My First MMO Guild")
 
         label(for="create__story__content" class="create__story__content__label") Story Content
-        textarea(type="textarea" rows="15"  name="story" class="create__story__content" placeholder= 'Your story goes here!')
+        textarea(type="textarea" rows="10"  name="story" class="create__story__content" placeholder= 'Your story goes here!')
 
         button(type="submit" class="create__story__form__submit") Submit

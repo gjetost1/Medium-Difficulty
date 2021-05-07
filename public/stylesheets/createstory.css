@@ -12,7 +12,8 @@
     display: flex;
     justify-content: space-between;
     max-width: 60%;
-    margin-bottom: 10px;
+    margin-bottom: 1%;
+    margin-top: 2%;
 }
 
 
@@ -24,11 +25,18 @@
     margin-top: 2.5%;
 }
 
+
 .create__story__title{
     min-width: 30%;
+    max-width: 50%;
+    max-height: 50%;
     font-size: 150%;
     text-align: center;
     padding: 5px;
+}
+.create__story__title::placeholder{
+    font-family: "Arcade Rounded";
+    font-size: 50%;
 }
 
 .create__story__content{
@@ -36,6 +44,11 @@
     font-size: 150%;
     padding: 10px
 }
+.create__story__content::placeholder{
+    font-family: "Arcade Rounded";
+    font-size: 80%;
+}
+
 
 .create__story__form__submit{
     position: relative;
@@ -64,4 +77,24 @@
 .create__story__form__submit:active{
     box-shadow: inset -2px -2px 3px rgba(255, 255, 255, .6),
                 inset 2px 2px 3px rgba(0, 0, 0, .6);
+}
+
+.create__story__container {
+    padding-top: 2%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    border: 1px solid black;
+    background-color:#d0a3bf;
+}
+
+.create__story__img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.create__story__img__label {
+    margin: 1%;
 }
