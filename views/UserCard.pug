@@ -1,37 +1,28 @@
 
 
 mixin userCard(users, followers, currentUser)
-    -var id = 0;
     each user in users
-        - ++id
-        //- div(class='div__userCard__space')
         +cardContainer(user, followers, currentUser, id)
 
 
-mixin followUserButton(user, followers, currentUser, id)
-    -var follow = true;
-    if followers[user.id]
-        each follower in followers[user.id]
-            if currentUser == follower
-                button(id=`${id} unfollowButton` class='button__primary button__primary--active button__primary__unfollow' value=`${user.id} ${currentUser}`) Unfollow
-                button(id=`${id} followButton` class='button__primary button__primary--active button__primary__follow button__primary--hidden' value=`${user.id} ${currentUser}`) Follow
-                -follow = false
-    if currentUser !== user.id && follow == true
-        button(id=`${id} followButton` class='button__primary button__primary--active button__primary__follow' value=`${user.id} ${currentUser}`) Follow
-        button(id=`${id} unfollowButton` class='button__primary button__primary--active button__primary__unfollow button__primary--hidden' value=`${user.id} ${currentUser}`) Unfollow
+mixin followUserButton(user)
+    if user.isFollowed
+        input(class='hidden userID' value=user.id)
+        button(class='hidden button__primary button__primary--active' id='follow') Follow
+        button(class='button__primary button__primary--active' id='unfollow') Unfollow
+    else
+        input(class='hidden userID' value=user.id)
+        button(class='button__primary button__primary--active' id='follow') Follow
+        button(class='hidden button__primary button__primary--active' id='unfollow') Unfollow
 
-mixin tableCard(user, followers)
+mixin tableCard(user)
     div(class='table')
         div
             div(class='table__text') Followers:
             div(class='table__text') Stories:
         div
-            if followers[user.id]
-                div=followers[user.id].length
-                div=user.Stories.length
-            else
-                div 0
-                div=user.Stories.length
+            div=user.followersNumber
+            div=user.Stories.length
 
 mixin cardContainer(user, followers, currentUser, id)
     div(class="cardContainer__userCard")
@@ -41,9 +32,8 @@ mixin cardContainer(user, followers, currentUser, id)
         h3(class='h3__userCard')=user.username
         h6(class='h6__userCard') --Insert Bio Here--
         div(class="div__buttons__userCard")
-            if currentUser
-                +followUserButton(user, followers, currentUser, id)
+            +followUserButton(user)
             a(class="a__userCard" href=`/Users/${user.id}/`)
                 button(class='button__primary' ) View Profile
         div(class="div__listContainer__userCard")
-            +tableCard(user, followers)
+            +tableCard(user)

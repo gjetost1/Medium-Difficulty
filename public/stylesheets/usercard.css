@@ -112,3 +112,7 @@
 .table__text{
 	margin-right: 5px;
 }
+
+.hidden{
+	display: none
+}

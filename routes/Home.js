@@ -76,16 +76,16 @@ router.post('/search', asyncHandler(async (req, res, next) => {
     })
   }
 
-
-  users.forEach(user => {
-    user.Followers.forEach(follower => {
-      if (followers[follower.following_user_id]) {
-        followers[follower.following_user_id].push(follower.follower_user_id)
-      } else {
-        followers[follower.following_user_id] = [follower.follower_user_id]
-      }
-    })
-  })
+  for (aUser of users) {
+    let followers = await Follower.findAll({where: {following_user_id: aUser.id}})
+    aUser.followersNumber = followers.length;
+    if (await Follower.findOne({where:{follower_user_id: res.locals.user.id, following_user_id: aUser.id}})) {
+      aUser.isFollowed = true
+    } else {
+      aUser.isFollowed = false
+    }
+    await aUser.save()
+  }
 
   try {
     if (res.locals.user.id) {
