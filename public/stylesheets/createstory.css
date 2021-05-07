@@ -7,26 +7,39 @@
     margin-top: 3%;
 }
 
-.create__story__title,
+
 .create__story__title__label{
     display: flex;
     justify-content: space-between;
     max-width: 60%;
-    padding: .7%
+    margin-bottom: 10px;
 }
 
-.create__story__content,
+
 .create__story__content__label{
     display: flex;
     justify-content: space-between;
     max-width: 60%;
-    padding: .7%
+    margin-bottom: 10px;
+    margin-top: 2.5%;
 }
 
+.create__story__title{
+    min-width: 30%;
+    font-size: 150%;
+    text-align: center;
+    padding: 5px;
+}
 
+.create__story__content{
+    min-width: 60%;
+    font-size: 150%;
+    padding: 10px
+}
 
 .create__story__form__submit{
     position: relative;
+    font-size: 70%;
     display: inline-block;
     width: 80px;
     height: 80px;
@@ -37,4 +50,18 @@
     border-radius: 60%;
     cursor: pointer;
     transition: box-shadow 2000ms;
+}
+.create__story__form__submit{
+    font-family: "Arcade Normal";
+    border: 1px solid black;
+}
+
+.create__story__form__submit:hover{
+    font-family: "Arcade Normal";
+    background-color: green;
+}
+
+.create__story__form__submit:active{
+    box-shadow: inset -2px -2px 3px rgba(255, 255, 255, .6),
+                inset 2px 2px 3px rgba(0, 0, 0, .6);
 }

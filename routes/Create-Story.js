@@ -18,7 +18,7 @@ router.post('/', asyncHandler(async(req, res, next) => {
         story,
         author_id: res.locals.user.id,
         liked: 0,
-        views: 0
+        views: 0,
     })
 
     res.redirect(`/Stories/${currentStory.id}`)

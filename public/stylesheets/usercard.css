@@ -1,18 +1,18 @@
 @font-face {
     font-family: 'Arcade Interlaced';
-    src: url('../fonts/ARCADE_I.TTF') format('truetype'),
+    src: url('/fonts/ARCADE_I.TTF') format('truetype'),
     url('arcade_i-webfont.woff') format('woff'),
     url('arcade_i-webfont.woff2') format('woff2')
 }
 
 @font-face {
     font-family: 'Arcade Normal';
-    src: url('../fonts/ARCADE_N') format('truetype');
+    src: url('/fonts/ARCADE_N') format('truetype');
 }
 
 @font-face {
     font-family: "Arcade Rounded";
-    src: url('../fonts/ARCADE_R.TTF') format('truetype')
+    src: url('/fonts/ARCADE_R.TTF') format('truetype')
 }
 
 .a__userCard {
@@ -39,15 +39,18 @@
 	color: #B3B8CD;
 	padding-top: 30px;
 	position: relative;
-	width: 350px;
+	width: 15%;
 	max-width: 100%;
 	text-align: center;
+	margin: 2%;
 }
 
 .div__searchResults{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
+	flex-wrap: wrap;
+	justify-content: center;
 }
 
 .cardContainer__userCard .author {
@@ -77,8 +80,10 @@
 	font-family: "Arcade Normal", sans-serif;
 	font-weight: 500;
 	padding: 10px 25px;
+	margin: 5px;
 	height: 45px;
 	width: 220px;
+	cursor: pointer;
 }
 
 .button__primary--active {
@@ -95,4 +100,19 @@
 	text-align: left;
 	padding: 15px;
 	margin-top: 30px;
+}
+
+.table{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+  }
+
+.table__text{
+	margin-right: 5px;
+}
+
+.hidden{
+	display: none
 }
