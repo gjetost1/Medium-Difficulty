@@ -68,6 +68,7 @@
 	padding: 7px;
 }
 
+
 .button__primary {
 	background-color: #03BFCB;
 	border: 1px solid #03BFCB;
@@ -76,11 +77,17 @@
 	font-family: "Arcade Normal", sans-serif;
 	font-weight: 500;
 	padding: 10px 25px;
+	height: 45px;
+	width: 220px;
 }
 
 .button__primary--active {
 	background-color: transparent;
 	color: #02899C;
+}
+
+.button__primary--hidden{
+	display: none;
 }
 
 .div__listContainer__userCard {

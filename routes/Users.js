@@ -73,14 +73,14 @@ router.delete('/:id/follow', async (req, res, next) => {
 })
 
 router.post('/follow', asyncHandler(async(req, res, next)=>{
-
+    const {follower_id, following_id} = req.body
     await Follower.create({
         follower_user_id: follower_id,
         following_user_id: following_id
     })
 
     res.json({success: 'true'})
-    
+
 }))
 
 router.delete('/unfollow', asyncHandler(async(req, res, next)=>{

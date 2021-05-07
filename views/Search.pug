@@ -11,6 +11,6 @@ include UserCard.pug
 block content
     div(class='div__searchResults')
         if currentUser
-            +userCard(users, currentUser)
+            +userCard(users, followers, currentUser)
         else
-            +userCard(users)
+            +userCard(users, followers)
