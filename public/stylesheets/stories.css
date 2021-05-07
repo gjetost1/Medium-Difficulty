@@ -25,6 +25,26 @@
 
 }
 
+.follow__title{
+    display:flex;
+    position: relative;
+    align-items: center;
+    left: 93px;
+}
+
+.follow__button{
+    font-size: 30px;
+    width: 250px;
+    height: 40px;
+}
+
+.unfollow__button{
+
+    font-size: 30px;
+    width: 250px;
+    height: 40px;
+}
+
 .container{
     display: flex;
     justify-content: center;
@@ -150,4 +170,32 @@
  button{
     font-family: 'Arcade Normal';
     font-size: 100%;
+}
+
+.title__spacer{
+    min-width: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#author__name{
+    font-size: 26px;
+    margin-bottom: 10px;
+    text-decoration: none;
+    color: black;
+    background-color: pink;
+    border: 1px solid black;
+    border-radius: 4px;
+    padding: 5px
+}
+
+#story__delete__button{
+    margin-right: 10px;
+    min-width: 205px;
+}
+
+#form__submit__button__edit{
+    margin-left: 10px;
+    min-width: 205px;
 }

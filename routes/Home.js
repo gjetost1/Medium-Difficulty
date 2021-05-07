@@ -12,13 +12,13 @@ router.get('/', asyncHandler(async (req, res, next) => {
   if (res.locals.user) {
     const followers = await Follower.findAll({
       where: {
-        following_user_id: res.locals.user.id
+        follower_user_id: res.locals.user.id
       },
       include: [{
         model: User, as: 'User'
       }]
     })
-    const ids = followers.map(follower => follower.follower_user_id)
+    const ids = followers.map(follower => follower.following_user_id)
     stories = await Story.findAll({ where: { author_id: { [Op.in]: ids } }, include: User })
   } else {
     stories = await Story.findAll({ include: User })
@@ -63,7 +63,8 @@ router.post('/search', asyncHandler(async (req, res, next) => {
       },
       include: [{
         model: Follower,
-      }, Story]
+      }, Story],
+      order: [['id', "ASC"]]
     })
   } else {
     users = await User.findAll({
@@ -77,13 +78,16 @@ router.post('/search', asyncHandler(async (req, res, next) => {
   }
 
   for (aUser of users) {
-    let followers = await Follower.findAll({where: {following_user_id: aUser.id}})
+    let followers = await Follower.findAll({ where: { following_user_id: aUser.id } })
     aUser.followersNumber = followers.length;
-    if (await Follower.findOne({where:{follower_user_id: res.locals.user.id, following_user_id: aUser.id}})) {
-      aUser.isFollowed = true
-    } else {
-      aUser.isFollowed = false
+    if (res.locals.user) {
+      if (await Follower.findOne({ where: { follower_user_id: res.locals.user.id, following_user_id: aUser.id } })) {
+        aUser.isFollowed = true
+      } else {
+        aUser.isFollowed = false
+      }
     }
+
     await aUser.save()
   }
 

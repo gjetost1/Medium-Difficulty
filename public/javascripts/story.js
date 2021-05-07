@@ -58,11 +58,30 @@ window.addEventListener('DOMContentLoaded', (event) => {
         })
     }
 
-    deleteStory.addEventListener('click', async e =>{
-        await fetch(`/Stories/Delete/${storyId}`, {
-            method: 'DELETE'
+    if (deleteStory) {
+        deleteStory.addEventListener('click', async e => {
+            await fetch(`/Stories/Delete/${storyId}`, {
+                method: 'DELETE'
+            })
+            window.location.replace('/')
         })
-        window.location.replace('/')
+    }
+
+
+    const follow = document.querySelector('#follow')
+    const unfollow = document.querySelector('#unfollow')
+    const userId = document.querySelector('.userID').value
+
+    follow.addEventListener('click', async e => {
+        follow.classList.add('hidden')
+        unfollow.classList.remove('hidden')
+        await fetch(`/Users/${userId}/follow`, { method: 'POST' })
+    })
+
+    unfollow.addEventListener('click', async e => {
+        follow.classList.remove('hidden')
+        unfollow.classList.add('hidden')
+        await fetch(`/Users/${userId}/follow`, { method: 'DELETE' })
     })
 
 });
