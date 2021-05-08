@@ -1,7 +1,7 @@
 const express = require('express');
 const { Result } = require('express-validator');
 const router = express.Router();
-const { Story, Comment, StoryLike, User } = require('../db/models')
+const { Story, Comment, StoryLike, User, Follower } = require('../db/models')
 const { asyncHandler, csrfProtection } = require('./utils')
 
 //Collection Resource
@@ -24,9 +24,12 @@ router.get('/:id', asyncHandler(async (req, res, next) => {
     const story = await Story.findByPk(req.params.id);
     let currentUsersStory = false;
 
-    if (story.author_id == res.locals.user.id) {
-        currentUsersStory = true;
-    };
+    if (res.locals.user) {
+        if (story.author_id == res.locals.user.id) {
+            currentUsersStory = true;
+        };
+    }
+
     let liked;
     if (res.locals.user) {
         liked = await StoryLike.findOne({
@@ -36,6 +39,13 @@ router.get('/:id', asyncHandler(async (req, res, next) => {
             }
         })
     }
+    let isFollowing = false;
+    if (res.locals.user) {
+        if (await Follower.findOne({ where: { follower_user_id: res.locals.user.id, following_user_id: story.author_id } })) {
+            isFollowing = true
+        }
+    }
+
 
     let isLiked;
     if (liked) {
@@ -63,13 +73,15 @@ router.get('/:id', asyncHandler(async (req, res, next) => {
                 comment.mine = true;
             }
         }
-
     })
 
     let loggedIn = false;
-    if(res.locals.user) {
+    if (res.locals.user) {
         loggedIn = true
     }
+
+    let authorObj = await User.findByPk(story.author_id)
+    const author = authorObj.username
 
     res.render('Stories', {
         story,
@@ -79,7 +91,9 @@ router.get('/:id', asyncHandler(async (req, res, next) => {
         isLiked,
         liked,
         comments,
-        loggedIn
+        loggedIn,
+        isFollowing,
+        author
     })
 }))
 
@@ -104,7 +118,7 @@ router.post('/:id', asyncHandler(async (req, res, next) => {
     const currentStory = await Story.findByPk(req.params.id);
     const { title, story } = req.body;
 
-    await currentStory.update({title: title, story: story})
+    await currentStory.update({ title: title, story: story })
 
     await currentStory.save();
     res.redirect(`/Stories/${currentStory.id}`)

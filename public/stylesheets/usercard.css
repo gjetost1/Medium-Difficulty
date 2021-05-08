@@ -39,8 +39,7 @@
 	color: #B3B8CD;
 	padding-top: 30px;
 	position: relative;
-	width: 15%;
-	max-width: 100%;
+	width: 17rem;
 	text-align: center;
 	margin: 2%;
 }
@@ -82,7 +81,7 @@
 	padding: 10px 25px;
 	margin: 5px;
 	height: 45px;
-	width: 220px;
+	width: 90%;
 	cursor: pointer;
 }
 
@@ -111,6 +110,7 @@
 
 .table__text{
 	margin-right: 5px;
+	min-width: 100%;
 }
 
 .hidden{
