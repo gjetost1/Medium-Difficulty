@@ -18,14 +18,13 @@ block content
             form(action="/Stories/" + story.id + '/Edit' method='GET')
               button(type='submit' id='form__submit__button__edit') Edit Story
           else
-            if isFollowing
-              if loggedIn
-                input(class='hidden userID' value=user.id)
+            if loggedIn
+              if isFollowing
+                input(class='hidden userID' value=story.author_id)
                 button(class='hidden button__primary button__primary--active' id='follow') Follow
                 button(class='button__primary button__primary--active' id='unfollow') Unfollow
-            else
-              if loggedIn
-                input(class='hidden userID' value=user.id)
+              else
+                input(class='hidden userID' value=story.author_id)
                 button(class='button__primary button__primary--active' id='follow') Follow
                 button(class='hidden button__primary button__primary--active' id='unfollow') Unfollow
       div(class='title__div')
@@ -51,7 +50,7 @@ block content
       div(class='story__comments')
         each comment in comments
           div(class='comment_container')
-            div(class='comment__author') #{comment.User.username} says:
+            a(class='comment__author' href='/Users/' + comment.User.id) #{comment.User.username} says:
             div(class='comment__text')=comment.comment
             div(class='comment__like__parent')
               div(class='comment__like__container')

@@ -35,14 +35,14 @@ window.addEventListener('DOMContentLoaded', (event) => {
     commentForm.addEventListener('submit', async e => {
         e.preventDefault()
         let data = commentBox.value
-        console.log(data, '<<<data')
+
         await fetch(`/Stories/${storyId}/comment`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify({ comment: data })
-        }).then(r => console.log(r))
+        })
         e.target.submit()
     })
 
@@ -70,18 +70,23 @@ window.addEventListener('DOMContentLoaded', (event) => {
 
     const follow = document.querySelector('#follow')
     const unfollow = document.querySelector('#unfollow')
-    const userId = document.querySelector('.userID').value
+    let userId = document.querySelector('.userID')
+    if (userId) {
+        userId = userId.value
+    }
 
-    follow.addEventListener('click', async e => {
-        follow.classList.add('hidden')
-        unfollow.classList.remove('hidden')
-        await fetch(`/Users/${userId}/follow`, { method: 'POST' })
-    })
+    if (follow) {
+        follow.addEventListener('click', async e => {
+            follow.classList.add('hidden')
+            unfollow.classList.remove('hidden')
+            await fetch(`/Users/${userId}/follow`, { method: 'POST' })
+        })
 
-    unfollow.addEventListener('click', async e => {
-        follow.classList.remove('hidden')
-        unfollow.classList.add('hidden')
-        await fetch(`/Users/${userId}/follow`, { method: 'DELETE' })
-    })
+        unfollow.addEventListener('click', async e => {
+            follow.classList.remove('hidden')
+            unfollow.classList.add('hidden')
+            await fetch(`/Users/${userId}/follow`, { method: 'DELETE' })
+        })
+    }
 
 });

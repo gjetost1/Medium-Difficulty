@@ -66,6 +66,10 @@ router.post('/search', asyncHandler(async (req, res, next) => {
       }, Story],
       order: [['id', "ASC"]]
     })
+
+    if (users.length == 0) {
+      return res.redirect('/')
+    }
   } else {
     users = await User.findAll({
       where: {
@@ -75,6 +79,9 @@ router.post('/search', asyncHandler(async (req, res, next) => {
         model: Follower,
       }, Story]
     })
+    if (users.length == 0) {
+      return res.redirect('/')
+    }
   }
 
   for (aUser of users) {
@@ -91,13 +98,11 @@ router.post('/search', asyncHandler(async (req, res, next) => {
     await aUser.save()
   }
 
-  try {
-    if (res.locals.user.id) {
-      loggedOn = true
-    }
-  } catch (err) {
-    console.log('No user logged on')
+
+  if (res.locals.user) {
+    loggedOn = true
   }
+
 
   if (loggedOn) {
     const currentUser = res.locals.user.id
