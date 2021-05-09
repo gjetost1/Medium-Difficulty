@@ -5,97 +5,97 @@ window.addEventListener('DOMContentLoaded', (event) => {
 
     function selectImgs(){
         let choice = select.value;
-        if(choice === '1') {
+        if(choice === "/storyImgs/mario.png") {
             img.src = "/storyImgs/mario.png"
         }
-        if(choice === '2') {
+        if(choice === "/storyImgs/beetlejuice.png") {
             img.src = "/storyImgs/beetlejuice.png"
         }
-        if(choice === '3') {
+        if(choice === "/storyImgs/boat.png") {
             img.src = "/storyImgs/boat.png"
         }
-        if(choice === '4') {
+        if(choice === "/storyImgs/cabin.png") {
             img.src = "/storyImgs/cabin.png"
         }
-        if(choice === '5') {
+        if(choice === "/storyImgs/cardgame.png") {
             img.src = "/storyImgs/cardgame.png"
         }
-        if(choice === '6') {
+        if(choice === "/storyImgs/castlevania.png") {
             img.src = "/storyImgs/castlevania.png"
         }
-        if(choice === '7') {
+        if(choice === "/storyImgs/chess.png") {
             img.src = "/storyImgs/chess.png"
         }
-        if(choice === '8') {
+        if(choice === "/storyImgs/dark.png") {
             img.src = "/storyImgs/dark.png"
         }
-        if(choice === '9') {
+        if(choice === "/storyImgs/donkey.png") {
             img.src = "/storyImgs/donkey.png"
         }
-        if(choice === '10') {
+        if(choice === "/storyImgs/fight.png") {
             img.src = "/storyImgs/fight.png"
         }
-        if(choice === '11') {
+        if(choice === "/storyImgs/flight.png") {
             img.src = "/storyImgs/flight.png"
         }
-        if(choice === '12') {
+        if(choice === "/storyImgs/flintstones.png") {
             img.src = "/storyImgs/flintstones.png"
         }
-        if(choice === '13') {
+        if(choice === "/storyImgs/food.png") {
             img.src = "/storyImgs/food.png"
         }
-        if(choice === '14') {
+        if(choice === "/storyImgs/football.png") {
             img.src = "/storyImgs/football.png"
         }
-        if(choice === '15') {
+        if(choice === "/storyImgs/megaman.png") {
             img.src = "/storyImgs/megaman.png"
         }
-        if(choice === '16') {
+        if(choice === "/storyImgs/mickey.png") {
             img.src = "/storyImgs/mickey.png"
         }
-        if(choice === '17') {
+        if(choice === "/storyImgs/nightmare.png") {
             img.src = "/storyImgs/nightmare.png"
         }
-        if(choice === '18') {
+        if(choice === "/storyImgs/pinball.png") {
             img.src = "/storyImgs/pinball.png"
         }
-        if(choice === '19') {
+        if(choice === "/storyImgs/pirate.png") {
             img.src = "/storyImgs/pirate.png"
         }
-        if(choice === '20') {
+        if(choice === "/storyImgs/prince.png") {
             img.src = "/storyImgs/prince.png"
         }
-        if(choice === '21') {
+        if(choice === "/storyImgs/punch.png") {
             img.src = "/storyImgs/punch.png"
         }
-        if(choice === '22') {
+        if(choice === "/storyImgs/racing.png") {
             img.src = "/storyImgs/racing.png"
         }
-        if(choice === '23') {
+        if(choice === "/storyImgs/rpg.png") {
             img.src = "/storyImgs/rpg.png"
         }
-        if(choice === '24') {
+        if(choice === "/storyImgs/rpg2.png") {
             img.src = "/storyImgs/rpg2.png"
         }
-        if(choice === '25') {
+        if(choice === "/storyImgs/spaceshuttle.png") {
             img.src = "/storyImgs/spaceshuttle.png"
         }
-        if(choice === '26') {
+        if(choice === "/storyImgs/spyhunter.png") {
             img.src = "/storyImgs/spyhunter.png"
         }
-        if(choice === '27') {
+        if(choice === "/storyImgs/stage.png") {
             img.src = "/storyImgs/stage.png"
         }
-        if(choice === '28') {
+        if(choice === "/storyImgs/starwars.png") {
             img.src = "/storyImgs/starwars.png"
         }
-        if(choice === '29') {
+        if(choice === "/storyImgs/uncles.png") {
             img.src = "/storyImgs/uncles.png"
         }
-        if(choice === '30') {
+        if(choice === "/storyImgs/wrestling.png") {
             img.src = "/storyImgs/wrestling.png"
         }
-        if(choice === '31') {
+        if(choice === "/storyImgs/zorldo.png") {
             img.src = "/storyImgs/zorldo.png"
         }
     }
