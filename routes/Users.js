@@ -6,14 +6,17 @@ const { User, Follower, Story } = require('../db/models')
 
 router.get('/:id', asyncHandler(async (req, res, next) => {
     let currentUser = false;
-    if (req.params.id == res.locals.user) {
-        currentUser = true
-    };
+    if (res.locals.user) {
+        if (req.params.id == res.locals.user.id) {
+            currentUser = true
+        };
+    }
+
 
     const profileUser = await User.findByPk(req.params.id)
 
     const stories = await Story.findAll({
-        where:{
+        where: {
             author_id: profileUser.id
         },
         include: User
@@ -32,7 +35,7 @@ router.get('/:id', asyncHandler(async (req, res, next) => {
     })
 
     const followers = await Follower.findAll({
-        where:{
+        where: {
             following_user_id: profileUser.id
         },
         include: [{
@@ -42,7 +45,13 @@ router.get('/:id', asyncHandler(async (req, res, next) => {
 
     const followerAmount = followers.length
 
-    console.log(followers)
+    let isFollowing = false;
+    if (res.locals.user) {
+        if (await Follower.findOne({ where: { follower_user_id: res.locals.user.id, following_user_id: req.params.id } })) {
+            isFollowing = true
+        }
+    }
+
     res.render('User', {
         user: res.locals.user,
         stories,
@@ -50,7 +59,8 @@ router.get('/:id', asyncHandler(async (req, res, next) => {
         profileUser,
         currentUser,
         followers,
-        followerAmount
+        followerAmount,
+        isFollowing
     })
 }));
 
@@ -73,41 +83,41 @@ router.delete('/:id/follow', async (req, res, next) => {
     follow.destroy()
 })
 
-router.post('/follow', asyncHandler(async(req, res, next)=>{
-    const {follower_id, following_id} = req.body
+router.post('/follow', asyncHandler(async (req, res, next) => {
+    const { follower_id, following_id } = req.body
     await Follower.create({
         follower_user_id: follower_id,
         following_user_id: following_id
     })
-    res.json({success: 'true'})
+    res.json({ success: 'true' })
 }))
 
-router.delete('/unfollow', asyncHandler(async(req, res, next)=>{
-    const {follower_id, following_id} = req.body
+router.delete('/unfollow', asyncHandler(async (req, res, next) => {
+    const { follower_id, following_id } = req.body
     const follower = await Follower.findOne({
-        where:{
+        where: {
             follower_user_id: follower_id,
             following_user_id: following_id
         }
     })
     await follower.destroy();
-    res.json({success: 'true'})
+    res.json({ success: 'true' })
 }))
 
-router.post('/followers', asyncHandler(async(req, res, next)=>{
-    const {user_id} = req.body
+router.post('/followers', asyncHandler(async (req, res, next) => {
+    const { user_id } = req.body
     const following = []
-    console.log(user_id, 'user_IDDD')
+
     const followersDB = await Follower.findAll({
-        where:{
+        where: {
             follower_user_id: user_id
         }
     })
 
-    followersDB.forEach(follower=>{
+    followersDB.forEach(follower => {
         following.push(follower.following_user_id)
     })
-    res.json({following: following})
+    res.json({ following: following })
 }))
 
 module.exports = router;

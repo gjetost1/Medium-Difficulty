@@ -19,7 +19,7 @@
     font-family: "Arcade Normal";
     display:block;
     border-radius: 25px;
-    background-color: #d0d1c9;
+    background-color: #3A3238;
     padding: 3%;
     position: sticky;
     box-shadow: 0 0 0 2pt #2b0b0b;
@@ -29,7 +29,7 @@
 
     display: flex;
     /* border-radius: 25px; */
-    background-color: #deeee3;
+    background-color: #D282A6;
     flex-direction: column;
     box-shadow: 0 0 0 2pt #2b0b0b;
     height: 42rem;
@@ -132,7 +132,7 @@
 	height: 200px;
 	transform: skew(22deg);
     border: 3px solid #2b0b0b;
-	background: #b8b9ae;
+	background-color: #b8b9ae;
     z-index: -3;
     right: -18px;
     top: -33px;

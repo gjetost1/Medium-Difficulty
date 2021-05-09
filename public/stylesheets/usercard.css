@@ -5,10 +5,10 @@
     url('arcade_i-webfont.woff2') format('woff2')
 }
 
-@font-face {
+/* @font-face {
     font-family: 'Arcade Normal';
     src: url('/fonts/ARCADE_N') format('truetype');
-}
+} */
 
 @font-face {
     font-family: "Arcade Rounded";

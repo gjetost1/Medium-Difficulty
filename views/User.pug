@@ -13,8 +13,17 @@ include utils.pug
 block content
     div(class='user__container')
         div(class='user__info__holder')
-            div(class='profile__spacer')
-                div(display='min-width: 50%')
+            div(class='profile__spacer' display='min-width: 50%')
+                if user
+                    unless currentUser
+                        if isFollowing
+                            input(class='hidden userID' value=profileUser.id)
+                            button(class='hidden button__primary button__primary--active' id='follow') Follow
+                            button(class='button__primary button__primary--active' id='unfollow') Unfollow
+                        else
+                            input(class='hidden userID' value=profileUser.id)
+                            button(class='button__primary button__primary--active' id='follow') Follow
+                            button(class='hidden button__primary button__primary--active' id='unfollow') Unfollow
             div(class='user__info')
                 img(class='profile__picture' src=profileUser.profileImage)
                 h1=profileUser.username

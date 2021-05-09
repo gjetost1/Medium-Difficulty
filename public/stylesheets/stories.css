@@ -199,3 +199,8 @@
     margin-left: 10px;
     min-width: 205px;
 }
+
+.comment__author{
+    text-decoration: none;
+    color: black;
+}

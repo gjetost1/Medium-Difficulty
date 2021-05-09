@@ -24,6 +24,9 @@
 
 .profile__spacer{
     min-width: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .follower__container__button{
@@ -61,4 +64,9 @@
 
 .hidden > .follower__div{
     display: none;
+}
+
+.button__primary{
+    font-size: 24px;
+    margin-left: 50%;
 }
