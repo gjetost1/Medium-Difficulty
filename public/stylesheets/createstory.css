@@ -81,20 +81,33 @@
 
 .create__story__container {
     padding-top: 2%;
+    padding-right: 2%;
+    padding-left: 2%;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
     border: 1px solid black;
-    background-color:#d0a3bf;
+    background-color:#E1E5EE;
 }
 
 .create__story__img {
     display: flex;
     align-items: center;
     justify-content: center;
+    margin: 2%;
+    padding: 2%;
 }
 
+
+
 .create__story__img__label {
+    margin: 2%;
+    display: flex;
+    font-size: 70%;
+    align-items: center;
+}
+
+select {
     margin: 1%;
 }
