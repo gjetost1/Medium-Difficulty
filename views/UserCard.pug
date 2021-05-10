@@ -1,8 +1,8 @@
 
 
-mixin userCard(users, followers, currentUser)
+mixin userCard(loggedOn, users, followers, currentUser)
     each user in users
-        +cardContainer(user, followers, currentUser, id)
+        +cardContainer(user, followers, currentUser, id, loggedOn)
 
 
 mixin followUserButton(user)
@@ -24,7 +24,7 @@ mixin tableCard(user)
             div=user.followersNumber
             div=user.Stories.length
 
-mixin cardContainer(user, followers, currentUser, id)
+mixin cardContainer(user, followers, currentUser, id, loggedOn)
     div(class="cardContainer__userCard")
         if user.Stories.length > 0
             span(class="author") Author
@@ -32,7 +32,8 @@ mixin cardContainer(user, followers, currentUser, id)
         h3(class='h3__userCard')=user.username
         h6(class='h6__userCard') --Insert Bio Here--
         div(class="div__buttons__userCard")
-            +followUserButton(user)
+            if loggedOn
+                +followUserButton(user)
             a(class="a__userCard" href=`/Users/${user.id}/`)
                 button(class='button__primary' ) View Profile
         div(class="div__listContainer__userCard")
