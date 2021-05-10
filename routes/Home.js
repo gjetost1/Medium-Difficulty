@@ -103,15 +103,16 @@ router.post('/search', asyncHandler(async (req, res, next) => {
     loggedOn = true
   }
 
+  console.log(loggedOn)
 
   if (loggedOn) {
     const currentUser = res.locals.user.id
     if (users.length) {
-      res.render('Search', { users, followers, currentUser })
+      res.render('Search', { users, followers, currentUser, loggedOn })
     }
   }
   else if (users.length) {
-    res.render('Search', { users, followers })
+    res.render('Search', { users, followers, loggedOn })
   }
   else {
     res.render('SearchFail')
