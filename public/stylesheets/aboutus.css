@@ -1,0 +1,9 @@
+h3 {
+    margin: 5%;
+    word-wrap: normal;
+}
+
+.person__cont__noah{
+    display: flex;
+    justify-content: center;
+}
