@@ -15,6 +15,10 @@
     src: url('/fonts/ARCADE_R.TTF') format('truetype')
 }
 
+button{
+    cursor: pointer;
+}
+
 .layout__div__container {
     font-family: "Arcade Normal";
     display:block;

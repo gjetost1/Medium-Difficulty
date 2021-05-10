@@ -1,16 +1,17 @@
 extends layout.pug
 
+append head
+  style
+    include ../public/stylesheets/aboutUs.css
+
 block content
-    div(class="about__us__cont" style="min-width: 100%; display: flex; justify-content: center; align-items: center")
-      div(class="person__cont" style="display: flex; justify-content: center; align-items: center)
-        h3 Noah Carmichael-Hitsman
-        a(href="github.com") Github
-        a(href="linkedin.com") LinkedIn
-      div(class="person__cont")
-        h3 Alex
-        a(href="github.com") Github
-        a(href="linkedin.com") LinkedIn
-      div(class="person__cont")
-        h3 Dan
-        a(href="github.com") Github
-        a(href="linkedin.com") LinkedIn
+    div(class="about__us__cont")
+      h3(class='names text') Noah Carmichael-Hitsman
+      a(href="https://github.com/NCHitsman" class='text') Github
+      a(href="https://www.linkedin.com/in/noah-carmichael-hitsman-b024a1203/" class='text') LinkedIn
+      h3(class='names text') Alex Betita
+      a(href="https://github.com/AlexBetita" class='text') Github
+      a(href="https://www.linkedin.com/in/alex-betita/" class='text') LinkedIn
+      h3(class='names text') Dan Rosen
+      a(href="https://github.com/gjetost1" class='text') Github
+      a(href="https://www.linkedin.com/in/daniel-rosen-54962190/.com" class='text') LinkedIn
