@@ -15,6 +15,7 @@
   justify-content: space-between;
   align-items: center;
   width: 100%;
+  min-height: 40px;
 }
 
 .storyCard__subinfo__spacer {
