@@ -9,6 +9,7 @@
 - [DB Schema](https://github.com/gjetost1/Medium-Difficulty/wiki/Database-Schema)
 ---
 #### *Exploring Medium Difficulty*
-![60e88bd8d9245124803048](https://user-images.githubusercontent.com/73906585/125117674-2f771300-e0b4-11eb-99a6-da3aa1a3378a.gif)
+##### Comments
+![comment](https://user-images.githubusercontent.com/73906585/126704045-9d256962-c498-45ab-a49a-a4e3bdced3e9.gif)
 
 
